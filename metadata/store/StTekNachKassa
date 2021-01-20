@@ -1,0 +1,46 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userAlias": "stTekNachKassa",
+        "designer|userClassName": "StTekNachKassa",
+        "model": "MdTekNachKassa",
+        "storeId": "stTekNachKassa"
+    },
+    "designerId": "85151698-8d2b-431a-b09c-df430d0c603c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryKassa.getResults"
+            },
+            "name": "MyDirectProxy71",
+            "designerId": "ed49a2e5-0586-43f0-b049-de2d158cd612",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader73",
+                    "designerId": "8b28a85d-dec7-4819-b8bf-039a810724b5"
+                }
+            ]
+        }
+    ]
+}

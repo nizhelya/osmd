@@ -1,0 +1,14 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css2",
+        "remote": true,
+        "url": "resources/css/ykis_news.css"
+    },
+    "designerId": "28289af8-f08c-44e7-8e7b-ebee52b1577f"
+}

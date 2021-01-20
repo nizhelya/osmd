@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winaddlgotaperer",
+        "designer|userClassName": "sprav.WinAddLgotaPererViewController"
+    },
+    "designerId": "933e5aae-668f-41b5-ad32-3ed95b25dc65"
+}

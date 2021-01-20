@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabpncenter",
+        "designer|userClassName": "menu.TabPnCenterViewController"
+    },
+    "designerId": "fcda3646-eae4-436a-b354-4656672d2d30"
+}

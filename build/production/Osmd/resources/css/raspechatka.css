@@ -1,0 +1,114 @@
+td {padding:0px; margin:0px;};
+.print_ignore {
+    display: none;
+}
+body table {
+    width: 100%;
+    font-size:8pt;
+    border: 0;
+}
+
+img {
+    border: 0;
+}
+
+table.telo {
+    border-width:      0.1em;
+    border-color:      #000000;
+    border-style:      dotted;
+    border-collapse:collapse;
+}
+
+table.telo th {
+	white-space:  nowrap;
+	border:  1px  dotted  #000000;
+	text-align: 	center;
+	font-size:10px;
+}
+table.telo td {
+	white-space:  nowrap;
+	border:  1px  dotted  #000000;
+	text-align: 	right;
+	font-size:10px;	
+}
+/*UTKE raspechatka*/
+table.schet {
+    border-width:      0.1em;
+    border-color:      #000000;
+    border-style:      dotted;
+    border-collapse:collapse;
+}
+
+table.schet th {
+	border:  1px  dotted  #000000;
+	text-align: 	center;
+	font-size:10px;
+}
+table.schet td {
+	border:  1px  dotted  #000000;
+	text-align: 	right;
+	font-size:10px;
+}
+
+table.left 
+{
+	font-size:	8pt;
+	border: 		0;
+	
+}
+table.left td 
+ {
+	
+	text-align: 	center;
+	border: 		0;
+}
+@media print {
+.print_ignore {
+    display: none;
+}
+body table {
+   	
+    color:             #000000;
+    background-color:  #ffffff;
+    font-size:         8pt;
+    border: 0;
+}
+
+img {
+    border: 0;
+}
+
+table.telo {
+    border-width:      0.1em;
+    border-color:      #000000;
+    border-style:      dotted;
+    border-spacing:    0;
+	padding: 0.1em 0.5em 0.1em 0.5em;
+}
+
+table.telo th {
+	white-space:  nowrap;
+	border:  1px  dotted  #000000;
+	padding: 0.1em 0.5em 0.1em 0.5em;
+	text-align: 	center
+}
+table.telo td {
+	white-space:  nowrap;
+	border:  1px  dotted  #000000;
+	padding: 0.1em 0.5em 0.1em 0.5em;
+	text-align: 	right;
+	
+}
+table.left 
+{
+	font-size:	8pt;
+	border: 		0;
+	
+}
+table.left td 
+ {
+	
+	text-align: 	center;
+	border: 		0;
+}
+}

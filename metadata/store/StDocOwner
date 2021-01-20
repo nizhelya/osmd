@@ -1,0 +1,64 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": [
+            "[",
+            "{",
+            "document: 'Витяг про право власності'",
+            "},",
+            "{",
+            "document: 'Договір купівлі-продажу'",
+            "},",
+            "{",
+            "document: 'Договір дарування'",
+            "},",
+            "{",
+            "document: 'Договір міни'",
+            "},",
+            "{",
+            "document: 'Свідотцтво про право власності'",
+            "},",
+            "{",
+            "document: 'Свідотцтво про право на спадщину'",
+            "}",
+            "",
+            "",
+            "]"
+        ],
+        "designer|userClassName": "StDocOwner",
+        "storeId": "StDocOwner"
+    },
+    "name": "StDocument1",
+    "designerId": "24e5f981-c16d-45f5-bf93-a9036d5cc2ac",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "document"
+            },
+            "name": "MyString209",
+            "designerId": "b50101a9-1132-4038-ab4e-6fbe981c7c4a"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyMemoryProxy4",
+            "designerId": "a6d346df-75a4-40dc-a170-271389228651"
+        }
+    ]
+}

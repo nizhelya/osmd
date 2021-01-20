@@ -1,0 +1,378 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "crLeftMenu",
+        "designer|userClassName": "CrLeftMenu",
+        "stores": [
+            "StAddressOrg"
+        ],
+        "views": [
+            "VpKommuna",
+            "menu.TabPnCenter"
+        ]
+    },
+    "designerId": "f77e4e76-b9ea-4938-b6f5-9c8f4e782141",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": null,
+                "forceCreate": null,
+                "ref": "CbRaion",
+                "selector": "#cbRaion",
+                "xtype": null
+            },
+            "name": "CbRaion",
+            "designerId": "6d305aaf-1b65-4b91-b02a-cb7d1caf3829"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "ListHouses",
+                "selector": "#listHouses"
+            },
+            "name": "ListHouses",
+            "designerId": "1d69aea2-bf0d-4084-acea-d41abf5cbf61"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "ListHousesData",
+                "selector": "listHouses dataview"
+            },
+            "name": "ListHousesData",
+            "designerId": "61ee24b9-d690-45a3-8861-2f95bb91ed26"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "adr"
+                ],
+                "fn": "LoadFlatData",
+                "implHandler": [
+                    "",
+                    "//in use",
+                    "var me = this;",
+                    "var crKassa = this.application.getController('CrKassa');",
+                    "",
+                    "//TAB_PANEL",
+                    "// Активный таб",
+                    "//console.log(activeTab);",
+                    "var tabPnCenter = me.getTabPnCenter();",
+                    "var activeTab = tabPnCenter.getActiveTab();",
+                    "var nameactiveTab = activeTab.getXType();",
+                    "var index = tabPnCenter.items.indexOf(activeTab);",
+                    "",
+                    "//STORE",
+                    "",
+                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                    "",
+                    "//LOGIN & PASSWORD",
+                    "",
+                    "var values =stUser.getAt(0);",
+                    "var login = values.get('login');",
+                    "var password = values.get('password');",
+                    "var address_id = values.get('address_id');",
+                    "var address = values.get('address');",
+                    "var house_id = values.get('house_id');",
+                    "var prixod_id = values.get('prixod_id');",
+                    "",
+                    "//LOGIKA",
+                    "values.set({'dteplomer_id':0});",
+                    "stUser.sync();",
+                    "",
+                    "//КВАРТИРЫ",
+                    "tabPnCenter.child('#tabAppBti').tab.show();",
+                    "tabPnCenter.child('#tabKassa').tab.show();",
+                    "tabPnCenter.child('#tabNachApp').tab.show();",
+                    "tabPnCenter.child('#tabOplata').tab.show();",
+                    "tabPnCenter.child('#tabAppVodomer').tab.show();",
+                    "tabPnCenter.child('#tabAppTeplomer').tab.show();",
+                    "tabPnCenter.child('#tabLogin').tab.hide();",
+                    "var tab = tabPnCenter.child('#tabKassa');",
+                    "tab.setTitle(address);",
+                    "",
+                    "if (nameactiveTab==='tabkassa'){",
+                    "    crKassa.onTabKassaActivate();",
+                    "} else {",
+                    "    tabPnCenter.setActiveTab('tabKassa');",
+                    "}",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "name": "LoadFlatData",
+            "designerId": "bb17c4fd-bb19-4625-a7b0-c0ad3f364627"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#listHousesView",
+                "designer|targetType": "Ext.view.View",
+                "fn": "onListHousesViewItemClick",
+                "implHandler": [
+                    "//in use",
+                    "var me = this;",
+                    "var showAddress = Ext.getCmp('showAddress');",
+                    "",
+                    "// STORE",
+                    "",
+                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                    "",
+                    "//LOGIN & PASSWORD",
+                    "",
+                    "var values =stUser.getAt(0);",
+                    "var login = values.get('login');",
+                    "var password = values.get('password');",
+                    "",
+                    "//LOGIKA",
+                    "",
+                    "var selected = record.data;",
+                    "if (selected){",
+                    "       // console.log(selected);",
+                    "",
+                    "    values.set({'osmd_id':selected.osmd_id,",
+                    "                'house_id':selected.house_id,",
+                    "                'house':selected.house,",
+                    "                'address_id':selected.address_id,",
+                    "                'address':selected.address,",
+                    "                'raion_id':selected.raion_id,",
+                    "                'raion':selected.raion,",
+                    "                'appartment':selected.appartment,",
+                    "                'street_id':selected.street_id,",
+                    "                'vibor':\"app\"",
+                    "               });",
+                    "   // console.log(values);",
+                    "",
+                    "",
+                    "    showAddress.setText(selected.address).show();",
+                    "    me.LoadFlatData(true);",
+                    "",
+                    "}",
+                    ""
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "name": "onListHousesViewItemClick",
+            "designerId": "4e7b0e7d-47e6-44ab-bbee-17b3e1d84d75"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "CbStreet",
+                "selector": "#cbStreet"
+            },
+            "name": "CbStreet",
+            "designerId": "e96dec12-8346-4dfc-9d63-c4e5e3296a40"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "ShowAddress",
+                "selector": "#showAddress"
+            },
+            "name": "ShowAddress",
+            "designerId": "fd1817ce-6fab-44b6-b77e-befaaa2eb701"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "VpKommuna",
+                "selector": "#vpKommuna",
+                "xtype": null
+            },
+            "name": "VpKommuna",
+            "designerId": "1fc8d440-92f5-4c4e-a1b6-c9ff8db3a70b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "TabPnCenter",
+                "selector": "#tabPnCenter",
+                "xtype": null
+            },
+            "name": "TabPnCenter",
+            "designerId": "588cc0eb-d8de-4ec6-aa51-62ba7a959eb4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#tabMenuLifeFond",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onTabMenuLifeFondActivate",
+                "implHandler": [
+                    "//TAB",
+                    "var me = this;",
+                    "",
+                    "var tabPnCenter = me.getTabPnCenter();",
+                    "//LOGIKA",
+                    "",
+                    "  ",
+                    "        //КВАРТИРЫ",
+                    "        tabPnCenter.child('#tabAppBti').tab.hide();",
+                    "        tabPnCenter.child('#tabKassa').tab.hide();",
+                    "        tabPnCenter.child('#tabNachApp').tab.hide();",
+                    "        tabPnCenter.child('#tabOplata').tab.hide();",
+                    "",
+                    "        tabPnCenter.child('#tabAppVodomer').tab.hide();",
+                    "        tabPnCenter.child('#tabAppTeplomer').tab.hide();",
+                    "  ",
+                    "        tabPnCenter.child('#tabLogin').tab.hide();",
+                    "        tabPnCenter.setActiveTab('tabLogin');",
+                    "",
+                    ""
+                ],
+                "name": "activate",
+                "scope": "me"
+            },
+            "name": "onTabMenuLifeFondActivate",
+            "designerId": "2acde47e-9021-463a-bc41-3cae3c54ffee"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#tabMenuSprav",
+                "designer|targetType": "Ext.panel.Panel",
+                "fn": "onPanelActivate",
+                "implHandler": [
+                    "//in use",
+                    "var me=this;",
+                    "//TAB",
+                    "var tabPnCenter = me.getTabPnCenter();",
+                    "",
+                    "tabPnCenter.child('#tabLogin').tab.hide();",
+                    "tabPnCenter.setActiveTab('tabLogin');"
+                ],
+                "name": "activate",
+                "scope": "me"
+            },
+            "name": "onPanelActivate",
+            "designerId": "ca844c34-108f-4465-b701-ffb27fe0d5b4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#cbHouse",
+                "designer|params": [
+                    "combo",
+                    "record",
+                    "eOpts"
+                ],
+                "designer|targetType": "MyComboBox1",
+                "fn": "onCbHouseSelect",
+                "implHandler": [
+                    "//in use",
+                    "var me=this;",
+                    "/*",
+                    "COMPONENT",
+                    "*/",
+                    "//var cbRaion = me.getCbRaion();",
+                    "var viewHouses = me.getListHousesData();",
+                    "/*",
+                    "STORE",
+                    "*/",
+                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                    "var StAddress = Ext.data.StoreManager.get(\"StAddress\");",
+                    "/*",
+                    "LOGIN & PASSWORD",
+                    "*/",
+                    "var values =stUser.getAt(0);",
+                    "var login = values.get('login');",
+                    "var password = values.get('password');",
+                    "values.set({'house_id':record.get('house_id')});",
+                    "stUser.sync();",
+                    "",
+                    "/*",
+                    "LOGIKA",
+                    "*/",
+                    "//cbRaion.clearValue();",
+                    "if (record) {",
+                    "    StAddress.load({",
+                    "        params: {",
+                    "            what:'kvartira',",
+                    "            house_id: record.get('house_id'),",
+                    "            login:login,",
+                    "            password:password",
+                    "        },",
+                    "        scope: this",
+                    "    });",
+                    "}"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "onCbHouseSelect",
+            "designerId": "4215ba69-9de9-476b-8281-fedcbac39980"
+        }
+    ]
+}

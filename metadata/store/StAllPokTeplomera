@@ -1,0 +1,47 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "stAllPokTeplomera",
+        "designer|userClassName": "StAllPokTeplomera",
+        "model": "MdPriborUcheta",
+        "remoteFilter": null,
+        "remoteSort": null,
+        "storeId": "stAllPokTeplomera"
+    },
+    "designerId": "8f4cec0b-0dd6-4a6c-b563-fd6693c92ab4",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryTeplomer.getResults"
+            },
+            "name": "MyDirectProxy10",
+            "designerId": "b2b20599-ee6b-4aa9-a25b-736914e29515",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader10",
+                    "designerId": "05867d94-53ab-4ce5-bd7e-83ec96230a2c"
+                }
+            ]
+        }
+    ]
+}

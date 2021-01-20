@@ -1,0 +1,223 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "collapseFirst": false,
+        "designer|userAlias": "tabreportorg",
+        "designer|userClassName": "sprav.TabReportOrg",
+        "id": null,
+        "itemId": null,
+        "layout": "border",
+        "title": null
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "102369cc-1396-48db-baba-7173e1982ff1",
+    "viewControllerInstanceId": "33770157-92ac-4c6e-b3c1-58a20cfd23ab",
+    "viewModelInstanceId": "9f58cc12-4e61-4a43-897a-d2c83a6ef047",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": null,
+                "layout": "fit",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "minHeight": 100,
+                "scrollable": true,
+                "title": ""
+            },
+            "name": "MyPanel13",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "fca60534-ab7d-4078-b6af-83192e0ac334"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "minHeight": 40,
+                "resizable": true
+            },
+            "name": "MyToolbar8",
+            "configAlternates": {
+                "resizable": "boolean",
+                "scrollable": "boolean"
+            },
+            "designerId": "9ea270f0-a94f-4851-b608-7913cd988280",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "href": null,
+                        "icon": "resources/css/images/ico/print_printer.png",
+                        "id": null,
+                        "itemId": null,
+                        "layout|flex": null,
+                        "scale": "large",
+                        "text": "Печать",
+                        "tooltip": "Печать документа"
+                    },
+                    "name": "MyButton136",
+                    "configAlternates": {
+                        "tooltip": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "dbfa3ab3-62c2-4313-b412-380588d010a6",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var rep = Ext.REPORTCONTENT;",
+                                    "//console.log(rep);",
+                                    "var win = window.open( 'blank.php','printwin');",
+                                    "win.document.write(rep);",
+                                    "win.document.close();",
+                                    "if(Ext.isIE){",
+                                    "",
+                                    "    window.print();",
+                                    "    // window.close();",
+                                    "} else {",
+                                    "",
+                                    "    win.print();",
+                                    "    // win.close();",
+                                    "}",
+                                    ""
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "a64d6c91-5b2c-498f-a3c7-040c40c3bbf9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "href": "resources/php/xls/xls.php",
+                        "hrefTarget": "this",
+                        "icon": "resources/css/images/ico/sprav.png",
+                        "id": null,
+                        "itemId": null,
+                        "layout|flex": null,
+                        "text": "Exel",
+                        "tooltip": "Экспорт в електронную таблицу"
+                    },
+                    "name": "MyButton137",
+                    "configAlternates": {
+                        "tooltip": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "c85501ea-9bd7-49f1-9b0e-811ead848de3",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "//STORE",
+                                    "",
+                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                    "",
+                                    "//LOGIN & PASSWORD & SQL",
+                                    "",
+                                    "var values =stUser.getAt(0);",
+                                    "var login = values.get('login');",
+                                    "var password =values.get('password');",
+                                    "var sql = Ext.REPORTSQL;",
+                                    "var title= Ext.REPORTTITLE;",
+                                    "",
+                                    "",
+                                    "button.setParams({login:login,password:password,sql:sql,fname:title});"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "71de8caf-e52d-40b3-8113-d98fb9d276c1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelBeforeClose",
+                "implHandler": [
+                    "//in use",
+                    "var me=this;",
+                    "//TAB",
+                    "var tabPnCenter = Ext.getCmp('tabPnCenter');",
+                    "",
+                    "var act = 0;",
+                    "Ext.Array.forEach(tabPnCenter.getTabBar().items.items, function(f)",
+                    "{",
+                    "    if (f.hidden===false) {",
+                    "        act = act + 1;",
+                    "    }",
+                    "}); ",
+                    "",
+                    "if (act < 2) {",
+                    "    tabPnCenter.setActiveTab('tabLogin');",
+                    "} ",
+                    ""
+                ],
+                "name": "beforeclose",
+                "scope": "me"
+            },
+            "name": "onPanelBeforeClose",
+            "designerId": "cf513eff-309b-4375-9915-5afab9dd725c"
+        }
+    ]
+}

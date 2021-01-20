@@ -1,0 +1,59 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userAlias": "stRaion",
+        "designer|userClassName": "StRaion",
+        "model": "MdRaion",
+        "storeId": "stRaion"
+    },
+    "designerId": "7597fb85-7868-4571-83e7-7f771047edf0",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryAddress.getResults",
+                "extraParams": [
+                    "{'what':'raion'}"
+                ]
+            },
+            "name": "MyDirectProxy42",
+            "designerId": "528f6d9f-d433-4842-a1ba-508f97b5e76b",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader44",
+                    "designerId": "76607921-1775-4221-9de6-128da39499b3"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonWriter1",
+                    "designerId": "9409d41d-3db7-497e-9f9f-6404a6ff8ab6"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "stFamaly",
+        "designer|userClassName": "StFamaly",
+        "groupField": null,
+        "model": "MdAppartment",
+        "storeId": "StFamaly"
+    },
+    "name": "StLgotnik1",
+    "designerId": "1c38a9f2-2086-47d8-9de9-e6e184138dc9",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryAddress.getResults"
+            },
+            "name": "MyDirectProxy1",
+            "designerId": "78766d4e-4143-44ef-b338-23bb7caba67c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "baf023f9-9b4d-48b4-aeb8-fb91a9d90d78"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter6",
+                    "designerId": "5f8c8d71-1221-4e4b-92f7-8e87130cf86f"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,286 @@
+.icon-add {
+    background-image: url(images/ico/add.png) !important;
+}
+.icon-drop {
+    background-image: url(images/ico/drop.png) !important;
+}
+.icon-save {
+    background-image: url(images/ico/save.png) !important;
+}
+
+.icon-delete {
+    background-image: url(images/ico/delete.png) !important;
+}
+
+.icon-info {
+    background-image: url(images/ico/information.png) !important;
+}
+.icon-home {
+    background-image: url(images/ico/home_16.png) !important;
+}
+.icon-news {
+    background-image: url(images/ico/script.png) !important;
+}
+.icon-video {
+    background-image: url(images/ico/film.png) !important;
+}
+.icon-flat {
+    background-image: url(images/ico/key_go.png) !important;
+}
+.icon-tarif {
+    background-image: url(images/ico/diagram_16.png) !important;
+}
+.icon-factory {
+    background-image: url(images/ico/factory.png) !important;
+}
+.icon-sprav {
+    background-image: url(images/ico/sprav.png) !important;
+}
+.icon-user-go {
+    background-image: url(images/ico/user_go.png) !important;
+    background-size: 16px auto;
+}
+.icon-door-in {
+    background-image: url(images/ico/door_in.png) !important;
+}
+.icon-door-out {
+    background-image: url(images/ico/door_out.png) !important;
+}
+.icon-my-profile {
+    background-image: url(images/ico/my-profile.png) !important;
+}
+.img-xvoda {
+    background-image: url(images/ico/pipeX.png) !important;
+    background-position: center;
+}
+.img-gvoda {
+    background-image: url(images/ico/pipeG.png)  no-repeat !important;
+    background-position: center;
+}
+ .padding-img
+	   {
+	   	    width:18px;height:0px;
+	   }
+.btn_diagram64{
+     background-image:url(images/btn64/diagram_64.png) !important;
+      background-position: center;
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+
+.btn_work64{
+     background-image:url(images/btn64/factory.png) !important;
+      background-position: center;
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+
+.btn_contact64{
+     background-image:url(images/btn64/contact_64.png) !important;   
+      background-position: left;
+      background-repeat: no-repeat ; 
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+.btn_book48{
+     background-image:url(images/btn64/Books.png) !important;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+.btn_nachisleno64{
+     background-image:url(images/btn64/nachisleno_64.png) !important;
+      background-position: center;
+      background-repeat: no-repeat ;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+.btn_tbo64{
+     background-image:url(images/btn64/trash_64.png) !important;
+      background-position: center;
+     background-repeat: no-repeat ;
+      opacity:0.5;
+      filter:alpha(opacity=50); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+
+.btn_voda64{
+	    background-image:url(images/btn64/pipe_48.png)  !important;
+	    background-position: center;
+	  background-repeat: no-repeat;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+	    }
+.btn_podogrev64{
+	    background-image:url(images/btn64/pipeg_48.png) !important;
+	    background-position:  center;
+	  background-repeat: no-repeat;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;   
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+.btn_kvartplata64{
+	    background-image:url(images/btn64/many_64.png)  !important;
+	    background-position: top center;
+	 background-repeat: no-repeat;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf; 
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+.btn_oplata{
+	    background-image:url(images/btn64/usluga.png) !important;
+	    background-position: top center;
+	background-repeat: no-repeat;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+.icon_tarif{
+	    background-image:url(images/home/tarif.png) !important;
+	    background-position: top center;
+	background-repeat: no-repeat;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;	
+behavior: url(ie-css3.htc); /* Новая строка для IE */   
+	  
+}
+
+.kassa{
+	    background-image:url(images/panel/kassa.png) !important;
+	    background-position:  center;
+	 background-repeat: no-repeat;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+.master{
+	    background-image:url(images/btn64/Workers.png) !important;
+	    background-position:  center;
+	  background-repeat: no-repeat;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf; 
+behavior: url(ie-css3.htc); /* Новая строка для IE */ 
+}
+.banking{
+	    background-image:url(images/panel/banking.png) !important;
+	    background-position:  center;
+	    -moz-box-shadow: 2px 3px 5px #bfbfbf;
+	    -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+	     box-shadow: 2px 3px 5px #bfbfbf;	
+behavior: url(ie-css3.htc); /* Новая строка для IE */  
+}
+.map{
+	    background-image:url(images/panel/map.png) !important;
+	    background-position:  center;
+	background-repeat: no-repeat;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+.phone{
+	    background-image:url(images/panel/Phone.png) !important;
+	    background-position:  center;
+	  background-repeat: no-repeat;
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-box-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+      box-shadow: 2px 3px 5px #bfbfbf;  
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+.td-phone{
+	    background-image:url(images/panel/phone_logo.gif) !important;
+	    background-repeat: no-repeat;
+	    background-position:  center;
+	      opacity:0.8;
+	    filter:alpha(opacity=80); /* For IE8 and earlier */
+	    -moz-box-shadow: 2px 3px 5px #bfbfbf;
+	    -webkit-box-shadow: 2px 3px 5px #bfbfbf;
+	    box-shadow: 2px 3px 5px #bfbfbf;
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+
+#loading-mask {
+position: absolute;
+left:     0;
+top:      0;
+width:    200%;
+height:   100%;
+z-index:  20000;
+background-color: white;
+}
+ 
+#loading {
+position: absolute;
+left:     50%;
+top:      50%;
+padding:  2px;
+z-index:  20001;
+height:   auto;
+margin:   -35px 0 0 -30px;
+}
+
+#loading .loading-indicator {
+background: url(images/ajax-loader.gif) ;
+background-repeat: no-repeat;
+color:      #555;
+font:       bold 13px tahoma,arial,helvetica;
+padding:    8px 42px;
+margin:     0;
+text-align: center;
+height:     auto;
+}
+
+#loading-logo {
+        font-size: 11px;
+        font-weight: bold;
+}
+ #loading-msg {
+        font-size: 10px;
+        font-weight: normal;
+}

@@ -1,0 +1,14 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css4",
+        "remote": true,
+        "url": "resources/css/dogovor.css"
+    },
+    "designerId": "4e162872-7f74-4562-9385-4e918a7e99b0"
+}

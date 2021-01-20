@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MdPrixod",
+        "idProperty": "prixod_id"
+    },
+    "designerId": "e84013ea-9e76-411c-a022-1b8b1d1707bf",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "prixod_id"
+            },
+            "name": "MyInteger60",
+            "designerId": "85a3da5f-3f91-4dcf-89f1-6d0cde85d303"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "prixod"
+            },
+            "name": "MyString60",
+            "designerId": "b69eb9f9-d21d-488e-bb5b-3b026e1efc8b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "what"
+            },
+            "name": "MyString197",
+            "designerId": "ae247328-c660-42fe-8a95-aa0e77f4fbcb"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+@media print {
+
+    body, table, th, td {
+        font-size:9pt;
+        color:             #000000;
+        background-color:  #ffffff;
+
+
+    }
+
+    img {
+        border: 0;
+    }
+
+    table, th, td {
+        border-width:      1px;
+        border-color:      #000000;
+        border-style:      solid;
+    }
+
+    table {
+        border-collapse:   collapse;
+         border-spacing:    0;
+				 width: 100%;
+
+    }
+
+    th, td {
+        padding:           0.2em;
+				white-space: nowrap;
+    }
+
+    th {
+        font-weight:       bold;
+        background-color:  #e5e5e5;
+				
+    }
+   .left   {	text-align: left;}
+   .center {	text-align: center;}
+   .right  {	text-align: right;}
+   .nextpage { display:block; page-break-before:always; }
+}

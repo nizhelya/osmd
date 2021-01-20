@@ -1,0 +1,53 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "autoSync": null,
+        "designer|userAlias": "stSubsidiaUtszn",
+        "designer|userClassName": "stSubsidiaUtszn",
+        "groupDir": null,
+        "groupField": null,
+        "model": "MdUtszn",
+        "storeId": "stSubsidiaUtszn"
+    },
+    "designerId": "a2940105-a119-4d54-9496-7a86dcd098ec",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "directFn": "QuerySprav.getResults",
+                "extraParams": [
+                    " {'what':'getSubsidiaUtszn'}"
+                ]
+            },
+            "name": "MyDirectProxy52",
+            "designerId": "8e557f21-9873-4351-bbb1-8e521e852e5a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader54",
+                    "designerId": "bf39e789-acf5-4e24-a8f7-6a78b723df0b"
+                }
+            ]
+        }
+    ]
+}

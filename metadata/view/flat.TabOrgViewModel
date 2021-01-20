@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "taborg",
+        "designer|userClassName": "flat.TabOrgViewModel"
+    },
+    "designerId": "d4465f55-580f-468d-907a-cab36355d5b3"
+}

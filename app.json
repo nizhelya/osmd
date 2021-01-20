@@ -1,0 +1,96 @@
+{
+   "name": "Osmd",
+   "indexHtmlPath": "index.html",
+   "classpath": "${app.dir}/app,${app.dir}/resources/",
+   "overrides": "${app.dir}/overrides",
+   "framework": "ext",
+   "theme": "ext-theme-gray",
+   "requires": [],
+   "sass": {
+      "namespace": "Yкis"
+   },
+   "js": [
+      {
+         "path": "${framework.dir}/build/ext-all-rtl-debug.js"
+      },
+      {
+         "path": "resources/ext-locale-ru.js",
+         "bootstrap": false,
+         "x-compile": true,
+         "includeInBundle": true
+      },
+      {
+         "path": "app.js",
+         "bundle": true
+      }
+   ],
+   "css": [
+      {
+         "path": "bootstrap.css",
+         "bootstrap": true
+      },
+      {
+         "path": "resources/css/ykis_images.css",
+         "remote": true
+      },
+      {
+         "path": "resources/css/ykis_style.css",
+         "remote": true
+      },
+      {
+         "path": "resources/css/ykis_news.css",
+         "remote": true
+      },
+      {
+         "path": "resources/css/report.css",
+         "remote": true
+      },
+      {
+         "path": "resources/css/dogovor.css",
+         "remote": true
+      },
+      {
+         "path": "resources/css/otchet.css",
+         "remote": true
+      },
+      {
+         "path": "resources/css/print.css",
+         "remote": true
+      }
+   ],
+   "production": {},
+   "testing": {},
+   "development": {},
+   "bootstrap": {
+      "base": "${app.dir}",
+      "manifest": "bootstrap.json",
+      "microloader": "bootstrap.js",
+      "css": "bootstrap.css"
+   },
+   "output": {
+      "base": "${workspace.build.dir}/${build.environment}/${app.name}"
+   },
+   "appCache": {
+      "cache": [
+         "index.html"
+      ],
+      "network": [
+         "*"
+      ],
+      "fallback": []
+   },
+   "resources": [],
+   "ignore": [
+      "(^|/)CVS(/?$|/.*?$)"
+   ],
+   "archivePath": "archive",
+   "slicer": {
+      "js": [
+         {
+            "path": "${app.dir}/sass/example/custom.js",
+            "isWidgetManifest": true
+         }
+      ]
+   },
+   "id": "a3ddf52b-170b-4098-8b20-0f22219a9362"
+}

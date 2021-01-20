@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "fieldnach",
+        "designer|userClassName": "FieldNachViewModel"
+    },
+    "designerId": "ef4a173b-7cef-43b0-862f-2dc141763242"
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabtarif",
+        "designer|userClassName": "sprav.TabTarifViewController"
+    },
+    "name": "sprav.TabKvartplataViewController1",
+    "designerId": "044b9065-9018-45f6-86d5-f5ccfb759e30"
+}

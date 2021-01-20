@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winexportlgota",
+        "designer|userClassName": "sprav.WinExportLgotaViewController"
+    },
+    "designerId": "17749dc1-02d1-447b-8a32-a778573b8435"
+}

@@ -1,0 +1,1474 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "tablgotnik",
+        "designer|userClassName": "sprav.TabLgotnik",
+        "height": 761,
+        "id": "tabLgotnik",
+        "itemId": null,
+        "layout": "fit",
+        "scrollable": true,
+        "title": "Льготники",
+        "width": null
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "283d07e1-f7d4-4caf-9518-5d42098355c9",
+    "viewControllerInstanceId": "4ba2defe-a9f9-4666-b160-1597f3f6ff2d",
+    "viewModelInstanceId": "25719d1f-fa3d-4e7d-9c02-50dbf21cca8f",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": null,
+                "height": null,
+                "id": "grLgotnik",
+                "itemId": null,
+                "scrollable": true,
+                "store": "StLgotnikTab",
+                "title": "",
+                "width": null
+            },
+            "name": "MyGridPanel49",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "2d610840-a7f1-4f2f-9b04-a7a2a6e1ddf2",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "Нет записей по льготе",
+                        "height": null
+                    },
+                    "name": "MyGridView49",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "5b27c691-8b68-417f-bb2c-4a78fa69e5e8",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "record",
+                                    "rowIndex",
+                                    "rowParams",
+                                    "store"
+                                ],
+                                "fn": "getRowClass",
+                                "implHandler": [
+                                    "if(record.get('pr') === 1 ){",
+                                    "    return 'change_color_yellow';",
+                                    "} else if(record.get('pr') === 2 ){",
+                                    "    return 'change_color_red';",
+                                    "} else {",
+                                    "    return 'change_color_green';",
+                                    "}"
+                                ]
+                            },
+                            "name": "getRowClass",
+                            "designerId": "41902f33-83c0-44c6-abd1-2895c708e913"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "floating": null,
+                        "width": null
+                    },
+                    "name": "MyToolbar2",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "68909162-439f-4442-b708-15a26961bac5",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "name": "MySpacer2",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "4c30d96c-abe5-4089-b1f2-98fbeb8d2de2"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": null,
+                                "icon": "resources/css/images/ico/door_in.png",
+                                "id": "btnImportLgotnik",
+                                "layout|flex": null,
+                                "text": "Импорт из УТиСЗН",
+                                "width": 145
+                            },
+                            "name": "MyButton",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "828b7891-272d-4800-9d06-f93ce01cb8d0",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "//in use",
+                                            "var winImport = Ext.ClassManager.instantiateByAlias('widget.winimport');",
+                                            "var form = Ext.getCmp('fmImport');",
+                                            "var vibor =  'utszn';",
+                                            "winImport.setTitle('Загрузка льготников из УТиСЗН)');",
+                                            "",
+                                            "winImport.show();",
+                                            "",
+                                            "form.getForm().findField('vibor').setValue(vibor);",
+                                            "",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "63e66c0d-eb43-41c1-8d32-83ef441e119b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": null,
+                                "icon": "resources/css/images/ico/door_in.png",
+                                "id": "btninserttLgotnik",
+                                "layout|flex": null,
+                                "text": "подгрузить в базу льгот",
+                                "width": 190
+                            },
+                            "name": "MyButton6",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "90c8d6cb-c475-4d93-9b14-d89c542f48b2",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "//COMBO",
+                                            "var grid = button.findParentByType('grid');",
+                                            "var store = grid.store;",
+                                            "var cbTabLgotnikHouse = Ext.getCmp('cbTabLgotnikHouse');",
+                                            "",
+                                            "//STORE",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var values =stUser.getAt(0);",
+                                            "",
+                                            "//LOGIKA",
+                                            "var params = {",
+                                            "    login:values.get('login'),",
+                                            "    password:values.get('password'),",
+                                            "    what:'insert_lgota_from_utszn'",
+                                            "};",
+                                            "",
+                                            "",
+                                            "//LOGIKA",
+                                            "var myMask= Ext.Msg.show({",
+                                            "    title:'Обновление записи...',",
+                                            "    msg: 'Обновление записей в базе льгот.Ожидайте...',",
+                                            "    buttons: Ext.Msg.CANCEL,",
+                                            "    wait: true,",
+                                            "    modal: true,",
+                                            "    icon: Ext.Msg.INFO",
+                                            "});",
+                                            "",
+                                            "QueryAddress.updateRecords(params,function(results){",
+                                            "    if(results.success===\"1\"){",
+                                            "        cbTabLgotnikHouse.clearValue();",
+                                            "        store.load({",
+                                            "            params: {",
+                                            "                what:'insert_lgota_from_utszn',",
+                                            "                login:values.get('login'),",
+                                            "                password:values.get('password')",
+                                            "            }",
+                                            "        });",
+                                            "        myMask.close();",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Обновление базы ',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.INFO",
+                                            "        });",
+                                            "    } else {",
+                                            "        myMask.close();",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Обновление базы ',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.ERROR",
+                                            "        });",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "926c94d5-938d-4efa-b4d2-f86a2fb1d2b2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 20
+                            },
+                            "name": "MySeparator3",
+                            "designerId": "675598ab-9125-4909-a762-e60ac07fcf6b"
+                        },
+                        {
+                            "type": "Ext.toolbar.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 20
+                            },
+                            "name": "MySeparator4",
+                            "designerId": "61f08ef3-4c31-427f-aa35-8b09fdc299ba"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "house",
+                                "emptyText": "Дом",
+                                "fieldLabel": "",
+                                "hideMode": "visibility",
+                                "id": "cbTabLgotnikHouse",
+                                "itemId": null,
+                                "layout|flex": null,
+                                "name": "house_id",
+                                "queryMode": "local",
+                                "store": "StHousesOrg",
+                                "valueField": "house_id",
+                                "width": 136
+                            },
+                            "name": "MyComboBox32",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "37455a36-9b6d-4afa-b53e-e93093170267",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCbTabLgotnikHouseSelect",
+                                        "implHandler": [
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var values =stUser.getAt(0);",
+                                            "",
+                                            "var login = Ext.data.StoreManager.get(\"StUser\").getAt(0).get('login');",
+                                            "var password = Ext.data.StoreManager.get(\"StUser\").getAt(0).get('password');",
+                                            "var selected = record;",
+                                            "var StLgotnik= Ext.data.StoreManager.get(\"StLgotnikTab\");",
+                                            "",
+                                            "if (selected) {",
+                                            "    values.set({'report':'tabLgotnikHouse','house_id':selected.get(\"house_id\")});",
+                                            "    StLgotnik.proxy.setExtraParam('what', 'tabLgotnikHouse');",
+                                            "    StLgotnik.proxy.setExtraParam('house_id',selected.get(\"house_id\"));",
+                                            "    StLgotnik.proxy.setExtraParam('login', login);",
+                                            "    StLgotnik.proxy.setExtraParam('password', password);",
+                                            "    StLgotnik.load();",
+                                            "}"
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onCbTabLgotnikHouseSelect",
+                                    "designerId": "7b861894-729a-4ebb-852f-b35b331fce75"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": null,
+                                "icon": "resources/css/images/ico/printer.png",
+                                "iconCls": null,
+                                "id": "btnPrintLgotnikHouse",
+                                "layout|flex": null,
+                                "text": "",
+                                "width": null
+                            },
+                            "name": "MyButton103",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "e322677f-51cd-4ef0-8e11-062bb8cebadc"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 20
+                            },
+                            "name": "MySpacer4",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3e858394-2c96-4524-b24c-296b383b51a5"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 20
+                            },
+                            "name": "MySpacer3",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "1a032b07-1781-4adf-aa9a-01c4bd658100"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": null,
+                                "icon": "resources/css/images/ico/add.png",
+                                "iconCls": null,
+                                "id": "btnLgotaAll",
+                                "layout|flex": null,
+                                "text": "Все льготники"
+                            },
+                            "name": "MyButton108",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "e0b297b5-ba65-4941-8c88-216ae9d3afd0",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var values =stUser.getAt(0);",
+                                            "values.set({'report':'tabLgotnik'});",
+                                            "",
+                                            "var login = Ext.data.StoreManager.get(\"StUser\").getAt(0).get('login');",
+                                            "var password = Ext.data.StoreManager.get(\"StUser\").getAt(0).get('password');",
+                                            "",
+                                            "var StLgotnik= Ext.data.StoreManager.get(\"StLgotnikTab\");",
+                                            "StLgotnik.proxy.setExtraParam('what', 'tabLgotnik');",
+                                            "StLgotnik.proxy.setExtraParam('login', login);",
+                                            "StLgotnik.proxy.setExtraParam('password', password);",
+                                            "StLgotnik.load();"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "ba862fbf-41d9-4570-8c6d-2f2452f29ddd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": null,
+                                "icon": "resources/css/images/ico/printer.png",
+                                "iconCls": null,
+                                "id": "btnPrintLgotnikAll",
+                                "layout|flex": null,
+                                "text": "",
+                                "width": null
+                            },
+                            "name": "MyButton109",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "f5cd2a84-495a-42d9-940a-a4126cde5850"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "id": null,
+                                "layout|flex": null,
+                                "name": "what"
+                            },
+                            "name": "MyHiddenField16",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "d8762341-1693-4f32-a6b5-42446594004f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar3",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "ee252ddd-f14a-47b8-9ad2-808b934db820",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": null
+                            },
+                            "name": "MySpacer5",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "2667d36a-51af-4893-aea2-9e3b85718b8d"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 20
+                            },
+                            "name": "MySpacer6",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "d9bd4718-32a0-4d29-b75c-f19557651865"
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "width": 20
+                            },
+                            "name": "MySpacer7",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "f9e5ad69-9c02-4a96-a5f2-cc103dd51641"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.RowNumberer",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": null,
+                        "text": "п.н",
+                        "width": 34
+                    },
+                    "name": "MyRowNumberer",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "6f70f5e6-4db3-43d5-975a-d9673d888bfa"
+                },
+                {
+                    "type": "Ext.grid.column.Action",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "редактировать",
+                        "menuDisabled": true,
+                        "width": 30
+                    },
+                    "name": "MyActionColumn54",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "a03c0991-4110-4f71-a1f0-6e483f0e7ee0",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "resources/css/images/ico/edit.png"
+                            },
+                            "name": "MyActionColumnItem67",
+                            "designerId": "a5f4b88d-e0b7-4f7a-a75d-e201e418e072",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var dt = new Date();",
+                                            "var winLgotnik = Ext.ClassManager.instantiateByAlias('widget.winlgotnik');",
+                                            "var form = winLgotnik.down('#fmLgotnik');",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var StLgota = Ext.data.StoreManager.get(\"StLgota\");",
+                                            "",
+                                            "var values =stUser.getAt(0);",
+                                            "StLgota.proxy.setExtraParam('login', values.get('login'));",
+                                            "StLgota.proxy.setExtraParam('password',values.get('password'));",
+                                            "StLgota.load();",
+                                            "",
+                                            "var value = record;",
+                                            "//console.log(rowIndex);",
+                                            "//console.log(record);",
+                                            "",
+                                            "view.getSelectionModel().select(record);",
+                                            "values.set({'vibor':'editTabLgotnik'});",
+                                            "stUser.sync();",
+                                            "form.loadRecord(value);",
+                                            "form.down('#winBtnAddLgotnik').setText('Обновить данные по льготнику');",
+                                            "winLgotnik.setTitle('Редактирование данных по льготнику');",
+                                            "winLgotnik.show();"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "b31e95b0-e999-4254-837f-afd6e23aced2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "editRenderer",
+                                "implHandler": [
+                                    "var val=\"\";",
+                                    "return val;"
+                                ]
+                            },
+                            "name": "editRenderer",
+                            "designerId": "d5a2c693-725d-4478-b0e3-0388d1507471"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "pr",
+                        "format": "0",
+                        "hidden": null,
+                        "menuDisabled": true,
+                        "text": "пр",
+                        "width": 40
+                    },
+                    "name": "MyNumberColumn244",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "32fb5f74-c2b0-4fdf-814b-edb061a089fb"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "address_id",
+                        "format": "0",
+                        "hidden": true,
+                        "text": "АдресИд"
+                    },
+                    "name": "MyNumberColumn",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b5ee48f0-188b-4464-adee-dbab34ba4573"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "address",
+                        "menuDisabled": true,
+                        "text": "Адрес",
+                        "width": 149
+                    },
+                    "name": "MyColumn228",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "42ce555c-efd7-45b6-8b9e-fbea86ecfb2e"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "fio",
+                        "items": [
+                            "{",
+                            "            xtype: 'textfield',",
+                            "            flex : 1,",
+                            "            margin: 2,",
+                            "            enableKeyEvents: true,",
+                            "            listeners: {",
+                            "                keyup: function() {",
+                            "                    var store = this.up('tablepanel').store;",
+                            "                    store.clearFilter();",
+                            "                    if (this.value) {",
+                            "                        store.filter({",
+                            "                            property     : 'fio',",
+                            "                            value         : this.value,",
+                            "                            anyMatch      : true,",
+                            "                            caseSensitive : false",
+                            "                        });",
+                            "                    }",
+                            "                },",
+                            "                buffer: 1000",
+                            "            }",
+                            "        }"
+                        ],
+                        "menuDisabled": true,
+                        "text": "Ф.И.О.",
+                        "width": 250
+                    },
+                    "name": "MyColumn229",
+                    "configAlternates": {
+                        "items": "object",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "43eecee9-350e-4fb0-b2b6-cdffeedfe600",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "items",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTextField140",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3272af13-e3b1-44b9-824d-376e55ddb934"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "menuDisabled": true,
+                        "text": "Период действия"
+                    },
+                    "name": "MyColumn230",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "8f0fd415-992b-4f88-8bde-7b541fbf1ff0",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "start",
+                                "format": "d-m-y",
+                                "menuDisabled": true,
+                                "text": "начало",
+                                "width": 80
+                            },
+                            "name": "MyDateColumn41",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "06ffafca-5555-4abe-8ae1-031f27721fa8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "finish",
+                                "format": "d-m-y",
+                                "menuDisabled": true,
+                                "text": "оконч",
+                                "width": 80
+                            },
+                            "name": "MyDateColumn42",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "f0ac8c80-f660-42bc-8a6b-71520a1ecb4f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "inn",
+                        "items": [
+                            "{",
+                            "xtype: 'textfield',",
+                            "flex : 1,",
+                            "margin: 2,",
+                            "enableKeyEvents: true,",
+                            "listeners: {",
+                            "keyup: function() {",
+                            "var store = this.up('tablepanel').store;",
+                            "store.clearFilter();",
+                            "if (this.value) {",
+                            "store.filter({",
+                            "property     : 'inn',",
+                            "value         : this.value,",
+                            "anyMatch      : true,",
+                            "caseSensitive : false",
+                            "});",
+                            "}",
+                            "},",
+                            "buffer: 1000",
+                            "}",
+                            "}"
+                        ],
+                        "menuDisabled": true,
+                        "text": "инн",
+                        "width": 96
+                    },
+                    "name": "MyColumn",
+                    "configAlternates": {
+                        "scrollable": "boolean",
+                        "items": "object"
+                    },
+                    "designerId": "98c735e7-bf63-4a31-af30-8633e97d1cbb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "items",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTextField",
+                            "designerId": "baf8b31c-c2df-42f4-8940-bd7ed250f39f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "people",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Чел",
+                        "width": 61
+                    },
+                    "name": "MyNumberColumn246",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "02ef6578-2400-4f64-b7fe-4682b6dd4cf3"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "kartochka",
+                        "hidden": true,
+                        "text": "Карт"
+                    },
+                    "name": "MyNumberColumn247",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "baf5d60f-b48f-4909-b92d-ed460be77580"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "passport",
+                        "hidden": true,
+                        "text": "Паспорт"
+                    },
+                    "name": "MyColumn231",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "5d152faf-acf1-4478-a51e-fd72472dd2b7"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "surname",
+                        "hidden": true,
+                        "text": "Фамилия"
+                    },
+                    "name": "MyColumn232",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "bd541de4-990c-4aa6-8352-2c34f3a2b10b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "firstname",
+                        "hidden": true,
+                        "text": "Имя"
+                    },
+                    "name": "MyColumn233",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "48a03eaa-e859-4a38-909d-f635a936fe91"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "lastname",
+                        "hidden": true,
+                        "text": "Отчество"
+                    },
+                    "name": "MyColumn234",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "85fe8709-05e6-4867-a771-c070574a8cb0"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "surname_ua",
+                        "hidden": true,
+                        "text": "Фамилия укр"
+                    },
+                    "name": "MyColumn235",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "7c78286d-087a-4b6c-bd45-afdb4fb16a59"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "firstname_ua",
+                        "hidden": true,
+                        "text": "Имя укр"
+                    },
+                    "name": "MyColumn236",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e42fc340-5e86-47bf-951a-0c03aa90b071"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "lastname_ua",
+                        "hidden": true,
+                        "text": "Отчество укр"
+                    },
+                    "name": "MyColumn237",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "f60d7f78-6aba-4a61-b8bc-c8edf3ff0c3e"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "lgota",
+                        "hidden": true,
+                        "text": "Льгота"
+                    },
+                    "name": "MyColumn238",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e9d3282b-2440-486b-a47f-4b6b89be239c"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "gr",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "text": "Гр",
+                        "width": 38
+                    },
+                    "name": "MyNumberColumn248",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "f545a379-c429-4bb6-940f-900e7cacc8a9"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "category",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "text": "Кат",
+                        "width": 53
+                    },
+                    "name": "MyNumberColumn249",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "a5edcb14-2abb-4e5b-8e59-59e0401b8628"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "percent",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "text": "%",
+                        "width": 47
+                    },
+                    "name": "MyNumberColumn250",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "706c6dfe-31c5-4e76-bc9b-58722b42abdc"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "vkl",
+                        "menuDisabled": true,
+                        "text": "Вкл",
+                        "width": 40
+                    },
+                    "name": "MyColumn239",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "2e04c315-ca34-4cc9-9a44-354852319a39",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "switch (value) {                ",
+                                    "    case \"да\":",
+                                    "    metaData='<span><img clas=\"icon\" src=\"resources/css/images/ico/yes.png\"/></span>';",
+                                    "    break;",
+                                    "    case \"нет\":",
+                                    "    metaData='<span><img clas=\"icon\" src=\"resources/css/images/ico/no.png\"/></span>';",
+                                    "    break;",
+                                    "}",
+                                    "return metaData;",
+                                    ""
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "c29fcc81-ca7b-4edb-b595-e0ece4dceeb5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "raion",
+                        "hidden": true,
+                        "text": "Raion"
+                    },
+                    "name": "MyNumberColumn251",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "aa414c65-3d29-41a3-83f5-2b560062abca"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "data",
+                        "format": "d-m-Y",
+                        "menuDisabled": true,
+                        "text": "Дата изм",
+                        "width": 89
+                    },
+                    "name": "MyDateColumn43",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d7bf8b3b-255b-4b0f-b3f2-bd8d55e9cfe4"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "document",
+                        "hidden": true,
+                        "text": "Документ",
+                        "width": 165
+                    },
+                    "name": "MyColumn240",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "0c13f08e-2cdc-412a-924d-4910cd866bf7"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "data",
+                        "format": "d-m-Y",
+                        "hidden": true,
+                        "text": "Дата",
+                        "width": 89
+                    },
+                    "name": "MyDateColumn44",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "7a355979-be6d-4a22-85c3-f27398f0b9b6"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "given",
+                        "hidden": true,
+                        "text": "Выдан",
+                        "width": 200
+                    },
+                    "name": "MyColumn241",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "8dd19e40-3fa8-4cc8-b2be-75588a871813"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "operator",
+                        "hidden": true,
+                        "text": "Оператор"
+                    },
+                    "name": "MyColumn242",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "7e5a0467-9827-4ece-b1da-f6a314a8bc96"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "lgota_id",
+                        "hidden": true,
+                        "text": "ЛьготаИд"
+                    },
+                    "name": "MyNumberColumn252",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e3f92ed7-280d-40b3-8acd-6dc04b288a11"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "lgota_ua",
+                        "hidden": true,
+                        "text": "Льгота укр"
+                    },
+                    "name": "MyColumn243",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d07db276-7286-4b00-8d55-773858f2d5a6"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "lgotnik_id",
+                        "hidden": true,
+                        "text": "ЛьготникИд"
+                    },
+                    "name": "MyNumberColumn253",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "26e3c5f8-4d3f-4dc9-8120-03392a4bb9b5"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "law_article",
+                        "flex": null,
+                        "hidden": true,
+                        "text": "Статья",
+                        "width": 600
+                    },
+                    "name": "MyColumn244",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e390dfba-5469-4194-9335-6efbf9257e0c"
+                },
+                {
+                    "type": "Ext.grid.feature.Summary",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MySummaryFeature1",
+                    "designerId": "3ff0d657-8d1a-41ce-87be-c478824d7731"
+                },
+                {
+                    "type": "Ext.grid.feature.GroupingSummary",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGroupingSummaryFeature2",
+                    "designerId": "92ac36c4-a15a-4357-8d95-5889421c0043"
+                }
+            ]
+        }
+    ]
+}

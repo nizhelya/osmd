@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabnachapp",
+        "designer|userClassName": "flat.TabNachAppViewModel"
+    },
+    "designerId": "2928e1d8-3780-48ca-866b-84a0674bb426"
+}

@@ -1,0 +1,115 @@
+UPDATE `BKV` SET `zadol` = `st` , `dolg` = `fin` WHERE data = '20180101'
+UPDATE `SKV` SET `zadol` = `st` , `dolg` = `fin` WHERE data = '20180101'
+DELETE FROM `SKV` WHERE data < '20180101'
+UPDATE `BKV` SET `data` = '20171201' WHERE data = '20180101'
+
+CALL OSBB.update_utszn_lgota_kv(33,"2018-01-09T00:00:00",@success,@msg);
+
+UPDATE personal1 as t1,FAMALY1 as t2 SET t1.address =t2.address ,t1.address_id =t2.address_id WHERE t1.ind =t2.ind;
+UPDATE personal3 as t1,FAMALY3 as t2 SET t1.address =t2.address ,t1.address_id =t2.address_id WHERE t1.ind =t2.ind;
+UPDATE personal4 as t1,FAMALY4 as t2 SET t1.address =t2.address ,t1.address_id =t2.address_id WHERE t1.ind =t2.ind;
+
+INSERT INTO `FAMALY`(`ind`, `surname`, `firstname`, `lastname`, `rodstvo`, `surname_ua`, `firstname_ua`, `lastname_ua`, `house_id`, `address`, `address_id`) SELECT `ind`, `surname`, `firstname`, `lastname`, `rodstvo`, `surname_ua`, `firstname_ua`, `lastname_ua`, `house_id`, `address`, `address_id` FROM `FAMALY1` WHERE 1
+
+UPDATE personal1 as t1 ,ADDRESS as t2  SET t1.`address`=t2.address  WHERE  t1.`address_id`=t2.address_id 
+
+INSERT INTO `FAMALY`( `address_id`, `address`, `FAM`, `NAME`, `OTCH`, `FAMU`, `NAMEU`, `OTCHU`, `BORN`, `SEX`, `CITIZEN`, `CITIZENU`, `COUNTRYB`, `COUNTRYBU`, `REGIONB`, `REGIONBU`, `RAIONB`, `RAIONBU`, `CITYB`, `CITYBU`, `COUNTRYP`, `REGIONP`, `CITYP`, `SERIAL`, `NUMBER`, `ORGAN`, `ORGANU`, `STREET`, `STREETU`, `DOM`, `FLAT`, `WORK`, `DATAPASP`, `DATAP`, `DATAV`, `FONE`, `PRISON`, `FOTO`, `DATAPRIB`, `DOCUMENT`, `DOCUMENTU`, `CITYV`, `REGIONV`, `COUNTRYV`, `STREETP`, `STREETV`, `PROF`, `RAIONP`, `RAIONV`, `DATAOUT`, `ind`, `PRIM`) SELECT `address_id`, `address`, `FAM`, `NAME`, `OTCH`, `FAMU`, `NAMEU`, `OTCHU`, `BORN`, `SEX`, `CITIZEN`, `CITIZENU`, `COUNTRYB`, `COUNTRYBU`, `REGIONB`, `REGIONBU`, `RAIONB`, `RAIONBU`, `CITYB`, `CITYBU`, `COUNTRYP`, `REGIONP`, `CITYP`, `SERIAL`, `NUMBER`, `ORGAN`, `ORGANU`, `STREET`, `STREETU`, `DOM`, `FLAT`, `WORK`, `DATAPASP`, `DATAP`, `DATAV`, `FONE`, `PRISON`, `FOTO`, `DATAPRIB`, `DOCUMENT`, `DOCUMENTU`, `CITYV`, `REGIONV`, `COUNTRYV`, `STREETP`, `STREETV`, `PROF`, `RAIONP`, `RAIONV`, `DATAOUT`, `ind`, `PRIM` FROM `personal1` WHERE 1
+
+UPDATE FAMALY as t1,FAMALY_ORIG as t2 SET t1.rodstvo =t2.rodstvo WHERE t1.address_id =t2.address_id and t1.surname =t2.surname and t1.firstname =t2.firstname and t1.lastname =t2.lastname;
+
+UPDATE FAMALY as t1 SET t1.surname_ua = CASE WHEN t1.surname_ua ="" THEN t1.surname ELSE  t1.surname_ua END, t1.firstname_ua = CASE WHEN t1.firstname_ua ="" THEN t1.firstname ELSE  t1.firstname_ua END, t1.lastname_ua = CASE WHEN t1.lastname_ua ="" THEN t1.lastname ELSE  t1.lastname_ua END,
+
+UPDATE FAMALY as t1 SET t1.firstname_ua = CASE WHEN t1.firstname_ua ="Натал_я" THEN "Наталія" WHEN t1.firstname_ua ="Серг_й" THEN "Сергій" END 
+
+SELECT 
+t1.`address_id`,
+t1.`address`,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`zadol`,0)  ELSE IFNULL(t1.fzadol,0) END as zad,
+t1.zadol as z,
+t1.fzadol as fz,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`tarif`,0)  ELSE 0 END as tar ,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`square`,0)  ELSE 0 END as s,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`kvartplata`,0)  ELSE 0 END as kv,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`perer`,0)  ELSE 0 END as per,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`nachisleno`,0)  ELSE 0 END as nach,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`oplacheno`,0) ELSE IFNULL(t1.`foplacheno`,0) END  as oplata,
+t1.oplacheno as o,
+t1.foplacheno as fo,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`budjet`,0)  ELSE 0 END as lg,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`pbudjet`,0)  ELSE 0 END as plg ,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN (IFNULL(t1.`budjet`,0)+IFNULL(t1.`pbudjet`,0))  ELSE 0 END as lgota ,
+CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`dolg`,0)  ELSE IFNULL(t1.`fdolg`,0) END as dolg,
+t1.dolg as d,
+t1.fdolg as fd,
+
+t1.osmd
+FROM YIS.KVARTPLATA as t1 WHERE t1.`data`= '20170401' and t1.house_id = 20 limit 300
+
+
+SELECT CASE IFNULL(t1.`osmd`,0)  WHEN  0 THEN IFNULL(t1.`dolg`,0)  ELSE IFNULL(t1.`fdolg`,0) END as d ,t1.osmd FROM YIS.KVARTPLATA as t1 WHERE t1.`house_id`= 20  AND t1.`data`= '20170301'
+
+
+SELECT  t1.*,CONCAT(t1.`surname`," ",t1.`firstname`," ",t1.`lastname` ) as fio ,(SELECT t2.`law_article` FROM YIS.LGOTA as t2 WHERE  t2.`lgota_id` = t1.`lgota_id` ) as law_article,DATE_FORMAT(t1.data_in,"%Y-%m-%d") as data_in FROM YIS.LGOTAMEN as t1 WHERE 1 ORDER BY t1.`address_id`
+
+UPDATE famaly_1 as t1 SET t1.street = "Миру"  WHERE t1.street = "Мира";
+
+
+UPDATE famaly_1 as t1 ,dom1 as t2  SET t1.street =t2.NAMESTREET WHERE SUBSTRING_INDEX(t1.index," ",1) = t2.KODSTREET
+UPDATE famaly_3 as t1 ,dom3 as t2  SET t1.street =t2.NAMESTREET WHERE SUBSTRING_INDEX(t1.index," ",1) = t2.KODSTREET;
+UPDATE famaly_4 as t1 ,dom4 as t2  SET t1.street =t2.NAMESTREET WHERE SUBSTRING_INDEX(t1.index," ",1) = t2.KODSTREET;
+
+UPDATE famaly_1 as t1 ,dom1 as t2  SET t1.dom =t2.KODDOM WHERE SUBSTRING(t1.index,4,4) = t2.KODDOM
+UPDATE famaly3 as t1 ,dom3 as t2  SET t1.dom =t2.KODDOM WHERE SUBSTRING(t1.index,4,4) = t2.KODDOM;
+UPDATE famaly4 as t1 ,dom4 as t2  SET t1.dom =t2.KODDOM WHERE SUBSTRING(t1.index,4,4) = t2.KODDOM;
+
+
+UPDATE famaly3 as t1 ,dom3 as t2  SET t1.street =t2.NAMESTREET WHERE SUBSTRING_INDEX(t1.index," ",1) = t2.KODSTREET
+
+UPDATE famaly4 as t1  SET t1.dom =SUBSTRING(t1.index,4,4) 
+
+UPDATE famaly3 as t1 SET t1.appartment =SUBSTRING(t1.index,8) 
+
+UPDATE famaly3 as t1 SET t1.house = CONCAT(TRIM(t1.street)," ",TRIM(t1.dom)) ;
+
+UPDATE famaly3 as t1 ,HOUSE as t2  SET t1.`house_id`=t2.house_id  WHERE  t1.`house`=t2.house;
+
+UPDATE famaly3 as t1 ,HOUSE as t2  SET t1.`house`=t2.house  WHERE  t1.`house_id`=t2.house_id;
+
+UPDATE famaly3 as t1 SET t1.address = CONCAT(t1.house,"/",t1.appartment) 
+UPDATE famaly3 as t1 ,ADDRESS as t2  SET t1.`address_id`=t2.address_id  WHERE  t1.`house_id`=t2.house_id and t1.`appartment`=t2.appartment
+
+
+UPDATE famaly3 as t1 SET t1.street ="Гр.Десанта" WHERE t1.street ="Гр.десанта"
+
+Гр.десанта
+
+
+UPDATE famaly1 as t1 SET t1.appartment =SUBSTRING(t1.index,8) 
+UPDATE famaly3 as t1 SET t1.appartment =SUBSTRING(t1.index,8); 
+UPDATE famaly4 as t1 SET t1.appartment =SUBSTRING(t1.index,8) 
+
+UPDATE famaly4 as t1 ,STREET as t2  SET t1.`street`=t2.street  WHERE  t1.`street_id`=t2.street_id
+
+
+UPDATE famaly4 as t1 SET t1.street =34 WHERE  t1.street = 1
+
+UPDATE famaly4 as t1  SET t1.street_id =t1.street WHERE 1
+
+UPDATE famaly_1 as t1 SET t1.address = CONCAT(t1.street," ",t1.dom,"/",t1.appartment) 
+UPDATE famaly_3 as t1 SET t1.address = CONCAT(t1.street," ",t1.dom,"/",t1.appartment) ;
+UPDATE famaly_4 as t1 SET t1.address = CONCAT(t1.street," ",t1.dom,"/",t1.appartment) 
+
+UPDATE famaly_4 as t1 SET t1.house = CONCAT(t1.street," ",t1.dom) ;
+UPDATE famaly_3 as t1 SET t1.house = CONCAT(t1.street," ",t1.dom) ;
+UPDATE famaly_1 as t1 SET t1.house = CONCAT(t1.street," ",t1.dom) ;
+
+UPDATE famaly_4 as t1 ,HOUSE as t2  SET t1.`house_id`=t2.house_id  WHERE  t1.`house`=t2.house
+UPDATE famaly_3 as t1 ,HOUSE as t2  SET t1.`house_id`=t2.house_id  WHERE  t1.`house`=t2.house;
+UPDATE famaly_1 as t1 ,HOUSE as t2  SET t1.`house_id`=t2.house_id  WHERE  t1.`house`=t2.house;
+
+UPDATE famaly_4 as t1 ,ADDRESS as t2  SET t1.`address_id`=t2.address_id  WHERE  t1.`house_id`=t2.house_id and t1.`appartment`=t2.appartment
+UPDATE famaly_3 as t1 ,ADDRESS as t2  SET t1.`address_id`=t2.address_id  WHERE  t1.`house_id`=t2.house_id and t1.`appartment`=t2.appartment;
+UPDATE famaly_1 as t1 ,ADDRESS as t2  SET t1.`address_id`=t2.address_id  WHERE  t1.`house_id`=t2.house_id and t1.`appartment`=t2.appartment
+
+
+

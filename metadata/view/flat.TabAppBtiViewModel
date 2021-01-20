@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabappbti",
+        "designer|userClassName": "flat.TabAppBtiViewModel"
+    },
+    "designerId": "f43325db-1900-47ab-9e9d-41f685c1caed"
+}

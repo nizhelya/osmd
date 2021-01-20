@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winprintaktutszn",
+        "designer|userClassName": "sprav.WinPrintAktUtsznViewModel"
+    },
+    "name": "sprav.WinEditOplata1ViewModel",
+    "designerId": "fcc9bd9a-190f-444b-8dde-549a71252381"
+}

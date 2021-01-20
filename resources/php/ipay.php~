@@ -1,0 +1,144 @@
+<?php
+/* Раскомментировать для работы!
+try {
+if    (isset($_POST['xml']) && !empty($_POST['xml'])) {//код подтверждения 
+			$code = $_POST['xml'];
+		 } else {     
+		throw new Exception('Ошибка!');
+		}
+}
+	
+*/
+
+// ==== Для теста
+$testxml = '
+<?xml version="1.0" encoding="utf-8"?>
+<payment id="968487">
+<ident>520edda7b4e6e20482a30c85c44a1e56d8e8a666</ident>
+<status>5</status>
+<amount>5000</amount>
+<currency>UAH</currency>
+<timestamp>1312201619</timestamp>
+<transactions>
+<transaction id="431">
+<mch_id>7</mch_id>
+<srv_id>1</srv_id>
+<amount>5077</amount>
+<currency>UAH</currency>
+<type>10</type>
+<status>11</status>
+<code>00</code>
+<desc>Оплата услуг</desc>
+<info>{"dogovor":3512313424}</info>
+</transaction>
+<transaction id="432">
+<mch_id>7</mch_id>
+<srv_id>1</srv_id>
+<amount>5077</amount>
+<currency>UAH</currency>
+<type>11</type>
+<status>11</status>
+<code>00</code>
+<desc>Оплата услуг</desc>
+<info>{"dogovor":3512313424}</info>
+</transaction>
+</transactions>
+<salt>7cfdfa952b37261154d3419078e132cc82101f2a</salt>
+<sign>c8b4c6b9ca0abfa53346858ea9fb05b2056bf83d3c0fb0b7be7d37ae9195bb72cd511b3616e50b31258d52365f061cc6d04222a3830d35fd2920182ce3fb5612</sign>
+</payment>
+';
+$code = $testxml;
+// ==== Для теста
+
+
+
+// ==================== XML TO ARRAY
+$xmlresult = str_replace('<?xml version="1.0" encoding="utf-8"?>', '', $code );
+include 'XmlToArray.php';
+
+$array = XML2Array::createArray($xmlresult);
+//print_r($array);
+$paym = $array['payment'];
+$pid = $paym['@attributes']['id'];
+$pstatus = $paym['status'];
+$psalt = $paym['salt'];
+$psign = $paym['sign'];
+
+// =========== TRANSACTIONS 
+/*	$i=-1;
+	$res=array();
+	
+	foreach($array['payment']['transactions']['transaction'] as $tr){
+	$i = $i + 1;
+	
+	$res[$i]['trid']= $tr['@attributes']['id'];
+	$res[$i]['type']= $tr['type'];
+	$res[$i]['status']= $tr['status'];
+	//print_r($tr);	
+	}
+	//print_r($res);*/
+// =========== TRANSACTIONS 
+// ==================== XML TO ARRAY
+
+
+
+		$_db = new mysqli('localhost', 'cthubq' ,'hfljyt;crbq', 'YIS');
+		
+		if ($_db->connect_error) {
+			die('Connection Error (' . $_db->connect_errno . ') ' . $_db->connect_error);
+		}
+		$_db->set_charset("utf8");
+    
+
+		$sql_1='SELECT YIS.PAYMENT.`payment_id`
+			FROM YIS.PAYMENT 
+			WHERE 
+			YIS.PAYMENT.`pay_id`="'.$pid.'" AND
+			YIS.PAYMENT.`salt`="'.$psalt.'" AND 
+			YIS.PAYMENT.`sign`="'.$psign.'" 
+			LIMIT 1';
+		
+		
+		$result_1 = $_db->query($sql_1) or die('Connect Error in  (' .  $sql_1 . ') ' . $_db->connect_error);
+
+		$res_1 = array();
+		while ($row = $result_1->fetch_assoc()) {
+			array_push($res_1, $row);
+		}
+		$check = $res_1[0]['payment_id'];
+		
+		if ($check > 0) {
+		
+		 $_sql_update='UPDATE YIS.PAYMENT SET YIS.PAYMENT.`status` = "'.$pstatus.'" WHERE YIS.PAYMENT.`pay_id`="'.$pid.'" LIMIT 1';
+		  // print($_sql_update);
+		 $_result = $_db->query($_sql_update) or die('Connect Error (' . $_db->connect_errno . ') ' . $_db->connect_error);
+		 $rows=mysqli_affected_rows($_db);
+		// $rows=1;
+
+			  // == Процедура перевода PAYMENT в OPLATA 
+			  if ($pstatus == 5) {
+				    $sql_opl='CALL YISGRAND.OplataPaymentApp("'.$pid.'", @success, @msg)';
+				    //print( $this->sql);
+				    $result_opl = $_db->query($sql_opl) or die('Connect Error (' . $sql_opl . ') ' . $_db->connect_error);
+				    
+				    $result_opl_callback='SELECT @success, @msg';
+
+				    $res_opl_callback = $_db->query($result_opl_callback) or die('Connect Error in (' .  $result_opl_callback . ') ' . $_db->connect_error);
+				    
+				    while ($res_row = $res_opl_callback->fetch_assoc()) {
+					    $results['success'] = $res_row['@success'];
+					    $results['msg']	=$res_row['@msg'];
+				    }	
+		    
+			  } 
+			    // == Процедура перевода PAYMENT в OPLATA 
+	  
+		}
+		  
+		 
+		  
+		  
+		  
+		  
+
+?>

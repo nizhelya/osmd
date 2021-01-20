@@ -1,0 +1,48 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userAlias": "stVsubsidia",
+        "designer|userClassName": "StVsubsidia",
+        "groupField": "address",
+        "model": "MdVsubsidia",
+        "storeId": "StVsubsidia"
+    },
+    "name": "StTarif1",
+    "designerId": "aa1390ad-6c9b-4590-afab-fb8efb2157ab",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QuerySprav.getResults"
+            },
+            "name": "MyDirectProxy47",
+            "designerId": "56fef41e-4bcb-4baa-93ff-721c28a6ada5",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader49",
+                    "designerId": "627780e0-f1a4-495a-8b9a-dcaee163e216"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabsprutszn",
+        "designer|userClassName": "sprav.TabSprUtsznViewController"
+    },
+    "designerId": "2c1e8202-ba71-46dd-883d-3d79c8483fa1"
+}

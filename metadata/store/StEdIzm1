@@ -1,0 +1,82 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": [
+            "[",
+            "",
+            "{",
+            "\"usluga\": \"Теплоснабжение\",",
+            "\"usluga_id\": 2",
+            "},",
+            "{",
+            "\"usluga\": \"Т.П.Н.\",",
+            "\"usluga_id\": 7",
+            "},",
+            "{",
+            "\"usluga\": \"Водоснабжение\",",
+            "\"usluga_id\": 3",
+            "},",
+            "{",
+            "\"usluga\": \"Водоотведение\",",
+            "\"usluga_id\": 4",
+            "},",
+            "{",
+            "\"usluga\": \"Т.Б.О.\",",
+            "\"usluga_id\": 5",
+            "}",
+            "]"
+        ],
+        "designer|userAlias": "stUsluga",
+        "designer|userClassName": "StEdIzm1",
+        "storeId": "stUsluga"
+    },
+    "name": "StEdIzm1",
+    "designerId": "c3378240-f7d6-42c2-8b06-1ad43e66246f",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "usluga"
+            },
+            "name": "MyString238",
+            "designerId": "4ee3fbdb-be89-4b6b-bec1-dd8990c9a2fe"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "usluga_id"
+            },
+            "name": "MyInteger169",
+            "designerId": "79f96af9-4205-4a5b-a8bd-15c5e54672d2"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": null
+            },
+            "name": "MyMemoryProxy1",
+            "designerId": "7313b5c8-f54e-4053-ae63-5a93dd57552e"
+        }
+    ]
+}

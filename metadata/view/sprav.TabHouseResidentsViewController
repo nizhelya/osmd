@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabhouseresidents",
+        "designer|userClassName": "sprav.TabHouseResidentsViewController"
+    },
+    "name": "sprav.TabLgotaUtsznViewController1",
+    "designerId": "a058d482-a3ae-4f69-badf-f51e426b5a86"
+}

@@ -1,0 +1,409 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "tabsprutszn",
+        "designer|userClassName": "sprav.TabSprUtszn",
+        "height": null,
+        "id": null,
+        "itemId": null,
+        "layout": "fit",
+        "scrollable": true,
+        "title": "УТиСЗН",
+        "width": null
+    },
+    "name": "sprav.TabMVodomer1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "5efefd16-bfa7-452e-bf59-852a7ec6c279",
+    "viewControllerInstanceId": "2c1e8202-ba71-46dd-883d-3d79c8483fa1",
+    "viewModelInstanceId": "9f16c885-a85c-4323-a3bd-060853f7cb23",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": null,
+                "id": "grUtszn",
+                "scrollable": true,
+                "store": "StSprUtszn",
+                "title": "Ввод и редактированние видов льгот для актов УТиСЗН",
+                "width": null
+            },
+            "name": "MyGridPanel51",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "552a04db-ef29-45e6-a06d-8f399f3371ac",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null
+                    },
+                    "name": "MyGridView51",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b71c2591-585a-49e5-bacb-5f9466a1701a"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "rec_id",
+                        "hidden": true,
+                        "text": "Ид"
+                    },
+                    "name": "MyNumberColumn256",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "f346d553-d439-4e91-a3ea-5f8c6d3ff9dd"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "gr",
+                        "format": "0",
+                        "hidden": null,
+                        "text": "группа"
+                    },
+                    "name": "MyNumberColumn44",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "809d51d8-49f9-4e21-9e28-e5ef1dd2399e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowDecimals": false,
+                                "decimalPrecision": 0
+                            },
+                            "name": "MyNumberField31",
+                            "designerId": "6fbce843-2c3a-4a62-81cb-d9659660b968"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.CheckboxModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CheckboxModel",
+                    "userConfig": {
+                        "mode": "SINGLE"
+                    },
+                    "name": "MyCheckboxSelectionModel5",
+                    "designerId": "09e2131e-1872-46bc-8d8e-9b1e95fbffe1"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "lgota",
+                        "flex": 1,
+                        "text": "Вид льготы для акта сверки в УТиСЗН",
+                        "width": 799
+                    },
+                    "name": "MyColumn247",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e751f3cb-3014-431b-bdd6-b7f62bacb273",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTextField142",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "2ce95fff-322d-4275-a3de-69a8ade40bc8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Action",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "altText": null,
+                        "designer|displayName": "Удалить льготу",
+                        "icon": null,
+                        "menuDisabled": true,
+                        "tooltip": "Удалить",
+                        "width": 38
+                    },
+                    "name": "MyActionColumn51",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "091d27aa-13a0-4233-aae2-3e2b60f27b9d",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "resources/css/images/ico/no.png"
+                            },
+                            "name": "MyActionColumnItem69",
+                            "designerId": "9ff85c08-d8a3-440f-9d81-cd3735ee0759",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var grid = view.findParentByType('grid');",
+                                            "var store = view.store;",
+                                            "var plugin = grid.getPlugin('rowEditSprUtszn');",
+                                            "plugin.cancelEdit();",
+                                            "",
+                                            "Ext.MessageBox.show({",
+                                            "    title: 'Внимание!',",
+                                            "    msg: 'Вы удаляете данные ! Подтвердите свои действия!',",
+                                            "    buttons: Ext.MessageBox.OKCANCEL,",
+                                            "    icon: Ext.MessageBox.WARNING,",
+                                            "",
+                                            "    buttonText:{",
+                                            "        ok: \"Удалить!\",",
+                                            "        cancel: \"Отмена\"",
+                                            "    },",
+                                            "    fn:function(btn){",
+                                            "        if(btn=='ok'){",
+                                            "            store.remove(record);",
+                                            "",
+                                            "            store.sync({",
+                                            "                success: function(){",
+                                            "                    Ext.MessageBox.show({title: 'Удаление записи',",
+                                            "                                         msg:\"Запись удалена\",",
+                                            "                                         buttons: Ext.MessageBox.OK,",
+                                            "                                         icon: Ext.MessageBox.INFO",
+                                            "                                        });",
+                                            "                },",
+                                            "                failure: function(){",
+                                            "                    Ext.MessageBox.show({title: 'Удаление записи',",
+                                            "                                         msg:\"Невозможно удалить: вид оплаты уже используется\",",
+                                            "                                         buttons: Ext.MessageBox.OK,",
+                                            "                                         icon: Ext.MessageBox.ERROR",
+                                            "                                        });",
+                                            "",
+                                            "                },",
+                                            "                scope: this",
+                                            "            });",
+                                            "        }",
+                                            "    }",
+                                            "",
+                                            "});",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "6b92a639-ee5b-415c-95ca-2b54f0b3018b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "editRenderer",
+                                "implHandler": [
+                                    "var val=\"\";",
+                                    "return val;"
+                                ]
+                            },
+                            "name": "editRenderer",
+                            "designerId": "0b833e79-f4b3-4b61-ac52-21261c1dbe08"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "tooltip": "Добавить запись",
+                        "type": "plus"
+                    },
+                    "name": "MyTool29",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d6aaeda2-192d-4010-bda3-8e33c8516a46",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "owner",
+                                    "tool",
+                                    "event"
+                                ],
+                                "fn": "callback",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "var grid = tool.findParentByType('grid');",
+                                    "var store = grid.store;",
+                                    "var plugin = grid.getPlugin('rowEditSprUtszn');",
+                                    "",
+                                    "plugin.cancelEdit();",
+                                    "var newRecord = store.model.create();",
+                                    "store.insert(0, newRecord);",
+                                    "plugin.startEdit(0, 0);"
+                                ]
+                            },
+                            "name": "callback",
+                            "designerId": "5e436058-2ccc-4c11-aee9-b666a1cd5679"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "userConfig": {
+                        "pluginId": "rowEditSprUtszn"
+                    },
+                    "name": "MyRowEditingPlugin4",
+                    "designerId": "fab14973-a3ed-4b61-9469-72d6f96ee7ed",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowEditingEdit",
+                                "implHandler": [
+                                    "",
+                                    "var grid = editor.grid;",
+                                    "var store = grid.getStore();",
+                                    "var sm = store.getUpdatedRecords();",
+                                    "var data = grid.getSelectionModel();",
+                                    "",
+                                    "if(sm.length) {",
+                                    "    store.sync({",
+                                    "        success: function(){",
+                                    "",
+                                    "            store.load();",
+                                    "",
+                                    "        }",
+                                    "    });",
+                                    "",
+                                    "} else {",
+                                    "    store.sync({",
+                                    "        success: function(){",
+                                    "            Ext.MessageBox.show({",
+                                    "                title: 'Добавление записи',",
+                                    "                msg: 'Запись добавлена',",
+                                    "                buttons: Ext.MessageBox.OK,",
+                                    "                icon: Ext.MessageBox.INFO",
+                                    "            });",
+                                    "",
+                                    "           store.load();",
+                                    "        }",
+                                    "    });",
+                                    "",
+                                    "}",
+                                    ""
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "name": "onRowEditingEdit",
+                            "designerId": "9fb4fb83-b9f3-4743-bd39-edca3a42f1bf"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

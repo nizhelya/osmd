@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "taboplata",
+        "designer|userClassName": "flat.TabOplataViewModel"
+    },
+    "designerId": "d8701564-a89f-4b3e-85cc-55705c4a64d1"
+}

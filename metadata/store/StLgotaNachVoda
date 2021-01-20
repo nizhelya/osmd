@@ -1,0 +1,45 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "stLgotaNachVoda",
+        "designer|userClassName": "StLgotaNachVoda",
+        "model": "MdLgotnik",
+        "storeId": "stLgotaNachVoda"
+    },
+    "designerId": "9bf4d6ab-0619-4e60-89c1-f6b004cd10fb",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryKassa.getResults"
+            },
+            "name": "MyDirectProxy6",
+            "designerId": "3f6e10cf-a5f9-460f-9bdd-4f2ecbc98725",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader6",
+                    "designerId": "99d45ef5-38b0-41bf-a8b2-b64ade1db959"
+                }
+            ]
+        }
+    ]
+}

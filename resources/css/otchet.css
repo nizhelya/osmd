@@ -1,0 +1,194 @@
+@media screen {
+
+
+.otchet 
+{
+  font-family:'Liberation Sans','DejaVu Sans',Helvetica,Arial,Freesans,sans-serif;
+  font-size: 14px;
+  background: #fff;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.otchet table
+{
+  font-size: 12px;
+  margin: 10px;
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+
+}
+.otchet  caption {
+  font-size: 14px;
+  text-align: center;
+  background: #fff;
+  font-weight: bold;
+  padding: 2px 2px;
+  border: 0;
+}
+
+.otchet .odd {
+  background: #eff2ff;
+}
+
+
+.otchet th
+{
+  font-size: 12px;
+  font-weight: normal;
+  color: #000000;
+  padding: 2px 2px;
+  border-bottom: 2px solid #6678b1;
+  border:2px solid #ccc;
+  background: #F2F2F2;
+  page-break-inside: avoid;
+}
+
+.otchet tr .avoid
+{
+ page-break-inside: avoid;
+}
+
+.otchet tfoot
+{
+  font-size: 12px;
+  font-weight: normal;
+  color: #000000;
+  padding: 2px 2px;
+  border-bottom: 1px solid #6678b1;
+  border:1px solid #ccc;
+  background: #D6D6D6;
+}
+.otchet td
+{
+  font-size: 12px;
+  padding: 5px;
+  border-right: 1px solid #aabcfe;
+  border-left: 1px solid #aabcfe;
+  text-align: right;
+  color: #000;
+}
+
+.otchet td .left
+{
+  font-size: 12px;
+  border-bottom: 1px solid #ccc;
+  color: #000000; /*#669;*/
+  padding: 5px 5px;
+  margin: 5px;
+  text-align: left;
+}
+
+.otchet tr:hover td
+{
+  font-weight: bold;
+  color: #339;
+  background: #F4EDC9;
+}
+.otchet p.page
+      {
+        page-break-after: always;
+        font-weight: bold;
+}   
+}
+@media print {
+  
+@page {
+  size:landscape;
+}
+
+.otchet 
+{
+  font-family:'Liberation Sans','DejaVu Sans',Helvetica,Arial,Freesans,sans-serif;
+  font-size: 14px;
+  background: #fff;
+  width: 90%;
+  border-collapse: collapse;
+}
+
+.otchet table
+{
+  font-size: 12px;
+  margin: 10px;
+  border-collapse: collapse;
+  text-align: left;
+}
+.otchet  caption {
+  font-size: 14px;
+  text-align: center;
+  background: #fff;
+  font-weight: bold;
+  padding: 2px 2px;
+  border: 0;
+}
+
+.otchet .odd {
+  background: #eff2ff;
+}
+
+
+.otchet th
+{
+  font-size: 12px;
+  font-weight: normal;
+  color: #000000;
+  padding: 2px 2px;
+  border-bottom: 2px solid #6678b1;
+  border:2px solid #ccc;
+  background: #F2F2F2;
+  page-break-inside: avoid;
+}
+
+.otchet tr
+{
+ page-break-inside: avoid;
+}
+.otchet thead {
+  position: fixed;
+    width: 100%;
+
+}
+.otchet tfoot
+{
+  font-size: 12px;
+  font-weight: normal;
+  color: #000000;
+  padding: 2px 2px;
+  border-bottom: 1px solid #6678b1;
+  border:1px solid #ccc;
+  background: #D6D6D6;
+}
+.otchet td
+{
+  font-size: 12px;
+  padding: 5px;
+  border-right: 1px solid #aabcfe;
+  border-left: 1px solid #aabcfe;
+  text-align: right;
+  color: #000;
+}
+
+.otchet td .left
+{
+  font-size: 12px;
+  border-bottom: 1px solid #ccc;
+  color: #000000; /*#669;*/
+  padding: 5px 5px;
+  margin: 5px;
+  text-align: left;
+}
+
+.otchet tr:hover td
+{
+  font-weight: bold;
+  color: #339;
+  background: #F4EDC9;
+}
+.otchet p.page
+      {
+        page-break-after: always;
+        font-weight: bold;
+}   
+}
+

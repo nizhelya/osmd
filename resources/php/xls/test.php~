@@ -1,0 +1,13 @@
+<?php
+
+	
+		 if    (isset($_REQUEST['login']) && !empty($_REQUEST['login'])){ //код подтверждения 
+			$login=$_REQUEST['login'];
+		
+		}
+	
+
+	return print_r($login);
+
+
+?>

@@ -1,0 +1,1036 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "taborg",
+        "designer|userClassName": "flat.TabOrg",
+        "height": 740,
+        "id": "tabOrg",
+        "itemId": null,
+        "layout": "fit",
+        "scrollable": true,
+        "title": "Организация",
+        "width": 940
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "d727655f-8135-40c9-90bb-f733208df403",
+    "viewControllerInstanceId": "3d3540e1-e25f-4caf-9d6b-e5757e81a4c2",
+    "viewModelInstanceId": "d4465f55-580f-468d-907a-cab36355d5b3",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "bodyPadding": null,
+                "designer|snapToGrid": 5,
+                "height": null,
+                "id": "fmOrg",
+                "itemId": null,
+                "layout": "absolute",
+                "paramsAsHash": true,
+                "scrollable": true,
+                "title": ""
+            },
+            "name": "MyForm14",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "4281c007-b668-4d66-8f6a-d64c60bae398",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": null,
+                        "displayField": "osmd",
+                        "fieldLabel": "ОСББ",
+                        "labelAlign": null,
+                        "labelWidth": 50,
+                        "layout|x": 20,
+                        "layout|y": 20,
+                        "name": "osmd_id",
+                        "queryMode": "local",
+                        "store": "StOsmd",
+                        "valueField": "osmd_id",
+                        "width": 335
+                    },
+                    "name": "MyComboBox1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "a766d5c7-c833-4fa0-84e6-1b1d4b793166",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onComboboxSelect2111",
+                                "implHandler": [
+                                    "//STORE",
+                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                    "var values =stUser.getAt(0);",
+                                    "var login = values.get('login');",
+                                    "var password = values.get('password');",
+                                    "var btnUpdateOrg =  Ext.getCmp('btnUpdateOrg');",
+                                    "var btnEmailInfoApp =  Ext.getCmp('btnEmailInfoApp');",
+                                    "var btnInfoOsmd =  Ext.getCmp('btnInfoOsmd');",
+                                    "",
+                                    "var form =  Ext.getCmp('fmOrg');",
+                                    "var Store = Ext.data.StoreManager.get(\"StOrg\");",
+                                    "",
+                                    "",
+                                    "//LOGIN & PASSWORD",
+                                    "",
+                                    "",
+                                    "//LOGIKA",
+                                    "if (record) {",
+                                    "    values.set({'osmd_id':record.get('osmd_id')});",
+                                    "    stUser.sync();",
+                                    "    Store.load({",
+                                    "        params: {",
+                                    "            what:'osmd',",
+                                    "            login:login,",
+                                    "            password:password,",
+                                    "            osmd_id: record.get('osmd_id')",
+                                    "         },",
+                                    "            callback: function(records,operation,success){",
+                                    "",
+                                    "                if(success){",
+                                    "",
+                                    "                    if (records.length) {",
+                                    "                        form.getForm().loadRecord(records[0]);",
+                                    "",
+                                    "            }",
+                                    "        }",
+                                    "    },",
+                                    "    scope:this",
+                                    "});",
+                                    "",
+                                    "    btnUpdateOrg.setDisabled(false);",
+                                    "    btnEmailInfoApp.setDisabled(false);",
+                                    "    btnInfoOsmd.setDisabled(false);",
+                                    "",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onComboboxSelect2111",
+                            "designerId": "a8c9b94a-fc3d-426f-a8f7-07b9e60fedaa"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowDecimals": false,
+                        "decimalPrecision": 0,
+                        "fieldLabel": "Ид",
+                        "hideTrigger": true,
+                        "labelWidth": 30,
+                        "layout|anchor": null,
+                        "layout|x": 370,
+                        "layout|y": 20,
+                        "maxWidth": null,
+                        "name": "org_id",
+                        "readOnly": null,
+                        "width": 110
+                    },
+                    "name": "MyNumberField224",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "cbd0bf95-04bf-45a9-aa68-5b560186c829"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 125,
+                        "layout": "absolute",
+                        "layout|x": 25,
+                        "layout|y": 105,
+                        "style": "background-color: #DCDCDC;",
+                        "title": "Найменування, реквізити",
+                        "width": 895
+                    },
+                    "name": "MyFieldSet54",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "3e7554fb-d8e3-4ea6-ae1c-2fde64eb0982",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Повний",
+                                "grow": true,
+                                "height": null,
+                                "layout|anchor": null,
+                                "layout|x": 5,
+                                "layout|y": 40,
+                                "maxLength": null,
+                                "maxLengthText": null,
+                                "name": "fname",
+                                "tabIndex": null,
+                                "value": null,
+                                "width": 555
+                            },
+                            "name": "MyTextArea4",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "c15dc1a8-ece0-4e6c-8ab1-3c1b47938b57"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Телефони",
+                                "grow": true,
+                                "height": null,
+                                "labelAlign": null,
+                                "labelWidth": 80,
+                                "layout|anchor": null,
+                                "layout|x": 565,
+                                "layout|y": 40,
+                                "maxLength": null,
+                                "maxLengthText": null,
+                                "name": "phone",
+                                "tabIndex": null,
+                                "value": null,
+                                "width": 300
+                            },
+                            "name": "MyTextArea2",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "b8817120-987a-45bd-a8de-5fc32bc179ea"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Cкорочена",
+                                "formBind": false,
+                                "height": null,
+                                "id": null,
+                                "layout|anchor": null,
+                                "layout|x": 5,
+                                "layout|y": 10,
+                                "maxLength": 70,
+                                "name": "osmd",
+                                "value": null,
+                                "width": 650
+                            },
+                            "name": "MyTextField118",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "cd6fc6ab-ea17-402e-9613-106920042983"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "ЕДРПОУ",
+                                "labelWidth": 60,
+                                "layout|anchor": null,
+                                "layout|x": 670,
+                                "layout|y": 10,
+                                "maxLength": 12,
+                                "maxLengthText": null,
+                                "name": "edrpou",
+                                "value": null,
+                                "width": 195
+                            },
+                            "name": "MyTextField73",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "f8a56d02-329a-4b03-bcd6-67c4433c5e31"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 160,
+                        "layout|x": 25,
+                        "layout|y": 235,
+                        "padding": "10 10 10 10",
+                        "style": "background-color: #DCDCDC;",
+                        "title": "Адреса",
+                        "width": 895
+                    },
+                    "name": "MyFieldSet52",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b60e5046-034d-4314-beab-5c38518c9061",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enableKeyEvents": true,
+                                "fieldLabel": "Юридичний",
+                                "grow": true,
+                                "height": 50,
+                                "layout|anchor": null,
+                                "maxLength": null,
+                                "maxLengthText": null,
+                                "name": "uaddress",
+                                "width": 866
+                            },
+                            "name": "MyTextArea8",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "960d1037-46fa-433f-91cc-2e642f2b9d42",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextareafieldChange2",
+                                        "implHandler": [
+                                            "var me =this;",
+                                            "",
+                                            "var faddress = Ext.getCmp('faddress');",
+                                            "//console.log(faddress);",
+                                            "if (newValue) {",
+                                            "    faddress.setValue(newValue);",
+                                            "} ",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextareafieldChange2",
+                                    "designerId": "b786b35a-0966-426b-ae8b-5fed0acdb938"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Фізичний",
+                                "height": null,
+                                "id": "faddress",
+                                "layout|anchor": null,
+                                "maxLength": null,
+                                "maxLengthText": null,
+                                "name": "faddress",
+                                "width": 867
+                            },
+                            "name": "MyTextArea9",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "a7efe6bd-5e87-4f4c-be4d-6722cde7500b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 200,
+                        "layout": "absolute",
+                        "layout|x": 25,
+                        "layout|y": 490,
+                        "padding": "10 10 10 10",
+                        "style": "background-color: #DCDCDC;",
+                        "title": "Банківські реквізити",
+                        "width": 890
+                    },
+                    "name": "MyFieldSet",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "8cfd6062-d1a7-46b6-b831-94d973ab454d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Банк",
+                                "formBind": false,
+                                "height": null,
+                                "id": null,
+                                "layout|anchor": null,
+                                "layout|x": 5,
+                                "layout|y": 0,
+                                "maxLength": null,
+                                "name": "bank",
+                                "value": null,
+                                "width": 860
+                            },
+                            "name": "MyTextField3",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3f56e4bf-8a68-4c95-a19c-5cbcee12362a"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "МФО",
+                                "formBind": false,
+                                "height": null,
+                                "id": null,
+                                "layout|anchor": null,
+                                "layout|x": 5,
+                                "layout|y": 30,
+                                "maxLength": null,
+                                "name": "mfo",
+                                "value": null,
+                                "width": 193
+                            },
+                            "name": "MyTextField4",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "1fde390e-afa1-4526-9ac0-21dc419febd7"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Розрахунковий рахунок",
+                                "formBind": false,
+                                "height": null,
+                                "id": null,
+                                "labelWidth": 140,
+                                "layout|anchor": null,
+                                "layout|x": 205,
+                                "layout|y": 30,
+                                "maxLength": null,
+                                "name": "account",
+                                "value": null,
+                                "width": 335
+                            },
+                            "name": "MyTextField5",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "d9bfdc6f-f7f3-497f-8537-f07dcda039f3"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Додатковий рахунок",
+                                "formBind": false,
+                                "height": null,
+                                "id": null,
+                                "labelWidth": 140,
+                                "layout|anchor": null,
+                                "layout|x": 205,
+                                "layout|y": 60,
+                                "maxLength": null,
+                                "name": "daccount",
+                                "value": null,
+                                "width": 335
+                            },
+                            "name": "MyTextField23",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "91994009-9a68-4156-b7ad-f592d2dad3fc"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "ipay",
+                                "formBind": false,
+                                "height": null,
+                                "id": null,
+                                "labelWidth": 40,
+                                "layout|anchor": null,
+                                "layout|x": 550,
+                                "layout|y": 30,
+                                "maxLength": null,
+                                "name": "ipay",
+                                "value": null,
+                                "width": 115
+                            },
+                            "name": "MyTextField",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "82ef66cc-264d-403f-ab65-fd5275e084f9"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "приват банк",
+                                "formBind": false,
+                                "height": null,
+                                "id": null,
+                                "layout|anchor": null,
+                                "layout|x": 670,
+                                "layout|y": 30,
+                                "maxLength": null,
+                                "name": "pb",
+                                "value": null,
+                                "width": 195
+                            },
+                            "name": "MyTextField1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "4c7bef16-ab20-4f18-96d1-ef85e5ec4f74"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Пункти оплати",
+                                "height": null,
+                                "id": null,
+                                "layout|anchor": null,
+                                "layout|x": 5,
+                                "layout|y": 95,
+                                "maxLength": null,
+                                "maxLengthText": null,
+                                "name": "kassa",
+                                "width": 860
+                            },
+                            "name": "MyTextArea1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "29070bdf-d94e-471a-b88c-d02a97baa8f0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 85,
+                        "layout": "absolute",
+                        "layout|x": 25,
+                        "layout|y": 400,
+                        "style": "background-color: #DCDCDC;",
+                        "title": "Керівництво",
+                        "width": 890
+                    },
+                    "name": "MyFieldSet55",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "2b7872be-9455-44a5-803b-4a96f269b971",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Посада",
+                                "layout|anchor": null,
+                                "layout|x": 365,
+                                "layout|y": 0,
+                                "maxLength": 50,
+                                "name": "vosobi",
+                                "value": null,
+                                "width": 495
+                            },
+                            "name": "MyTextField75",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "9b3a47cc-373e-46ae-ac3c-ab9a1ea47a5c"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Гол.Бухгалтер",
+                                "layout|anchor": null,
+                                "layout|x": 0,
+                                "layout|y": 30,
+                                "maxLength": null,
+                                "name": "gbuh",
+                                "value": null,
+                                "width": 325
+                            },
+                            "name": "MyTextField76",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "0d05a6e5-9059-4e08-9c9b-750e39d0a926"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Бухгалтер",
+                                "layout|anchor": null,
+                                "layout|x": 365,
+                                "layout|y": 30,
+                                "maxLength": null,
+                                "name": "buh",
+                                "value": null,
+                                "width": 325
+                            },
+                            "name": "MyTextField6",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "9332dcde-cd5e-4a58-b607-9cde76a9f53b"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Керівник",
+                                "height": null,
+                                "layout|anchor": null,
+                                "layout|x": 0,
+                                "layout|y": 0,
+                                "maxLength": null,
+                                "name": "boss",
+                                "width": 325
+                            },
+                            "name": "MyTextField116",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3a833c9a-7953-42c8-932d-23ce3b1b61e0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "formBind": true,
+                        "height": null,
+                        "icon": "resources/css/images/ico/edit.png",
+                        "id": "btnUpdateOrg",
+                        "itemId": null,
+                        "layout|x": 645,
+                        "layout|y": 20,
+                        "text": "Оновити дані по ОСББ",
+                        "width": 265
+                    },
+                    "name": "MyButton48",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "9f10a429-026d-4e69-af9e-28582d24369f",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "// in use",
+                                    "//STORE",
+                                    "var me = this;",
+                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                    "var values =stUser.getAt(0);",
+                                    "var value = button.findParentByType('form').getValues();",
+                                    "var form = button.findParentByType('form').getForm();",
+                                    "var osmd_id = form.findField('osmd_id').getValue();",
+                                    "var StOrg = Ext.data.StoreManager.get(\"StOrg\");",
+                                    "",
+                                    "",
+                                    "//LOGIN & PASSWORD",
+                                    "var params = {",
+                                    "    login:values.get('login'),",
+                                    "    password:values.get('password'),",
+                                    "    osmd_id:osmd_id,",
+                                    "    what:\"editOsmd\"",
+                                    "",
+                                    "};",
+                                    "",
+                                    "//LOGIKA",
+                                    "",
+                                    "Ext.Object.merge(value, params);",
+                                    "",
+                                    "QueryAddress.updateRecords(value,function(results){",
+                                    "    if(results.success===\"1\"){",
+                                    "        Ext.MessageBox.show({",
+                                    "            title: 'Редактирование записи  ',",
+                                    "            msg: results.msg,",
+                                    "            buttons: Ext.MessageBox.OK,",
+                                    "            icon: Ext.MessageBox.INFO",
+                                    "        });",
+                                    "        StOrg.load({",
+                                    "            params: {",
+                                    "                what:\"osmd\",",
+                                    "                osmd_id:osmd_id,",
+                                    "                login:values.get('login'),",
+                                    "                password:values.get('password')",
+                                    "            },",
+                                    "            scope:this",
+                                    "        });",
+                                    "    } else {",
+                                    "        Ext.MessageBox.show({",
+                                    "            title: 'Редактирование записи ',",
+                                    "            msg: results.msg,",
+                                    "            buttons: Ext.MessageBox.OK,",
+                                    "            icon: Ext.MessageBox.ERROR",
+                                    "        });",
+                                    "    }",
+                                    "",
+                                    "});",
+                                    ""
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "d96bf0ed-54de-4f00-b2b9-964111ad5018"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "formBind": true,
+                        "height": null,
+                        "icon": "resources/css/images/news/article.gif",
+                        "id": "btnEmailInfoApp",
+                        "itemId": null,
+                        "layout|x": 550,
+                        "layout|y": 65,
+                        "text": "Розсилка інформаційного листка по Email",
+                        "width": 360
+                    },
+                    "name": "MyButton24",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "f25c519f-64cf-4438-8e7d-78b9d9c435a2",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                    "var values =stUser.getAt(0);",
+                                    "var value = button.findParentByType('form').getValues();",
+                                    "var form = button.findParentByType('form').getForm();",
+                                    "var osmd_id = form.findField('osmd_id').getValue();",
+                                    "",
+                                    "",
+                                    "//LOGIN & PASSWORD",
+                                    "var params = {",
+                                    "    login:values.get('login'),",
+                                    "    password:values.get('password'),",
+                                    "    osmd_id:osmd_id,",
+                                    "    what:\"EmailInfoApp\"",
+                                    "",
+                                    "};",
+                                    "var myMask= Ext.Msg.show({",
+                                    "    title: 'Отправка информационного листка',",
+                                    "    msg: 'Отправка информационного листка .Ожидайте...',",
+                                    "    buttons: Ext.Msg.CANCEL,",
+                                    "    wait: true,",
+                                    "    modal: true,",
+                                    "    icon: Ext.Msg.INFO",
+                                    "});",
+                                    "QueryAddress.updateRecords(params,function(results){",
+                                    "    if(results.success===\"1\"){",
+                                    "        setTimeout(function(){",
+                                    "            QueryExportInfoApp.exportToEmail(params,function(results){",
+                                    "                if(results.success){",
+                                    "                    myMask.close();",
+                                    "                    Ext.MessageBox.show({",
+                                    "                        title: 'Отправка информационного листка',",
+                                    "                        msg: results.msg,",
+                                    "                        buttons: Ext.MessageBox.OK,",
+                                    "                        icon: Ext.MessageBox.INFO",
+                                    "                    });",
+                                    "",
+                                    "                } else {",
+                                    "                    myMask.close();",
+                                    "",
+                                    "                    Ext.MessageBox.show({",
+                                    "                        title: 'Отправка информационного листка',",
+                                    "                        msg: results.msg,",
+                                    "                        buttons: Ext.MessageBox.OK,",
+                                    "                        icon: Ext.MessageBox.ERROR",
+                                    "                    });",
+                                    "                }",
+                                    "            }, 250);",
+                                    "        });",
+                                    "    }",
+                                    "",
+                                    "",
+                                    "",
+                                    "});"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "210fab7b-b164-4f05-a32f-a7e06ac2c2e8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "formBind": null,
+                        "height": null,
+                        "icon": "resources/css/images/ico/printer.png",
+                        "id": "btnInfoOsmd",
+                        "itemId": null,
+                        "layout|x": 25,
+                        "layout|y": 65,
+                        "text": "Роздруківка інформації з усіх ОСББ",
+                        "width": 295
+                    },
+                    "name": "MyButton25",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "c0d11355-a82e-42b9-9c15-58f51621bdd0",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "//in use",
+                                    "var me = this;",
+                                    "var StUser = Ext.data.StoreManager.get(\"StUser\");",
+                                    "var values =StUser.getAt(0);",
+                                    "var tabPnCenter =  Ext.getCmp('tabPnCenter');//me.getTabPnCenter();",
+                                    "",
+                                    "var report = 'InfoOsmd';",
+                                    "var namereport = 'Инфо ОСМД';",
+                                    "var value = {",
+                                    "    login:values.get('login'),",
+                                    "    password:values.get('password'),       ",
+                                    "    osmd_id:values.get('osmd_id'),",
+                                    "    report:report,",
+                                    "    what:report",
+                                    "",
+                                    "};",
+                                    "var tab = tabPnCenter.child('#'+report);",
+                                    "if (!tab) {",
+                                    "    tab  = tabPnCenter.add({",
+                                    "        xtype:'tabreportorg',",
+                                    "        title:namereport,",
+                                    "        id:''+report+''",
+                                    "    });",
+                                    "",
+                                    "}",
+                                    "//console.log(value);",
+                                    "",
+                                    "tabPnCenter.setActiveTab(tab);",
+                                    "var reppan = tab.getComponent(0);",
+                                    "// Basic mask:",
+                                    "var myMask= Ext.Msg.show({",
+                                    "    title:'Загрузка...',",
+                                    "    msg: 'Загрузка отчета .Ожидайте...',",
+                                    "    buttons: Ext.Msg.CANCEL,",
+                                    "    wait: true,",
+                                    "    modal: true,",
+                                    "    icon: Ext.Msg.INFO",
+                                    "});",
+                                    "QueryReport.getResults(value,function(data){",
+                                    "    if (data){",
+                                    "        reppan.update(data.content);",
+                                    "        Ext.REPORTCONTENT =data.content;",
+                                    "        Ext.REPORTSQL =data.sql;",
+                                    "        Ext.REPORTTITLE =report;",
+                                    "        myMask.close();",
+                                    "",
+                                    "    } else {",
+                                    "        myMask.close();",
+                                    "        Ext.MessageBox.show({",
+                                    "            title: 'Ошибка ',",
+                                    "            msg: 'Документ не создан',",
+                                    "            buttons: Ext.MessageBox.OK,",
+                                    "            icon: Ext.MessageBox.ERROR",
+                                    "        });",
+                                    "    }",
+                                    "});",
+                                    "",
+                                    ""
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "76c855e6-dade-455d-8d6f-cb09b702b14c"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

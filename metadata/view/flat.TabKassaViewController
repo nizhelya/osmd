@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabkassa",
+        "designer|userClassName": "flat.TabKassaViewController"
+    },
+    "name": "undefinedViewController",
+    "designerId": "c1a3d791-3525-4781-aab8-e11712e6a540"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tablgotnik",
+        "designer|userClassName": "sprav.TabLgotnikViewModel"
+    },
+    "designerId": "25719d1f-fa3d-4e7d-9c02-50dbf21cca8f"
+}

@@ -1,0 +1,14 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css5",
+        "remote": true,
+        "url": "resources/css/otchet.css"
+    },
+    "designerId": "f8d1520e-c5c0-42ae-8596-c466d82e86d7"
+}

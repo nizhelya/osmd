@@ -1,0 +1,55 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": [
+            "[",
+            "{",
+            "document: 'Паспорт'",
+            "},",
+            "{",
+            "document: 'Свідоцтво про народження'",
+            "},",
+            "{",
+            "document: 'Вид на проживання'",
+            "}",
+            "",
+            "",
+            "]"
+        ],
+        "designer|userClassName": "StDocument",
+        "storeId": "StDocument"
+    },
+    "name": "StRodstvo1",
+    "designerId": "2bf9af42-2aa2-4839-b4b0-7d211d8102b2",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "document"
+            },
+            "name": "MyString209",
+            "designerId": "0efa60bf-93df-4a2e-8950-7aebe4f4efd7"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyMemoryProxy4",
+            "designerId": "09c94090-9b2f-489c-be28-1a2f69e24c75"
+        }
+    ]
+}

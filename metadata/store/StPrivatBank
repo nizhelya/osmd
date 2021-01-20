@@ -1,0 +1,110 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "autoSync": null,
+        "designer|userClassName": "StPrivatBank",
+        "groupField": "god",
+        "model": "MdOplata",
+        "storeId": "StPrivatBank"
+    },
+    "name": "StSubsidia1",
+    "designerId": "0b9b6fdb-ce9e-43d6-92f4-cab58ef6ce8c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "create: 'QuerySprav.createRecord',",
+                    "read: 'QuerySprav.getResults',",
+                    "update: 'QuerySprav.updateRecords',",
+                    "destroy: 'QuerySprav.destroyRecord'",
+                    "}"
+                ],
+                "directFn": null,
+                "extraParams": [
+                    " {'what':'getPrivatBank'}"
+                ]
+            },
+            "name": "MyDirectProxy53",
+            "designerId": "8c250318-99f7-4c41-8948-fac76b8266a3",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader55",
+                    "designerId": "26397fdb-7e66-491b-9080-45b6f2a61d46"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "4557862f-a64f-4672-9ca6-3119853ba733"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreRemove",
+                "implHandler": [
+                    "                records[0].data.what = \"getPrivatBank\";",
+                    ""
+                ],
+                "name": "remove",
+                "scope": "me"
+            },
+            "name": "onDirectstoreRemove",
+            "designerId": "cf602f4e-f435-4744-a9e7-ae34125c5be7"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreUpdate",
+                "implHandler": [
+                    "                record.data.what = \"getPrivatBank\";",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "name": "onDirectstoreUpdate",
+            "designerId": "951a9cf0-7a50-4bc0-a908-323cc1234993"
+        }
+    ]
+}

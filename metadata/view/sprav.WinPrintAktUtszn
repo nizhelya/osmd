@@ -1,0 +1,825 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winprintaktutszn",
+        "designer|userClassName": "sprav.WinPrintAktUtszn",
+        "height": 630,
+        "id": "winPrintAktUtszn",
+        "itemId": null,
+        "layout": "fit",
+        "modal": true,
+        "title": "Обновить  акт сверки с УТиСЗН",
+        "width": 355
+    },
+    "name": "sprav.WinEditOplata1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "902738c5-6ad5-49a1-816d-631ca7381d9d",
+    "viewControllerInstanceId": "caf66933-d647-4c8b-9975-eb4543ffba33",
+    "viewModelInstanceId": "fcc9bd9a-190f-444b-8dde-549a71252381",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": null,
+                "height": null,
+                "id": "fmPrintAktUtszn",
+                "itemId": null,
+                "layout": "fit",
+                "title": ""
+            },
+            "name": "MyForm47",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "fce91c6e-70dd-416b-97fa-5bd3186ca3cb",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "",
+                        "designer|snapToGrid": 5,
+                        "height": null,
+                        "layout": "absolute",
+                        "style": "background-color: #C2D9E9;",
+                        "title": "",
+                        "width": 415
+                    },
+                    "name": "MyFieldSet182",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "35f5f08d-3920-49b2-94dd-06edc470437e",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "height": null,
+                                "icon": "resources/css/images/ico/yes.png",
+                                "id": null,
+                                "itemId": null,
+                                "layout|anchor": null,
+                                "layout|x": 110,
+                                "layout|y": 525,
+                                "margin": 5,
+                                "scale": "medium",
+                                "text": "Обновить  акт сверки",
+                                "width": 200
+                            },
+                            "name": "MyButton3",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "c7536316-2241-4f48-958c-622512a0c83a",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "// in use",
+                                            "//STORE",
+                                            "var me = this;",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var values =stUser.getAt(0);",
+                                            "var value = button.findParentByType('form').getValues();",
+                                            "var form = button.findParentByType('form').getForm();",
+                                            "var vibor = form.findField('vibor').getValue();",
+                                            "var osmd_id = form.findField('osmd_id').getValue();",
+                                            "",
+                                            "",
+                                            "var w = '';",
+                                            "",
+                                            "if (vibor == 1) {",
+                                            "    w =  \"editSubsidiaUtszn\";",
+                                            "    g =  \"getSubsidiaUtszn\";",
+                                            "    var StUtszn = Ext.data.StoreManager.get(\"stSubsidiaUtszn\");",
+                                            "",
+                                            "",
+                                            "}else {",
+                                            "    w =  \"editLgotaUtszn\";",
+                                            "    g =  \"getLgotaUtszn\";",
+                                            "    var StUtszn = Ext.data.StoreManager.get(\"stLgotaUtszn\");",
+                                            "",
+                                            "}",
+                                            "",
+                                            "//LOGIN & PASSWORD",
+                                            "var params = {",
+                                            "    login:values.get('login'),",
+                                            "    password:values.get('password'),",
+                                            "    osmd_id:osmd_id,",
+                                            "    usluga_id:values.get('usluga_id'),",
+                                            "    what:w",
+                                            "",
+                                            "};",
+                                            "",
+                                            "//LOGIKA",
+                                            "",
+                                            "Ext.Object.merge(value, params);",
+                                            "",
+                                            "QueryAddress.updateRecords(value,function(results){",
+                                            "    if(results.success===\"1\"){",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Редактирование записи  ',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.INFO",
+                                            "        });",
+                                            "        StUtszn.load({",
+                                            "            params: {",
+                                            "                what:g,",
+                                            "                osmd_id:osmd_id,",
+                                            "                usluga_id:values.get('usluga_id'),",
+                                            "                data: value.data,",
+                                            "                login:values.get('login'),",
+                                            "                password:values.get('password')",
+                                            "            },",
+                                            "            scope:this",
+                                            "        });",
+                                            "        me.up('#winPrintAktUtszn').close();",
+                                            "    } else {",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Редактирование записи ',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.ERROR",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "});",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "69047177-0da4-4ff1-be09-d28eed5ccde5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "labelAlign": null,
+                                "labelWidth": null,
+                                "layout|x": null,
+                                "layout|y": null,
+                                "name": "rec_id",
+                                "width": null
+                            },
+                            "name": "MyHiddenField13",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "4660586c-e422-4467-b55a-5b5d7bb82ccd"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Запись_ид",
+                                "labelAlign": null,
+                                "labelWidth": null,
+                                "layout|x": null,
+                                "layout|y": null,
+                                "name": "house_id",
+                                "width": null
+                            },
+                            "name": "MyHiddenField9",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3a1659a3-d72b-4ff1-bdcb-c9d750d3b46e"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Запись_ид",
+                                "labelAlign": null,
+                                "labelWidth": null,
+                                "layout|x": 170,
+                                "layout|y": 510,
+                                "name": "osmd_id",
+                                "width": null
+                            },
+                            "name": "MyHiddenField1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "54b424c3-63a4-4312-bece-f2f0e06619a8"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Запись_ид",
+                                "height": 20,
+                                "labelAlign": null,
+                                "labelWidth": 20,
+                                "layout|x": 390,
+                                "layout|y": 245,
+                                "name": "vibor",
+                                "width": 200
+                            },
+                            "name": "MyHiddenField10",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "cb56f126-0487-4056-bd0b-9b2a77d0c7bc"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "период ",
+                                "fieldStyle": "background-color:#C2D9C9;font-size:11pt;text-align:right;",
+                                "format": null,
+                                "hideTrigger": true,
+                                "labelWidth": 55,
+                                "layout|anchor": null,
+                                "layout|x": 5,
+                                "layout|y": 10,
+                                "name": "data",
+                                "submitFormat": "Ymd",
+                                "width": 165
+                            },
+                            "name": "MyDateField83",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "beec1715-a986-4f3f-ab0a-27ba089b92a5"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "ИНН",
+                                "fieldStyle": "background-color:#C2D9C9;font-size:11pt;text-align:right;",
+                                "labelWidth": 35,
+                                "layout|anchor": "",
+                                "layout|x": 180,
+                                "layout|y": 10,
+                                "name": "inn",
+                                "width": 140
+                            },
+                            "name": "MyTextField",
+                            "designerId": "7fbdf233-4090-46e7-9c0b-22a4e8523ef2"
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": null,
+                                "height": 475,
+                                "layout|anchor": null,
+                                "layout|x": 5,
+                                "layout|y": 45,
+                                "padding": null,
+                                "style": "background-color: #DCDCDC;",
+                                "title": "Начисление",
+                                "width": 310
+                            },
+                            "name": "MyFieldSet3",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "66e715c8-7b62-4f47-b9f4-cbaa4dec18dd",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "Reset",
+                                        "formBind": true,
+                                        "height": null,
+                                        "icon": "resources/css/images/ico/refresh.png",
+                                        "id": null,
+                                        "itemId": null,
+                                        "layout|anchor": "100%",
+                                        "margin": 0,
+                                        "padding": null,
+                                        "text": "Восстановить",
+                                        "tooltip": "Восстановить",
+                                        "width": 269
+                                    },
+                                    "name": "MyButton164",
+                                    "configAlternates": {
+                                        "tooltip": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "7972fcd9-1f43-4f34-bc74-647313f6d61e",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var form = button.findParentByType('form').getForm();",
+                                                    "var vibor = form.findField('vibor').getValue();",
+                                                    "",
+                                                    "if (vibor == 1) {",
+                                                    "    var grUtszn = Ext.getCmp(\"grSubsUtszn\");",
+                                                    "",
+                                                    "}else {",
+                                                    "    var grUtszn = Ext.getCmp(\"grLgotaUtszn\");",
+                                                    "}",
+                                                    "var value  = grUtszn.getView().getSelectionModel().getSelection()[0];",
+                                                    "form.loadRecord(value);",
+                                                    ""
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "64a15b10-6136-4d79-bca1-3b1b876c6fc0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Сальдо на начало года",
+                                        "fieldStyle": "background-color:yellow;font-size:12pt;text-align:right;",
+                                        "hideTrigger": true,
+                                        "inputType": null,
+                                        "labelWidth": 160,
+                                        "layout|anchor": "100%",
+                                        "margin": 10,
+                                        "name": "st",
+                                        "value": [
+                                            "0"
+                                        ]
+                                    },
+                                    "name": "MyNumberField255",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "5d47326f-b1bc-4a1a-b31d-5890f863a401"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Долг на начало периода",
+                                        "fieldStyle": "background-color:#F0F8FF;font-size:11pt;text-align:right;",
+                                        "hideTrigger": true,
+                                        "inputType": null,
+                                        "labelWidth": 160,
+                                        "layout|anchor": "100%",
+                                        "margin": 10,
+                                        "name": "zadol",
+                                        "value": [
+                                            "0"
+                                        ]
+                                    },
+                                    "name": "MyNumberField14",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "fd32579e-5ffc-4ca2-87de-4416ee8d5eb1"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "Начислено в отчетном периоде"
+                                    },
+                                    "name": "MyFieldSet1",
+                                    "designerId": "77f3d034-0539-4fec-83ff-2df14866fa75",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Фактически ",
+                                                "fieldStyle": "background-color:#F0F8FF;font-size:11pt;text-align:right;",
+                                                "hideTrigger": true,
+                                                "inputType": null,
+                                                "labelWidth": 160,
+                                                "layout|anchor": "100%",
+                                                "name": "nachisleno",
+                                                "value": [
+                                                    "0"
+                                                ]
+                                            },
+                                            "name": "MyNumberField256",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "a9f02ddd-3ee4-4c56-ade3-5f99e97df425"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "По нормам",
+                                                "fieldStyle": "background-color:#F0F8FF;font-size:11pt;text-align:right;",
+                                                "hideTrigger": true,
+                                                "inputType": null,
+                                                "labelWidth": 160,
+                                                "layout|anchor": "100%",
+                                                "name": "norma",
+                                                "value": [
+                                                    "0"
+                                                ]
+                                            },
+                                            "name": "MyNumberField15",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "d72c7c8b-2b50-4f47-8e60-928a0f48452d"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "На бюджет",
+                                                "fieldStyle": "background-color:#F0F8FF;font-size:11pt;text-align:right;",
+                                                "hideTrigger": true,
+                                                "inputType": null,
+                                                "labelWidth": 160,
+                                                "layout|anchor": "100%",
+                                                "name": "perer",
+                                                "value": [
+                                                    "0"
+                                                ]
+                                            },
+                                            "name": "MyNumberField16",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "29297880-9e6c-4289-a7bc-a0d6a8bf1b28"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "Оплата"
+                                    },
+                                    "name": "MyFieldSet2",
+                                    "designerId": "a2e072e0-3bb0-4b55-a9fd-9ba1acbeb797",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Из бюджета",
+                                                "fieldStyle": "background-color:#F0F8FF;font-size:11pt;text-align:right;",
+                                                "hideTrigger": true,
+                                                "inputType": null,
+                                                "labelWidth": 160,
+                                                "layout|anchor": "100%",
+                                                "name": "oplata",
+                                                "value": [
+                                                    "0"
+                                                ]
+                                            },
+                                            "name": "MyNumberField257",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "45605900-d3b4-439f-957b-62fd35202c95"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Поставщикам",
+                                                "fieldStyle": "background-color:#F0F8FF;font-size:11pt;text-align:right;",
+                                                "hideTrigger": true,
+                                                "inputType": null,
+                                                "labelWidth": 160,
+                                                "layout|anchor": "100%",
+                                                "name": "poplata",
+                                                "value": [
+                                                    "0"
+                                                ]
+                                            },
+                                            "name": "MyNumberField24",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "7a03f671-e87e-49f5-b7e8-4e39c8c2007e"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Предыдущий период",
+                                                "fieldStyle": "background-color:yellow;font-size:11pt;text-align:right;",
+                                                "hideTrigger": true,
+                                                "inputType": null,
+                                                "labelWidth": 160,
+                                                "layout|anchor": "100%",
+                                                "name": "doplata",
+                                                "value": [
+                                                    "0"
+                                                ]
+                                            },
+                                            "name": "MyNumberField17",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "18b7e853-a655-4bc3-b74e-d8b70dadca80"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Долг на конец периода",
+                                        "fieldStyle": "background-color:#F0F8FF;font-size:11pt;text-align:right;",
+                                        "hideTrigger": true,
+                                        "inputType": null,
+                                        "labelWidth": 160,
+                                        "layout|anchor": null,
+                                        "margin": "0 0 0 10",
+                                        "name": "dolg",
+                                        "value": [
+                                            "0"
+                                        ],
+                                        "width": 266
+                                    },
+                                    "name": "MyNumberField311",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "56139b3e-c820-4db8-bae7-215ff7779557"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Сальдо на конец года",
+                                        "fieldStyle": "background-color:yellow;font-size:12pt;text-align:right;",
+                                        "hideTrigger": true,
+                                        "inputType": null,
+                                        "labelWidth": 160,
+                                        "layout|anchor": null,
+                                        "margin": "10 0 0 10",
+                                        "name": "fin",
+                                        "value": [
+                                            "0"
+                                        ],
+                                        "width": 265
+                                    },
+                                    "name": "MyNumberField18",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "f22f8992-14ff-4723-b037-94db37980bfa"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "formBind": true,
+                                        "height": null,
+                                        "icon": "resources/css/images/ico/yes.png",
+                                        "id": null,
+                                        "itemId": null,
+                                        "layout|anchor": "100%",
+                                        "margin": 5,
+                                        "scale": null,
+                                        "text": "просчитать",
+                                        "width": 268
+                                    },
+                                    "name": "MyButton4",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "c66c1817-7fac-4274-a337-ac66b043c982",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "e"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var form = button.findParentByType('form');",
+                                                    "var n = 0;",
+                                                    "var s = 0;",
+                                                    "",
+                                                    "var st = form.getForm().findField('st').getValue();",
+                                                    "var zadol = form.getForm().findField('zadol').getValue();",
+                                                    "var nachisleno = form.getForm().findField('nachisleno').getValue();",
+                                                    "var norma = form.getForm().findField('norma').getValue();",
+                                                    "var perer = form.getForm().findField('perer').getValue();",
+                                                    "",
+                                                    "var fin = form.getForm().findField('fin').getValue();",
+                                                    "var dolg = form.getForm().findField('dolg').getValue();",
+                                                    "var doplata = form.getForm().findField('doplata').getValue();",
+                                                    "var poplata = form.getForm().findField('poplata').getValue();",
+                                                    "var oplata = form.getForm().findField('oplata').getValue();",
+                                                    "",
+                                                    "n = st - doplata;",
+                                                    "",
+                                                    "s = zadol + perer - oplata -  doplata;",
+                                                    "",
+                                                    "form.getForm().findField('fin').setValue(n);",
+                                                    "form.getForm().findField('dolg').setValue(s);",
+                                                    "",
+                                                    ""
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "1a25d104-8b71-4527-b420-0e756a906939"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "icon": "resources/css/images/ico/delete.png",
+                                "layout|x": 5,
+                                "layout|y": 530,
+                                "scale": "medium",
+                                "text": "Отмена",
+                                "width": 100
+                            },
+                            "name": "MyButton162",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "b42fa27e-5f71-4302-a77f-7590ebebd34b",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "this.up('#winPrintAktUtszn').close();"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "8364a448-d4b1-4d12-a2c0-b65ef3ec2be4"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

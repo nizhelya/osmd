@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wineditoplata",
+        "designer|userClassName": "sprav.WinEditOPlataViewController"
+    },
+    "name": "undefinedViewController",
+    "designerId": "792dbe3a-190b-43af-9c47-a04a1920f12a"
+}

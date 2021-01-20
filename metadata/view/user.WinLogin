@@ -1,0 +1,306 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": false,
+        "designer|userAlias": "winlogin",
+        "designer|userClassName": "user.WinLogin",
+        "height": null,
+        "hideMode": "visibility",
+        "id": "winLogin",
+        "itemId": null,
+        "layout": "fit",
+        "modal": true,
+        "title": "Авторизация",
+        "width": 444
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "251bf108-f563-4d35-8661-b16084b26058",
+    "viewControllerInstanceId": "8057802b-dcc3-4b78-8619-b23e5f14d06e",
+    "viewModelInstanceId": "e047a17a-b5c2-4085-9eb0-4e2201f806f3",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": null,
+                "bodyStyle": null,
+                "border": null,
+                "height": null,
+                "id": "fmLogin",
+                "itemId": null,
+                "layout": "fit",
+                "modal": null,
+                "paramsAsHash": null,
+                "style": null,
+                "title": null,
+                "ui": null,
+                "width": 471
+            },
+            "name": "MyForm28",
+            "configAlternates": {
+                "modal": "boolean",
+                "bodyStyle": "string",
+                "style": "string",
+                "scrollable": "boolean"
+            },
+            "designerId": "545250b8-1474-48e7-ae12-454940c813b0",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "modal",
+                    "type": "string"
+                }
+            ],
+            "viewControllerInstanceId": "465a9e70-a322-4de1-b5c9-4536fd07e73d",
+            "viewModelInstanceId": "9b0e464d-7673-454c-a637-21096d41cb52",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 173,
+                        "html": "<IMG SRC=\"resources/css/images/home/logo.png\" >",
+                        "layout": "absolute",
+                        "style": "background-color: #DCDCDC;",
+                        "title": "",
+                        "width": null
+                    },
+                    "name": "MyFieldSet193",
+                    "configAlternates": {
+                        "style": "string",
+                        "html": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "01deccd1-16a9-40c6-a177-4e382e3c9b6d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "blankText": "Логин не введен",
+                                "fieldLabel": "Логин",
+                                "formBind": null,
+                                "frame": true,
+                                "id": "login",
+                                "itemId": null,
+                                "labelPad": 2,
+                                "layout|anchor": null,
+                                "layout|x": 120,
+                                "layout|y": 20,
+                                "maxLength": 20,
+                                "maxLengthText": "Не более 20 символов",
+                                "minLength": 3,
+                                "minLengthText": "Не менее 3 символов",
+                                "name": "login",
+                                "padding": null,
+                                "vtype": null,
+                                "width": 250
+                            },
+                            "name": "MyTextField182",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "4efa86ea-8817-4f2b-aff5-bd5c249fbe10",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLoginChange",
+                                        "implHandler": [
+                                            "var form = field.findParentByType('form'); ",
+                                            "form.getForm().findField('remember').show();",
+                                            "form.down('#info_remember').show();",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLoginChange",
+                                    "designerId": "8e2864c8-b013-427b-bdd2-049f88e4d785"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "blankText": "Пароль не введен",
+                                "fieldLabel": "Пароль",
+                                "formBind": null,
+                                "id": "password",
+                                "inputType": "password",
+                                "itemId": null,
+                                "labelPad": 2,
+                                "layout|anchor": null,
+                                "layout|x": 120,
+                                "layout|y": 60,
+                                "maxLength": 32,
+                                "maxLengthText": "Не более 32 символов",
+                                "minLength": 3,
+                                "minLengthText": "Не менее 3 символов",
+                                "name": "password",
+                                "width": 250
+                            },
+                            "name": "MyTextField183",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "bce69448-85fb-438b-9f46-58dee233ec2d"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowDepress": false,
+                                "cls": "button",
+                                "disabled": true,
+                                "enableToggle": null,
+                                "formBind": true,
+                                "height": 30,
+                                "iconCls": "icon-door-in",
+                                "id": "btninput",
+                                "itemId": null,
+                                "layout|x": 250,
+                                "layout|y": 110,
+                                "text": "Вход",
+                                "width": 100
+                            },
+                            "name": "MyButton172",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "8978873c-456e-4eee-b1d3-61ef94939b82"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "запомнить",
+                                "fieldLabel": "",
+                                "hidden": true,
+                                "inputValue": "1",
+                                "layout|x": 80,
+                                "layout|y": 120,
+                                "name": "remember"
+                            },
+                            "name": "MyCheckbox101",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "4038fbf2-3e37-461c-8764-73ed8560669b"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "decimalPrecision": 0,
+                                "fieldLabel": "",
+                                "hidden": true,
+                                "hideTrigger": true,
+                                "layout|x": 145,
+                                "layout|y": 125,
+                                "name": "attempt",
+                                "value": [
+                                    "0"
+                                ],
+                                "width": 50
+                            },
+                            "name": "MyNumberField264",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "b38bfd9c-f822-4f4b-a436-2b5b30480eb5"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "id": "chekLogin",
+                                "layout|x": 80,
+                                "layout|y": 150,
+                                "style": "{color: #D15706; text-shadow: -1px -1px white, 1px 1px #333;font-size:11pt;text-align:center;}",
+                                "text": "Неверный логин или пароль. Попытка №",
+                                "width": 300
+                            },
+                            "name": "MyLabel54",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "62ca3ac7-6815-4ada-895f-36ed4e03adb9"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "icon": "resources/css/images/ico/information.png",
+                                "id": "info_remember",
+                                "layout|x": 30,
+                                "layout|y": 120,
+                                "text": "",
+                                "tooltip": "Галочка в поле <Запомнить> - сохранит Ваш Логин и пароль на компьтере, что позволит Вам не заполнять поля  при следующей авторизации."
+                            },
+                            "name": "MyButton173",
+                            "configAlternates": {
+                                "tooltip": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "10b825ba-6fd0-4a09-9013-15c8ce782a83"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

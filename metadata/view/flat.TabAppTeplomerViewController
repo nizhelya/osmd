@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabAppTeplomer",
+        "designer|userClassName": "flat.TabAppTeplomerViewController"
+    },
+    "designerId": "451f93c3-5ee4-4cbc-8ff5-a894e0d4e82b"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tablgotnik",
+        "designer|userClassName": "sprav.TabLgotnikViewController"
+    },
+    "designerId": "4ba2defe-a9f9-4666-b160-1597f3f6ff2d"
+}

@@ -1,0 +1,108 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userAlias": "stPrixod",
+        "designer|userClassName": "StPrixod",
+        "model": "MdPrixod",
+        "storeId": "stPrixod"
+    },
+    "designerId": "5253c1ed-53f7-4bd5-a9ae-35a2f764fc15",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    create: 'QuerySprav.createRecord',",
+                    "    read: 'QuerySprav.getResults',",
+                    "    update: 'QuerySprav.updateRecords',",
+                    "    destroy: 'QuerySprav.destroyRecord'",
+                    "}"
+                ],
+                "directFn": "QuerySprav.getResults",
+                "extraParams": [
+                    "{what:'getPrixod'}"
+                ]
+            },
+            "name": "MyDirectProxy3",
+            "designerId": "77e8ffb8-fcee-46d3-be91-2160ee361962",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "5aa2ce94-43fd-48cd-88d2-c98fcc7f83ae"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter2",
+                    "designerId": "bff1ce25-e083-4c3a-8ee6-5c09a67d9333"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreUpdate",
+                "implHandler": [
+                    "record.data.what = \"getPrixod\";",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "name": "onDirectstoreUpdate",
+            "designerId": "e0e98d23-56de-4f24-ae93-1fd31a028c98"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreRemove",
+                "implHandler": [
+                    "records[0].data.what = \"getPrixod\";",
+                    ""
+                ],
+                "name": "remove",
+                "scope": "me"
+            },
+            "name": "onDirectstoreRemove",
+            "designerId": "c698bbfb-d5d9-4f90-b15d-13c6def940f6"
+        }
+    ]
+}

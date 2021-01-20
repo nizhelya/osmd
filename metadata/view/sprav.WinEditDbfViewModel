@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wineditdbflgota",
+        "designer|userClassName": "sprav.WinEditDbfViewModel"
+    },
+    "name": "sprav.WinEditOplataViewModel1",
+    "designerId": "f8901cc8-ca11-442c-9c0f-c7c316c3392f"
+}

@@ -1,0 +1,45 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "stStreet",
+        "designer|userClassName": "StStreet",
+        "model": "MdStreet",
+        "storeId": "stStreet"
+    },
+    "designerId": "744f27ad-8cb2-47bc-a3c7-87ecf1f68f74",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryAddress.getResults"
+            },
+            "name": "MyDirectProxy43",
+            "designerId": "31906461-0442-45a9-accb-c3d0e02b5d0a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader45",
+                    "designerId": "511137f3-3c08-4d6f-ab5d-8bf4437e1eec"
+                }
+            ]
+        }
+    ]
+}

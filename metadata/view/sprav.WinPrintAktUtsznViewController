@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winprintaktutszn",
+        "designer|userClassName": "sprav.WinPrintAktUtsznViewController"
+    },
+    "name": "sprav.WinEditOplata1ViewController",
+    "designerId": "caf66933-d647-4c8b-9975-eb4543ffba33"
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winowner",
+        "designer|userClassName": "flat.WinOwnerViewController"
+    },
+    "name": "flat.WinFamalyViewController1",
+    "designerId": "b3a318c9-a098-490e-8180-64b79325cd2d"
+}

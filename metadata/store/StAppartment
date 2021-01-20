@@ -1,0 +1,46 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "stAppartment",
+        "designer|userClassName": "StAppartment",
+        "model": "MdAppartment",
+        "storeId": "stAppartment"
+    },
+    "designerId": "7c8daf9e-c325-44e2-bf4e-b743c5d1b4ba",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "directFn": "QueryAddress.getResults"
+            },
+            "name": "MyDirectProxy75",
+            "designerId": "7a77ae37-eb76-4b75-a577-a78eba1d937d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader77",
+                    "designerId": "4e77cb13-bdfe-4eb6-ae68-62b022b50c13"
+                }
+            ]
+        }
+    ]
+}

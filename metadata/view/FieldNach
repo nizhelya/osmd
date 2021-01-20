@@ -1,0 +1,28 @@
+{
+    "type": "Ext.form.field.Number",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoStripChars": true,
+        "designer|userAlias": "fieldnach",
+        "designer|userClassName": "FieldNach",
+        "fieldLabel": "label",
+        "fieldStyle": "background-color:#F0F8FF;font-size:10pt;text-align:right;",
+        "hideLabel": null,
+        "hideTrigger": true,
+        "labelWidth": 55,
+        "value": [
+            "0"
+        ],
+        "width": 133
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "e48b3822-b46e-41e9-82ee-fb98c07ad3dc",
+    "viewControllerInstanceId": "2689456e-f3a6-4d30-974e-5653bcb7d7e2",
+    "viewModelInstanceId": "ef4a173b-7cef-43b0-862f-2dc141763242"
+}

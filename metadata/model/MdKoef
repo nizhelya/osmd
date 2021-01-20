@@ -1,0 +1,93 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mdKoef",
+        "designer|userClassName": "MdKoef"
+    },
+    "designerId": "30c51bbf-4802-4ba6-96a0-ab6565e2bdb2",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "koef_id"
+            },
+            "name": "MyString265",
+            "designerId": "7c4fda74-29d6-4125-93f7-a8206cd5bc4b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "kname"
+            },
+            "name": "MyString266",
+            "designerId": "313f5f32-5801-46ce-81e3-521402fce518"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "koef"
+            },
+            "name": "MyNumber327",
+            "designerId": "a06b2a34-5dd8-4371-8ff3-2c2561b28405"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "edizm"
+            },
+            "name": "MyString267",
+            "designerId": "7dd194eb-33ca-4fa2-9c44-2f14296ce1a3"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "date_from"
+            },
+            "name": "MyDate48",
+            "designerId": "d7a28ba7-037b-4150-87c0-9550e752863b"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "date_to"
+            },
+            "name": "MyDate49",
+            "designerId": "066fdfdc-435b-4dc6-bb89-8131e1d42401"
+        }
+    ]
+}

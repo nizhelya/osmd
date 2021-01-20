@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tablgota",
+        "designer|userClassName": "sprav.TabLgotaViewModel"
+    },
+    "designerId": "7564e48d-6a23-4b0f-a8ae-7f7084267ce1"
+}

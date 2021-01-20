@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabprivatbank",
+        "designer|userClassName": "sprav.TabPrivatBankViewController"
+    },
+    "name": "sprav.TabSubsidiaViewController1",
+    "designerId": "b4359a75-94b3-4391-83ca-309d6fa9a038"
+}

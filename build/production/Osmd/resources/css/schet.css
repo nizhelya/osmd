@@ -1,0 +1,425 @@
+@media screen { /* ==========Стиль для отображения в браузере=============*/
+
+
+#table-schet caption
+{
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+	padding: 2px 2px;
+	border:0px;
+}
+ 
+ 
+ #table-schet caption p
+{
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border:0px;
+}
+ /*
+  #table-schet table
+{
+page-break-inside:auto;
+
+
+}
+ */
+ 
+ #table-schet .odd
+{
+	background: #eff2ff;
+}
+ 
+#table-schet 
+{
+	font-family:'Liberation Sans','DejaVu Sans',Helvetica,Arial,Freesans,sans-serif;
+	font-size: 12px;
+	background: #fff;
+	margin: 10px;
+	width: 70%;
+	border-collapse: collapse;
+	text-align: right;
+}
+#table-schet th
+{
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border-bottom: 2px solid #6678b1;
+	border:2px solid #ccc;
+	background: #F2F2F2;
+	page-break-inside: avoid;
+}
+
+#table-schet tr
+{
+page-break-inside: avoid;
+}
+
+#table-schet tfoot
+{
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border-bottom: 1px solid #6678b1;
+	border:1px solid #ccc;
+	background: #D6D6D6;
+
+}
+
+
+#table-schet td
+{
+	border-bottom: 1px solid #ccc;
+	color: #000000; /*#669;*/
+	padding: 5px 5px;
+	margin: 5px;
+	text-align: right;
+/*	text-align: left;*/
+	vertical-align: top;
+
+
+}
+
+#table-schet td .left
+{
+	border-bottom: 1px solid #ccc;
+	color: #000000; /*#669;*/
+	padding: 5px 5px;
+	margin: 5px;
+	text-align: left;
+	vertical-align: top;
+
+}
+
+
+#table-schet tbody tr:hover td
+{
+	color: #000;
+	background: #F4EDC9;
+	
+}
+
+}
+
+
+
+/*  ===  table-schet-transparent  ===  */
+
+#table-schet-transparent tr
+{
+page-break-inside: avoid;
+
+}
+
+
+#table-schet-transparent caption
+{
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+	padding: 2px 2px;
+	border:0px;
+	text-align: left;
+
+}
+ 
+ 
+ #table-schet-transparent caption p
+{
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border:0px;
+	text-align: left;
+
+}
+ 
+
+ #table-schet-transparent .odd
+{
+	background: #eff2ff;
+}
+ 
+#table-schet-transparent 
+{
+	font-family:'Liberation Sans','DejaVu Sans',Helvetica,Arial,Freesans,sans-serif;
+	font-size: 12px;
+	background: #fff;
+	margin: 2px;
+	width: 70%;
+	border-collapse: collapse;
+	text-align: left;
+}
+#table-schet-transparent th
+{
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border-bottom: 2px solid #6678b1;
+	border:2px solid #ccc;
+	background: #F2F2F2;
+	page-break-inside: avoid;
+}
+
+#table-schet-transparent tfoot
+{
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+/*	border-bottom: 1px solid #6678b1;*/
+	border:1px solid #ccc;
+	background: #D6D6D6;
+
+}
+
+
+#table-schet-transparent td
+{
+/*	border-bottom: 1px solid #ccc;*/
+	color: #000000; /*#669;*/
+	padding: 3px 3px;
+/*	text-align: right;*/
+	text-align: left;
+	vertical-align:top;
+	border:0px; border-bottom:0px;
+
+}
+
+#table-schet-transparent td .left
+{
+/*	border-bottom: 1px solid #ccc;*/
+	color: #000000; /*#669;*/
+	padding: 3px 3px;
+	text-align: left;
+	vertical-align:top;
+}
+
+
+#table-schet-transparent tbody tr:hover td
+{
+	color: #000;
+	background: #F4EDC9;
+
+}
+/*  ===  table-schet-transparent  ===  */
+
+
+
+
+
+
+
+
+
+
+
+
+@media print { /* ==========Стиль для печати =============*/
+
+#table-schet tr
+{
+page-break-inside: avoid;
+}
+
+
+#table-schet caption
+{
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	padding: 2px 2px;
+	border:0px;
+}
+ 
+ 
+ #table-schet caption p
+{
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border:0px;
+}
+ 
+ #table-schet .odd
+{
+	background: #eff2ff;
+}
+ 
+#table-schet 
+{
+	font-family:'Liberation Sans','DejaVu Sans',Helvetica,Arial,Freesans,sans-serif;
+	font-size: 12px;
+	background: #fff;
+	margin: 50px;
+	width: 70%;
+	border-collapse: collapse;
+	text-align: right;
+}
+#table-schet th
+{
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border-bottom: 2px solid #6678b1;
+	border:2px solid #ccc;
+	background: #F2F2F2;
+	page-break-inside: avoid;
+}
+
+#table-schet tfoot
+{
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border-bottom: 1px solid #6678b1;
+	border:1px solid #ccc;
+	background: #D6D6D6;
+
+}
+
+
+#table-schet td
+{
+	border-bottom: 1px solid #ccc;
+	color: #000000; /*#669;*/
+	padding: 3px 3px;
+	text-align: right;
+	/*text-align: left;*/
+	vertical-align:top;
+
+}
+
+#table-schet td .left
+{
+	border-bottom: 1px solid #ccc;
+	color: #000000; /*#669;*/
+	padding: 3px 3px;
+	text-align: left;
+	vertical-align:top;
+}
+
+
+#table-schet tbody tr:hover td
+{
+	color: #000;
+	background: #F4EDC9;
+
+}
+
+
+
+
+/*  ===  table-schet-transparent  ===  */
+
+#table-schet-transparent tr
+{
+page-break-inside: avoid;
+}
+
+
+#table-schet-transparent caption
+{
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+	padding: 2px 2px;
+	border:0px;
+	text-align: left;
+
+}
+ 
+ 
+ #table-schet-transparent caption p
+{
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border:0px;
+	text-align: left;
+
+}
+ 
+
+ #table-schet-transparent .odd
+{
+	background: #eff2ff;
+}
+ 
+#table-schet-transparent 
+{
+	font-family:'Liberation Sans','DejaVu Sans',Helvetica,Arial,Freesans,sans-serif;
+	font-size: 12px;
+	background: #fff;
+	margin: 2px;
+	width: 70%;
+	border-collapse: collapse;
+	text-align: left;
+}
+#table-schet-transparent th
+{
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border-bottom: 2px solid #6678b1;
+	border:2px solid #ccc;
+	background: #F2F2F2;
+	page-break-inside: avoid;
+}
+
+#table-schet-transparent tfoot
+{
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	padding: 2px 2px;
+	border-bottom: 1px solid #6678b1;
+	border:1px solid #ccc;
+	background: #D6D6D6;
+
+}
+
+
+#table-schet-transparent td
+{
+/*	border-bottom: 1px solid #ccc;*/
+	color: #000000; /*#669;*/
+	padding: 3px 3px;
+/*	text-align: right;*/
+	text-align: left;
+
+}
+
+#table-schet-transparent td .left
+{
+/*	border-bottom: 1px solid #ccc;*/
+	color: #000000; /*#669;*/
+	padding: 3px 3px;
+	text-align: left;
+}
+
+
+#table-schet-transparent tbody tr:hover td
+{
+	color: #000;
+	background: #F4EDC9;
+
+}
+
+/*  ===  table-schet-transparent  ===  */
+
+ 
+}

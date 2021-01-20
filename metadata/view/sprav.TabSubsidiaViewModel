@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabsubsidia",
+        "designer|userClassName": "sprav.TabSubsidiaViewModel"
+    },
+    "name": "undefinedViewModel",
+    "designerId": "a8eea024-1d48-456a-8ce9-61509ad34637"
+}

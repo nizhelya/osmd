@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabLogin",
+        "designer|userClassName": "sprav.TabLoginViewController"
+    },
+    "designerId": "986be3a4-f937-4846-b0c0-a8d2b15696f4"
+}

@@ -1,0 +1,65 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "autoSync": null,
+        "designer|userClassName": "stLgotaUtszn",
+        "groupField": "gr",
+        "model": "MdUtszn",
+        "storeId": "stLgotaUtszn"
+    },
+    "name": "stSubsidiaUtszn1",
+    "designerId": "ea47b30a-f5f6-4808-a200-6af9ba85b2f9",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "directFn": "QuerySprav.getResults",
+                "extraParams": [
+                    " {'what':'getLgotaUtszn'}"
+                ]
+            },
+            "name": "MyDirectProxy52",
+            "designerId": "0c847ded-ff83-417a-9387-29eb26186e6d",
+            "cn": [
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter6",
+                    "designerId": "6d452784-f929-4dcf-b0b0-cd85c18fffea"
+                },
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader54",
+                    "designerId": "cec63990-c6ba-472d-9f57-396df0bbd0d9"
+                }
+            ]
+        }
+    ]
+}

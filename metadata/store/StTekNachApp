@@ -1,0 +1,46 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userAlias": "stTekNachApp",
+        "designer|userClassName": "StTekNachApp",
+        "model": "MdTekNach",
+        "storeId": "stTekNachApp"
+    },
+    "designerId": "d8db5871-e246-457b-a92b-58ee168c8325",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryKassa.getResults"
+            },
+            "name": "MyDirectProxy5",
+            "designerId": "8447f5c2-c4d5-4a08-888e-0ebe2c06548e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader5",
+                    "designerId": "7a8036c8-c1b5-4fc5-a016-5641ef84fe62"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabpncenter",
+        "designer|userClassName": "menu.TabPnCenterViewModel"
+    },
+    "designerId": "9d80c82b-6254-4338-9475-3bea5a18c795"
+}

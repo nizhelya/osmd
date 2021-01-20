@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "vpkommuna",
+        "designer|userClassName": "VpKommunaViewController"
+    },
+    "designerId": "01ad60bc-8e3f-420d-b886-84197dc36cb9"
+}

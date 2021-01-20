@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winreport",
+        "designer|userClassName": "sprav.WinReportViewController"
+    },
+    "designerId": "85f9db54-9da3-459d-b401-d34aef80f272"
+}

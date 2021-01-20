@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabdbflgota",
+        "designer|userClassName": "sprav.TabDbfLgotaViewController"
+    },
+    "designerId": "1581ccf5-3a97-4cdc-9f02-6c395339b868"
+}

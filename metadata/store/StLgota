@@ -1,0 +1,111 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "autoSync": null,
+        "designer|userAlias": "stLgota",
+        "designer|userClassName": "StLgota",
+        "groupDir": null,
+        "groupField": null,
+        "model": "MdLgotnik",
+        "storeId": "stLgota"
+    },
+    "designerId": "dc52eb61-be3a-4f29-b359-7c04e291baf4",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    create: 'QuerySprav.createRecord',",
+                    "    read: 'QuerySprav.getResults',",
+                    "    update: 'QuerySprav.updateRecords',",
+                    "    destroy: 'QuerySprav.destroyRecord'",
+                    "}"
+                ],
+                "directFn": null,
+                "extraParams": [
+                    "{what:'getLgota'}"
+                ]
+            },
+            "name": "MyDirectProxy45",
+            "designerId": "1aff056b-4b00-4b9d-8d2b-69793e4c1596",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader47",
+                    "designerId": "1af7190c-51c5-4478-afb2-54e6ab517fcd"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter1",
+                    "designerId": "fa0fcc2f-0b0e-4444-8704-a0e1e034ddeb"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreUpdate",
+                "implHandler": [
+                    "                      record.data.what = \"getLgota\";",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "name": "onDirectstoreUpdate",
+            "designerId": "d951ea46-a3af-4028-87e2-46229a1cf1ec"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreRemove",
+                "implHandler": [
+                    "records[0].data.what = \"getLgota\";",
+                    ""
+                ],
+                "name": "remove",
+                "scope": "me"
+            },
+            "name": "onDirectstoreRemove",
+            "designerId": "cd170f05-d802-4f05-a7b9-384d8e220d01"
+        }
+    ]
+}

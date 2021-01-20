@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winlogin",
+        "designer|userClassName": "user.WinLoginViewModel"
+    },
+    "designerId": "e047a17a-b5c2-4085-9eb0-4e2201f806f3"
+}

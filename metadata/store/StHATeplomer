@@ -1,0 +1,45 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "stHATeplomer",
+        "designer|userClassName": "StHATeplomer",
+        "model": "MdPriborUcheta",
+        "storeId": "stHATeplomer"
+    },
+    "designerId": "93070d55-ab7a-4931-ab5f-bc837f61bb08",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryTeplomer.getResults"
+            },
+            "name": "MyDirectProxy87",
+            "designerId": "42dc84fc-158c-4d35-89ba-19904644c33c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader89",
+                    "designerId": "cb2a7746-4f91-4f61-9461-f32fec923108"
+                }
+            ]
+        }
+    ]
+}

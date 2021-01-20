@@ -1,0 +1,318 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winimport",
+        "designer|userClassName": "sprav.WinImport",
+        "height": 267,
+        "id": "winImport",
+        "itemId": null,
+        "layout": "fit",
+        "modal": true,
+        "title": "Импорт файлов",
+        "width": 414
+    },
+    "name": "WinImport",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "2d7d138c-f428-4150-a2d6-9aeeb60763dc",
+    "viewControllerInstanceId": "3607779f-6cc5-4fe5-94d2-3b0b7cb673e2",
+    "viewModelInstanceId": "01e7365b-6432-423e-be4a-cbf57bc183f8",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "fileUpload": "true",
+                "height": null,
+                "id": "fmImport",
+                "layout": "fit",
+                "title": "",
+                "width": 455
+            },
+            "name": "MyForm49",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "2cc12fca-0ffe-41a8-8e94-ff717113919c",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "fileUpload",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": null,
+                        "layout": "absolute",
+                        "style": "background-color: #DCDCDC;",
+                        "title": "",
+                        "width": null
+                    },
+                    "name": "MyFieldSet189",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "27c580b1-63be-4fe0-806f-3cfd403c47ed",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "height": 30,
+                                "icon": "resources/css/images/ico/add.png",
+                                "id": "btImport",
+                                "itemId": null,
+                                "layout|x": 255,
+                                "layout|y": 115,
+                                "text": "Загрузить",
+                                "width": 100
+                            },
+                            "name": "MyButton168",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "52b017fe-7862-49ac-ae93-2e4ff8a05a32",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var values =stUser.getAt(0);",
+                                            "var form = button.findParentByType('form');",
+                                            "var vibor = form.getForm().findField('vibor').getValue();",
+                                            "var osmd_id = form.getForm().findField('osmd_id').getValue();",
+                                            "",
+                                            "//var url = 'resources/php/classes/QueryImport.php';",
+                                            "//console.log(vibor);",
+                                            "",
+                                            "switch (vibor) {",
+                                            "",
+                                            "    case \"utszn\":",
+                                            "        url  = 'resources/php/classes/QueryImportUtszn.php';",
+                                            "        break;",
+                                            "    case \"privatbank\":",
+                                            "        var StPrivatBank = Ext.data.StoreManager.get(\"StPrivatBank\");",
+                                            "        var grPrivatBank = Ext.getCmp('grPrivatBank');",
+                                            "        url  = 'resources/php/classes/QueryImportPrivatBank.php?osmd_id='+osmd_id;",
+                                            "        break;",
+                                            "    case \"lgota\":",
+                                            "",
+                                            "        url  = 'resources/php/classes/QueryImportLgota.php';",
+                                            "        break;",
+                                            "    case \"subsidia\":",
+                                            "        url  = 'resources/php/classes/QueryImportSubsidia.php';",
+                                            "        break;",
+                                            "    case \"subsidiaOshadBank\":",
+                                            "    case \"lgotaOshadBank\":",
+                                            "    ",
+                                            "        url  = 'resources/php/classes/QueryImportOshadBank.php';",
+                                            "        break;",
+                                            "",
+                                            "    default:",
+                                            "",
+                                            "        url  = 'resources/php/classes/QueryImportUtszn.php';",
+                                            "}",
+                                            "",
+                                            "//console.log(url);",
+                                            "",
+                                            "if(form.isValid()){",
+                                            "    form.submit({",
+                                            "        url: url,",
+                                            "        buttons: Ext.Msg.CANCEL,",
+                                            "        waitMsg: 'Загрузка файла...',",
+                                            "        success: function(fp, o) {",
+                                            "            Ext.MessageBox.show({",
+                                            "                title: 'Загрузка файла',",
+                                            "                msg: \"Файл загружен\",",
+                                            "                buttons: Ext.MessageBox.OK,",
+                                            "                icon: Ext.MessageBox.Info",
+                                            "            });",
+                                            "            switch (vibor) {",
+                                            "",
+                                            "                case \"privatbank\":",
+                                            "                    StPrivatBank.load({",
+                                            "                        params: {",
+                                            "                            what:'getPrivatBank',",
+                                            "                            login:values.get('login'),",
+                                            "                            password:values.get('password'),",
+                                            "                            osmd_id:osmd_id",
+                                            "                        }",
+                                            "                    });",
+                                            "                    grPrivatBank.getView().refresh();",
+                                            "                    break;",
+                                            "",
+                                            "            }",
+                                            "            button.up('#winImport').close();",
+                                            "",
+                                            "        },",
+                                            "        failure: function (form, action) {",
+                                            "            // console.log(Ext.form.action.Action.CONNECT_FAILURE);",
+                                            "            switch (action.failureType) {",
+                                            "                case Ext.form.action.Action.CLIENT_INVALID:",
+                                            "                    Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');",
+                                            "                    break;",
+                                            "                case Ext.form.action.Action.CONNECT_FAILURE:",
+                                            "                    Ext.Msg.alert('Failure', 'Ajax communication failed');",
+                                            "                    break;",
+                                            "                case Ext.form.action.Action.SERVER_INVALID:",
+                                            "                    Ext.Msg.alert('Failure', \"server\");",
+                                            "            }",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "}"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "a2d17d96-9ecb-4aa7-9796-54c56cd63d31"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "layout|x": 10,
+                                "layout|y": 70,
+                                "name": "vibor"
+                            },
+                            "name": "MyHiddenField33",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "8a44883c-e1fa-4b58-ab4d-48406f9d95d3"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "layout|x": 10,
+                                "layout|y": 70,
+                                "name": "osmd_id"
+                            },
+                            "name": "MyHiddenField11",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "d51c0bea-72b8-4909-8c78-f5c8a2de184d"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 30,
+                                "icon": "resources/css/images/ico/delete.png",
+                                "layout|x": 20,
+                                "layout|y": 120,
+                                "text": "Отмена",
+                                "width": 80
+                            },
+                            "name": "MyButton169",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "5e3bf2d3-fc19-4d15-b99c-c01acd2e5a31",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "button.up('#winImport').close();"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "61f3ebdd-41bb-4135-8095-202261067481"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.File",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "buttonText": "Просмотр",
+                                "fieldLabel": "Файла",
+                                "id": "fileUpload",
+                                "labelWidth": 50,
+                                "layout|x": 20,
+                                "layout|y": 30,
+                                "name": "filedata",
+                                "width": 330
+                            },
+                            "name": "MyFileUpload",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "dfa94e47-c1d4-43f8-ac0a-0aaa58ea4c69"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

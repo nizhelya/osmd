@@ -1,0 +1,760 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyBorder": false,
+        "closable": true,
+        "designer|userAlias": "tabtarif",
+        "designer|userClassName": "sprav.TabTarif",
+        "height": 766,
+        "id": "tabKvartplata1",
+        "layout": "fit",
+        "maxWidth": 950,
+        "minWidth": null,
+        "scrollable": true,
+        "title": "Тарифы по дому",
+        "width": 950
+    },
+    "name": "sprav.TabKvartplata1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "fa221433-02c8-4607-856c-412989e72b20",
+    "viewControllerInstanceId": "044b9065-9018-45f6-86d5-f5ccfb759e30",
+    "viewModelInstanceId": "e1fd2f00-41aa-4c8d-b52c-36c5107de6a1",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": null,
+                "headerPosition": "left",
+                "height": null,
+                "id": "fmTarif",
+                "scrollable": true,
+                "title": "",
+                "width": null
+            },
+            "name": "MyForm35",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "509bf5f8-0ae2-4cff-ba4d-978a05821f24",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyBorder": true,
+                        "bodyPadding": null,
+                        "height": null,
+                        "id": "grTarif",
+                        "layout|anchor": "100%",
+                        "padding": 10,
+                        "scrollable": true,
+                        "store": "StTarif",
+                        "title": "Дома",
+                        "width": 900
+                    },
+                    "name": "MyGridPanel26",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "2b2bb2a5-1aca-46c4-9422-1d43e044d2db",
+                    "cn": [
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "frame": null,
+                                "height": null
+                            },
+                            "name": "MyGridView56",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "2345414c-2ff8-46e0-8dc7-2a2395843846",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "record",
+                                            "rowIndex",
+                                            "rowParams",
+                                            "store"
+                                        ],
+                                        "fn": "getRowClass",
+                                        "implHandler": [
+                                            "  if(record.get('pr') === \"0\" ){",
+                                            "      return 'change_color_yellow';",
+                                            "      ",
+                                            "  } else  {",
+                                            "      return  'change_color_green';",
+                                            "  }"
+                                        ]
+                                    },
+                                    "name": "getRowClass",
+                                    "designerId": "b0714bc5-faaf-4873-8739-c38c0e611502"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "frame": null
+                            },
+                            "name": "MyToolbar9",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3db51633-6b5d-4925-878e-db6437adebf0",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": null,
+                                        "displayField": "house",
+                                        "fieldLabel": "Дом",
+                                        "labelAlign": null,
+                                        "labelWidth": 45,
+                                        "layout|flex": null,
+                                        "name": "id_house",
+                                        "queryMode": "local",
+                                        "store": "StHousesOrg",
+                                        "valueField": "house_id",
+                                        "width": 220
+                                    },
+                                    "name": "MyComboBox47",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "6af28ae4-3476-478d-8102-5bdc1a206b82",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onComboboxSelect211",
+                                                "implHandler": [
+                                                    "//in use",
+                                                    "",
+                                                    "//STORE",
+                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var StTarif = Ext.data.StoreManager.get(\"StTarif\");",
+                                                    "var tarif = Ext.getCmp('tarKv');",
+                                                    "var viborTarif = Ext.getCmp('cbTarifKv');",
+                                                    "var form = combo.findParentByType('form');",
+                                                    "var btnInsTarif = Ext.getCmp('btnInsTarifKv');",
+                                                    "",
+                                                    "//LOGIN & PASSWORD",
+                                                    "",
+                                                    "var values =stUser.getAt(0);",
+                                                    "var login = values.get('login');",
+                                                    "var password = values.get('password');",
+                                                    "",
+                                                    "//LOGIKA",
+                                                    "if (record) {",
+                                                    "       ",
+                                                    "        StTarif.load({",
+                                                    "            params: {",
+                                                    "                what:'TarifFromHouseOsmd',",
+                                                    "                login:login,",
+                                                    "                password:password,",
+                                                    "                //data:data,",
+                                                    "                house_id: record.get('house_id')",
+                                                    "            },",
+                                                    "            scope:this",
+                                                    "        });",
+                                                    "    }"
+                                                ],
+                                                "name": "select",
+                                                "scope": "me"
+                                            },
+                                            "name": "onComboboxSelect211",
+                                            "designerId": "a2db0741-6145-4000-bac6-5917f9ffe89d"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.CheckboxModel",
+                            "userConfig": {
+                                "showHeaderCheckbox": true
+                            },
+                            "name": "MyCheckboxSelectionModel9",
+                            "designerId": "1be9ff89-391e-48f1-8787-ccdd67062e9a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Дом"
+                            },
+                            "name": "MyColumn79",
+                            "designerId": "ab3a9cec-ddcc-4614-ab0b-22020c7628d8",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "house_id",
+                                        "format": "0",
+                                        "menuDisabled": true,
+                                        "text": "ид",
+                                        "width": 43
+                                    },
+                                    "name": "MyNumberColumn314",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "315b5f4a-5281-4f03-92dc-19b4e032796d"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Date",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "align": "center",
+                                        "dataIndex": "data",
+                                        "format": "F,y",
+                                        "menuDisabled": true,
+                                        "text": "дата",
+                                        "width": 100
+                                    },
+                                    "name": "MyDateColumn",
+                                    "designerId": "a91f65d3-0399-45eb-8445-e2501d848b84"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "house",
+                                        "menuDisabled": true,
+                                        "text": "Дом",
+                                        "width": 120
+                                    },
+                                    "name": "MyColumn266",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "a9dd8ee4-afb3-47b4-8822-25ba61dbd0fa"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "floor",
+                                        "flex": null,
+                                        "format": "0",
+                                        "menuDisabled": true,
+                                        "text": "Эт",
+                                        "width": 35
+                                    },
+                                    "name": "MyNumberColumn315",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "8cde2bcd-2ca2-45f5-a7e8-333955b1665b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Квартплата дома до 12эт"
+                            },
+                            "name": "MyColumn80",
+                            "designerId": "97628f1a-9ceb-4574-8ac6-0eb77b6db74e",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "1 этаж"
+                                    },
+                                    "name": "MyColumn81",
+                                    "designerId": "5b1401a9-6559-41cf-85aa-32b173c805a3",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "kv9f1",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "9497c1d2-5cb1-407b-a576-eb709e9f3289"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "ch_kv9f1",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Пер",
+                                                "width": 55
+                                            },
+                                            "name": "MyNumberColumn317",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "7dcd379e-8341-4981-912f-04ee86419c64"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "2й и выше"
+                                    },
+                                    "name": "MyColumn83",
+                                    "designerId": "5676bd36-7331-45b0-851f-b49ecd3f5ec8",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "kv9",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "ab10b55c-f4b3-428b-898c-82974ab48798"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "ch_kv9",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Пер",
+                                                "width": 55
+                                            },
+                                            "name": "MyNumberColumn317",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "ee4d8535-5afe-43f8-af51-b58aab2494fe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Квартплата дома свыше 12эт"
+                            },
+                            "name": "MyColumn44",
+                            "designerId": "004562a0-c55f-43fc-afb5-1605bd4c5b81",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "1 этаж"
+                                    },
+                                    "name": "MyColumn81",
+                                    "designerId": "9240ba9a-b246-4601-b38b-572e0795ef29",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "kv16f1",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "7d2d20c5-0f60-49e4-82d8-5c9b42f15a66"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "ch_kv16f1",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Пер",
+                                                "width": 55
+                                            },
+                                            "name": "MyNumberColumn317",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "6661113f-40b8-4333-88d1-c044e71f5279"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "2й и выше"
+                                    },
+                                    "name": "MyColumn83",
+                                    "designerId": "bbf62208-9b66-4d0c-a8c7-55a896e2659e",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "kv16",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "a8f3df7f-2c64-4297-b31e-e08e87237409"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "ch_kv16",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Пер",
+                                                "width": 55
+                                            },
+                                            "name": "MyNumberColumn317",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "f53d902f-fdf2-422e-b695-1602f2ebecef"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Тариф для льготников"
+                            },
+                            "name": "MyColumn84",
+                            "designerId": "38c6c726-53bb-44ef-9af8-737cdd0ed562",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "1 этаж"
+                                    },
+                                    "name": "MyColumn81",
+                                    "designerId": "0cfc2ac1-5496-45d4-9e41-9b244c9f451d",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "lgf1",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "b76d2a0a-09f2-48d3-943c-daf8f32e9920"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "2й и выше"
+                                    },
+                                    "name": "MyColumn83",
+                                    "designerId": "3f619206-e3cc-45e8-94a6-f315a2489f42",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "lg",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "84bc3100-c64b-43cb-bce8-af4d0949ae39"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "raion",
+                                "hidden": true,
+                                "text": "Raion"
+                            },
+                            "name": "MyNumberColumn313",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "c62f5055-ef4d-45dd-a088-b45bec969b5e"
+                        },
+                        {
+                            "type": "Ext.panel.Tool",
+                            "reference": {
+                                "name": "tools",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "type": "search"
+                            },
+                            "name": "MyTool",
+                            "designerId": "015e1c9b-67a5-4b51-979e-9ff42f5682dd",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "owner",
+                                            "tool",
+                                            "event"
+                                        ],
+                                        "fn": "callback",
+                                        "implHandler": [
+                                            "//STORE",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var StTarif = Ext.data.StoreManager.get(\"StTarif\");",
+                                            "//LOGIN & PASSWORD",
+                                            "var values =stUser.getAt(0);",
+                                            "var login = values.get('login');",
+                                            "var password = values.get('password');",
+                                            "// FORM",
+                                            "var tarif = Ext.getCmp('tarKv');",
+                                            "var viborTarif = Ext.getCmp('cbTarifKv');",
+                                            "var form = tool.findParentByType('form');",
+                                            "var value = form.getValues();",
+                                            "",
+                                            "  StTarif.load({",
+                                            "            params: {",
+                                            "                what:'TarifFromHouseAll',",
+                                            "                login:login,",
+                                            "                password:password,",
+                                            "                house_id: value.id_house",
+                                            "            },",
+                                            "            ",
+                                            "            scope:this",
+                                            "        });",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "callback",
+                                    "designerId": "fd4bef97-4181-4508-8d8c-383b9c1e5432"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

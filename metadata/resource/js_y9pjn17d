@@ -1,0 +1,18 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bootstrap": false,
+        "defer": false,
+        "designer|userClassName": "js_y9pjn17d",
+        "includeInBundle": true,
+        "url": "resources/ext-locale-ru.js",
+        "x-compile": true
+    },
+    "name": "js",
+    "designerId": "b8fb2217-d6fb-4823-b136-16be383f23b3"
+}

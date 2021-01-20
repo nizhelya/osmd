@@ -1,0 +1,804 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "tablgota",
+        "designer|userClassName": "sprav.TabLgota",
+        "height": null,
+        "id": "tabLgota",
+        "itemId": null,
+        "layout": "fit",
+        "scrollable": true,
+        "title": "Льгота",
+        "width": null
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "66bde121-1138-4350-8686-82ee93e6c500",
+    "viewControllerInstanceId": "6d5593d8-a785-4ab4-aa28-0f6589ffacb2",
+    "viewModelInstanceId": "7564e48d-6a23-4b0f-a8ae-7f7084267ce1",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapseDirection": "top",
+                "collapsible": null,
+                "forceFit": null,
+                "height": null,
+                "id": "grLgota",
+                "itemId": null,
+                "maxWidth": null,
+                "minHeight": null,
+                "scrollable": true,
+                "store": "StLgota",
+                "title": "Ввод новой льготы",
+                "width": null
+            },
+            "name": "MyGridPanel48",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "802ea20d-060c-4391-b668-67fcfb713179",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "loadingText": "Загрузка..."
+                    },
+                    "name": "MyGridView48",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b3a57989-f4ff-46d8-a18a-1625fed790af"
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Добавить запись",
+                        "disabled": null,
+                        "id": "btnGrLgotaAdd",
+                        "itemId": null,
+                        "tooltip": "Добавить запись",
+                        "type": "plus"
+                    },
+                    "name": "MyTool27",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "bbda1bbb-ebf2-462b-97a0-7b841e6f822d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnGrLgotaAddClick",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "var grid = tool.findParentByType('grid');",
+                                    "var store = grid.store;",
+                                    "var plugin = grid.getPlugin('rowEditLgota');",
+                                    "plugin.cancelEdit();",
+                                    "var newRecord = store.model.create();",
+                                    "store.insert(0, newRecord);",
+                                    "plugin.startEdit(0, 0);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onBtnGrLgotaAddClick",
+                            "designerId": "5ae81503-0fc8-4313-a72f-f91e0936a961"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGrLgotaSelectionChange",
+                        "implHandler": [
+                            "var btnAdd  = this.down('#btnGrLgotaAdd');",
+                            "btnAdd.setDisabled(false);",
+                            ""
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "name": "onGrLgotaSelectionChange",
+                    "designerId": "f45fd03e-64e8-4b77-bec5-b2f5972275d4"
+                },
+                {
+                    "type": "Ext.grid.column.Action",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Добавить льготу",
+                        "menuDisabled": true,
+                        "width": 30
+                    },
+                    "name": "MyActionColumn52",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "cd321395-8a97-47d2-b0b4-f5f0088615db",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "resources/css/images/ico/add.png"
+                            },
+                            "name": "MyActionColumnItem65",
+                            "designerId": "cdc4624f-e1a1-47fe-a2ee-5efba318674d",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var grid = view.findParentByType('grid');",
+                                            "var store = view.store;",
+                                            "var lgota = record.get('lgota');",
+                                            "var lgota_ua = record.get('lgota_ua');",
+                                            "var law_article = record.get('law_article');",
+                                            "var percent = record.get('percent');",
+                                            "var gr = record.get('gr');",
+                                            "var plugin = grid.getPlugin('rowEditLgota');",
+                                            "",
+                                            "plugin.cancelEdit();",
+                                            "",
+                                            "var newRecord = store.model.create();",
+                                            "newRecord = {category:1,lgota:lgota,lgota_ua:lgota_ua,percent:percent,gr:gr,law_article:law_article};",
+                                            "store.insert(0, newRecord);",
+                                            "plugin.startEdit(0, 0);"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "6fdafb82-93c2-42ab-8ef8-a5ddcc176394"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "editRenderer",
+                                "implHandler": [
+                                    "var val=\"\";",
+                                    "return val;"
+                                ]
+                            },
+                            "name": "editRenderer",
+                            "designerId": "ae21bd88-f421-464b-87b0-55e28f215272"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "lgota_id",
+                        "format": "0",
+                        "hidden": true,
+                        "text": "Ид",
+                        "width": 49
+                    },
+                    "name": "MyNumberColumn240",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "091fa0ed-7e89-429e-8568-572820891425"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "category",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "text": "Кат",
+                        "width": 40
+                    },
+                    "name": "MyNumberColumn241",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "3e1aabc8-3a87-40a2-8920-3c484ec5b55a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "decimalPrecision": 0,
+                                "hideTrigger": true
+                            },
+                            "name": "MyNumberField185",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "8ff2a89d-de42-4071-92f1-192661e32355"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "lgota",
+                        "text": "Наименование льготы рус",
+                        "width": 209
+                    },
+                    "name": "MyColumn225",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "1b2a81d2-dc0f-41d1-8ec6-6e1601d1b78c",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hideLabel": true
+                            },
+                            "name": "MyTextArea18",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "1b021f97-1b06-4a90-a4f0-7860d8b27aa9"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "metaData.style = 'white-space:pre-wrap;';",
+                                    "return value;",
+                                    ""
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "05e99d95-3a16-468f-9e35-b7d49e26fde1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "lgota_ua",
+                        "menuDisabled": true,
+                        "text": "Наименование льготы укр",
+                        "width": 228
+                    },
+                    "name": "MyColumn226",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "f537288b-8672-473b-941e-25d9b07b3284",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hideLabel": true
+                            },
+                            "name": "MyTextArea19",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "7029185a-7a5d-4f56-a293-a38b4c3cdca6"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "metaData.style = 'white-space:pre-wrap;';",
+                                    "return value;",
+                                    ""
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "5f1b9eb6-ff6a-4da4-9a2e-e16e300dc71a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "percent",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "text": "%",
+                        "width": 40
+                    },
+                    "name": "MyNumberColumn242",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "67b164eb-7d2f-4621-8466-52ea20c4bb05",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "decimalPrecision": 0,
+                                "hideTrigger": true
+                            },
+                            "name": "MyNumberField186",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "7ba7f8e5-3cf0-4440-b7a2-8969d49ccd86"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "gr",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "text": "Гр",
+                        "width": 40
+                    },
+                    "name": "MyNumberColumn243",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "0d05789d-1050-4774-970f-7f5ca0b8c9af",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "decimalPrecision": 0,
+                                "hideTrigger": true
+                            },
+                            "name": "MyNumberField187",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "e70faa75-6df7-4b8f-ac85-487412e07f67"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "law_article",
+                        "flex": 1,
+                        "menuDisabled": true,
+                        "shrinkWrap": 3,
+                        "text": "Статья"
+                    },
+                    "name": "MyColumn227",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "27e5caef-aa7e-4fd3-81ad-b9ae36a0e7f7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hideLabel": true
+                            },
+                            "name": "MyTextArea20",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "2b29002b-a536-4096-9892-8df9a3db7524"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "metaData.style = 'white-space:pre-wrap;';",
+                                    "return value;",
+                                    ""
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "d31f417a-4831-4297-9e93-6ceee2668b4c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Action",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Удалить льготу",
+                        "menuDisabled": true,
+                        "width": 30
+                    },
+                    "name": "MyActionColumn53",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "a36113b8-c15a-4854-abd7-85d352c10637",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "resources/css/images/ico/no.png"
+                            },
+                            "name": "MyActionColumnItem66",
+                            "designerId": "fef10b5d-dc67-429c-b4ef-39148ff554ae",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var grid = view.findParentByType('grid');",
+                                            "var store = view.getStore();",
+                                            "var value = store.getAt(rowIndex).data;",
+                                            "var plugin = grid.getPlugin('rowEditLgota');",
+                                            "plugin.cancelEdit();",
+                                            "Ext.MessageBox.show({",
+                                            "    title: 'Внимание!',",
+                                            "    msg: 'Вы удаляете данные ! Подтвердите свои действия!',",
+                                            "    buttons: Ext.MessageBox.OKCANCEL,",
+                                            "    icon: Ext.MessageBox.WARNING,",
+                                            "",
+                                            "    buttonText:{",
+                                            "        ok: \"Удалить!\",",
+                                            "        cancel: \"Отмена\"",
+                                            "    },",
+                                            "    fn:function(btn){",
+                                            "        if(btn=='ok'){",
+                                            "            store.remove(record);",
+                                            "",
+                                            "            store.sync({",
+                                            "                success: function(){",
+                                            "                    Ext.MessageBox.show({title: 'Удаление записи',",
+                                            "                                         msg:'Запись удалена',",
+                                            "                                         buttons: Ext.MessageBox.OK,",
+                                            "                                         icon: Ext.MessageBox.INFO",
+                                            "                                        });",
+                                            "                },",
+                                            "                failure: function(){",
+                                            "                    Ext.MessageBox.show({title: 'Удаление записи',",
+                                            "                                         msg:'Невозможно удалить: льгота используется',",
+                                            "                                         buttons: Ext.MessageBox.OK,",
+                                            "                                         icon: Ext.MessageBox.ERROR",
+                                            "                                        });",
+                                            "",
+                                            "                },",
+                                            "                scope: this",
+                                            "            });",
+                                            "        }",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "49e4371b-3cc0-4def-af8d-0d9a88dbd00a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "editRenderer",
+                                "implHandler": [
+                                    "var val=\"\";",
+                                    "return val;"
+                                ]
+                            },
+                            "name": "editRenderer",
+                            "designerId": "84f2ea40-d04c-4aee-a45e-9de024973286"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.CheckboxModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CheckboxModel",
+                    "userConfig": {
+                        "mode": "SINGLE"
+                    },
+                    "name": "MyCheckboxSelectionModel3",
+                    "designerId": "c260693e-ce77-4390-a520-5e28c6f6f125"
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "userConfig": {
+                        "pluginId": "rowEditLgota"
+                    },
+                    "name": "MyRowEditingPlugin2",
+                    "designerId": "3cbdc8ae-aab8-48d3-a19f-b0994cfdc0ae",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowEditingEdit",
+                                "implHandler": [
+                                    "var grid = editor.grid;",
+                                    "var store = grid.getStore();",
+                                    "var sm = store.getUpdatedRecords();",
+                                    "var data = grid.getSelectionModel();",
+                                    "if(sm.length) {",
+                                    "    store.sync({    ",
+                                    "        success: function(){",
+                                    "            store.load();",
+                                    "        },",
+                                    "        scope:this",
+                                    "    });   ",
+                                    "} else {    ",
+                                    "    store.sync({ ",
+                                    "        success: function(){",
+                                    "            Ext.MessageBox.show({",
+                                    "                title: 'Добавление льготника                ',",
+                                    "                msg: 'Льготник добавлен',",
+                                    "                buttons: Ext.MessageBox.OK,",
+                                    "                icon: Ext.MessageBox.INFO",
+                                    "            });",
+                                    "            var btnAdd  = Ext.getCmp('btnGrLgotaAdd');",
+                                    "            btnAdd.setDisabled(true);",
+                                    "            store.load();",
+                                    "        },",
+                                    "        scope:this",
+                                    "    });   ",
+                                    "}"
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "name": "onRowEditingEdit",
+                            "designerId": "fbd6ada7-d355-40d2-8dac-94bfce09078b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.BufferedRenderer",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.BufferedRenderer",
+                    "name": "MyBufferedRenderer",
+                    "designerId": "7f7b2894-f61a-453f-b3af-c29b1268f131"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTabLgotaActivate",
+                "implHandler": [
+                    "var login = Ext.data.StoreManager.get(\"StUser\").getAt(0).get('login');",
+                    "var password = Ext.data.StoreManager.get(\"StUser\").getAt(0).get('password');",
+                    "",
+                    "var StLgota = Ext.data.StoreManager.get(\"StLgota\");",
+                    "",
+                    "StLgota.proxy.setExtraParam('login', login);",
+                    "StLgota.proxy.setExtraParam('password', password);",
+                    "StLgota.load();",
+                    ""
+                ],
+                "name": "activate",
+                "scope": "me"
+            },
+            "name": "onTabLgotaActivate",
+            "designerId": "6150d091-fcb6-4536-8b42-d442f343ca2d"
+        }
+    ]
+}

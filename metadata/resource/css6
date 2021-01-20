@@ -1,0 +1,14 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css6",
+        "remote": true,
+        "url": "resources/css/print.css"
+    },
+    "designerId": "f1522b96-f949-4c8e-8e8e-fbed53424ea8"
+}

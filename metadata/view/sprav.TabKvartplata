@@ -1,0 +1,2509 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyBorder": false,
+        "closable": true,
+        "designer|userAlias": "tabkvartplata",
+        "designer|userClassName": "sprav.TabKvartplata",
+        "height": 766,
+        "id": "tabKvartplata",
+        "layout": "fit",
+        "maxWidth": null,
+        "minWidth": null,
+        "scrollable": true,
+        "title": "Квартплата",
+        "width": 1074
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "6f842bc3-ab27-40fe-b094-52f13bd03523",
+    "viewControllerInstanceId": "52f5fe50-4172-4682-962a-4d72ed12a0d6",
+    "viewModelInstanceId": "9153c4b1-4e17-4d95-8fe5-df5c9c65cc95",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": null,
+                "height": null,
+                "id": "fmKvartplata",
+                "scrollable": true,
+                "title": "",
+                "width": null
+            },
+            "name": "MyForm35",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "f8f6e140-795d-4175-8dda-cb3ef4e9ee7e",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyBorder": true,
+                        "bodyPadding": null,
+                        "height": null,
+                        "id": "grTarifHousesKv",
+                        "layout|anchor": "100%",
+                        "padding": 10,
+                        "scrollable": true,
+                        "store": "StTarif",
+                        "title": "Дома",
+                        "width": 900
+                    },
+                    "name": "MyGridPanel26",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e283050c-9bfd-4efc-8973-ce4d089c9826",
+                    "cn": [
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "frame": null,
+                                "height": null
+                            },
+                            "name": "MyGridView56",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "2cd712b2-7f5b-40a5-9260-1cdd92bd48dd",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "record",
+                                            "rowIndex",
+                                            "rowParams",
+                                            "store"
+                                        ],
+                                        "fn": "getRowClass",
+                                        "implHandler": [
+                                            "  if(record.get('pr') === \"0\" ){",
+                                            "      return 'change_color_yellow';",
+                                            "      ",
+                                            "  } else  {",
+                                            "      return  'change_color_green';",
+                                            "  }"
+                                        ]
+                                    },
+                                    "name": "getRowClass",
+                                    "designerId": "7661d524-000d-4125-abb3-b9c32fc5fa59"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "frame": null
+                            },
+                            "name": "MyToolbar9",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "80358057-979f-4cee-8c4a-082c25a178b1",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": null,
+                                        "displayField": "house",
+                                        "fieldLabel": "Дом",
+                                        "labelAlign": null,
+                                        "labelWidth": 45,
+                                        "layout|flex": null,
+                                        "name": "id_house",
+                                        "queryMode": "local",
+                                        "store": "StHousesOrg",
+                                        "valueField": "house_id",
+                                        "width": 220
+                                    },
+                                    "name": "MyComboBox47",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "cb65d55a-feba-48d6-93d3-ec4c1f871e80",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onComboboxSelect211",
+                                                "implHandler": [
+                                                    "//in use",
+                                                    "",
+                                                    "//STORE",
+                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var StTarif = Ext.data.StoreManager.get(\"StTarif\");",
+                                                    "var tarif = Ext.getCmp('tarKv');",
+                                                    "var viborTarif = Ext.getCmp('cbTarifKv');",
+                                                    "var form = combo.findParentByType('form');",
+                                                    "var btnInsTarif = Ext.getCmp('btnInsTarifKv');",
+                                                    "",
+                                                    "//LOGIN & PASSWORD",
+                                                    "",
+                                                    "var values =stUser.getAt(0);",
+                                                    "var login = values.get('login');",
+                                                    "var password = values.get('password');",
+                                                    "",
+                                                    "//LOGIKA",
+                                                    "if (record) {",
+                                                    "    if(record.get('house_id') == \"188\"){",
+                                                    "        StTarif.load({",
+                                                    "            params: {",
+                                                    "                what:'TarifFromHouses',",
+                                                    "                login:login,",
+                                                    "                password:password",
+                                                    "                //data:data,",
+                                                    "                //house_id: record.get('house_id')",
+                                                    "            },",
+                                                    "            callback: function(records,operation,success){",
+                                                    "                if(success){",
+                                                    "                    viborTarif.clearValue();",
+                                                    "                    viborTarif.setDisabled(true);",
+                                                    "                    tarif.setValue(0);",
+                                                    "                    tarif.setDisabled(true);",
+                                                    "                    btnInsTarif.setDisabled(true);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            scope:this",
+                                                    "        });",
+                                                    "    } else {",
+                                                    "",
+                                                    "        StTarif.load({",
+                                                    "            params: {",
+                                                    "                what:'TarifFromHouse',",
+                                                    "                login:login,",
+                                                    "                password:password,",
+                                                    "                //data:data,",
+                                                    "                house_id: record.get('house_id')",
+                                                    "            },",
+                                                    "            callback: function(records,operation,success){",
+                                                    "                if(success){",
+                                                    "                    viborTarif.clearValue();",
+                                                    "                    viborTarif.setDisabled(true);",
+                                                    "                    tarif.setValue(0);",
+                                                    "",
+                                                    "                }",
+                                                    "            },",
+                                                    "            scope:this",
+                                                    "        });",
+                                                    "    }",
+                                                    "}"
+                                                ],
+                                                "name": "select",
+                                                "scope": "me"
+                                            },
+                                            "name": "onComboboxSelect211",
+                                            "designerId": "90d8de35-37cb-473d-b328-5ccf39a295b4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": null,
+                                        "displayField": "usluga",
+                                        "fieldLabel": "услуга",
+                                        "id": "cbTarifKv",
+                                        "labelAlign": null,
+                                        "labelWidth": 50,
+                                        "layout|flex": null,
+                                        "name": "viborTarif",
+                                        "queryMode": "local",
+                                        "readOnly": null,
+                                        "store": "StKvTarif",
+                                        "valueField": "tarif",
+                                        "width": 220
+                                    },
+                                    "name": "MyComboBox48",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "e99a607b-a5f7-47fe-a0d8-ff393334c60f",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onCbTarifKvSelect",
+                                                "implHandler": [
+                                                    "//in use",
+                                                    "",
+                                                    "//STORE",
+                                                    "",
+                                                    "var form = combo.findParentByType('form');",
+                                                    "var tarif = form.getForm().findField('tar');",
+                                                    "var grid = Ext.getCmp('grTarifHousesKv');",
+                                                    "var btnInsTarif = Ext.getCmp('btnInsTarifKv');",
+                                                    "var selected = record;",
+                                                    "",
+                                                    "if (record) {",
+                                                    "    var gridRowSelectedRecords  = grid.getView().getSelectionModel().getSelection()[0];",
+                                                    "",
+                                                    "    var size = Ext.Object.getSize(gridRowSelectedRecords) ;",
+                                                    "    btnInsTarif.setDisabled(false);",
+                                                    "    tarif.setDisabled(false);",
+                                                    "",
+                                                    "",
+                                                    "    tarif.setValue(gridRowSelectedRecords.get(record.get('tarif')));",
+                                                    "",
+                                                    "}",
+                                                    ""
+                                                ],
+                                                "name": "select",
+                                                "scope": "me"
+                                            },
+                                            "name": "onCbTarifKvSelect",
+                                            "designerId": "eaeaa7ac-2106-4530-afc3-c6e00774f111"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "decimalPrecision": 3,
+                                        "fieldLabel": "значение",
+                                        "fieldStyle": "background-color:#F0F8FF;font-size:10pt;text-align:right;",
+                                        "hideTrigger": true,
+                                        "id": "tarKv",
+                                        "labelWidth": 80,
+                                        "layout|flex": null,
+                                        "name": "tar",
+                                        "step": null,
+                                        "value": [
+                                            "0"
+                                        ],
+                                        "width": 200
+                                    },
+                                    "name": "MyNumberField33",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "236084a1-63e3-4b53-8997-272d1e61633f"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "arrowAlign": null,
+                                        "disabled": true,
+                                        "formBind": null,
+                                        "icon": "resources/css/images/ico/yes.png",
+                                        "iconAlign": null,
+                                        "id": "btnInsTarifKv",
+                                        "layout|flex": null,
+                                        "text": "Записать ",
+                                        "width": 135
+                                    },
+                                    "name": "MyButton140",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "d013158b-ea5e-41cd-9f47-1673d81ac6f8",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var form = button.findParentByType('form');",
+                                                    "var  id_house = form.getForm().findField('id_house').getValue();",
+                                                    "",
+                                                    "//console.log(id_house);",
+                                                    "",
+                                                    "var btnInsTarif = Ext.getCmp('btnInsTarifKv');",
+                                                    "var tarif = Ext.getCmp('tarKv');",
+                                                    "var viborTarif = Ext.getCmp('cbTarifKv');",
+                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var StTarif = Ext.data.StoreManager.get(\"StTarif\");",
+                                                    "var grid =  Ext.getCmp('grTarifHousesKv');",
+                                                    "var gridRowSelectedRecords  = grid.getView().getSelectionModel().getSelection();",
+                                                    "var size = Ext.Object.getSize(gridRowSelectedRecords) ;",
+                                                    "var values =stUser.getAt(0);",
+                                                    "var login = values.get('login');",
+                                                    "var password = values.get('password');",
+                                                    "var myMask= Ext.Msg.show({",
+                                                    "    title:'Тариф...',",
+                                                    "    msg: 'Изменение тарифа.Ожидайте...',",
+                                                    "    buttons: Ext.Msg.CANCEL,",
+                                                    "    wait: true,",
+                                                    "    modal: true,",
+                                                    "    icon: Ext.Msg.INFO",
+                                                    "});",
+                                                    "var params =[];",
+                                                    "if (size >= 1){",
+                                                    "    params = {",
+                                                    "        login:values.get('login'),",
+                                                    "        password:values.get('password'),",
+                                                    "        what:\"vvod_tarif_kv\",",
+                                                    "        name_tar:viborTarif.getValue(),",
+                                                    "        new_tar:tarif.getValue()",
+                                                    "    };",
+                                                    "    Ext.Object.each(gridRowSelectedRecords, function(key, val, myself) {",
+                                                    "        Ext.Object.merge(val.data, params);",
+                                                    "        QueryAddress.updateRecords(val.data,function(results){",
+                                                    "            if(results.res){",
+                                                    "                return  true;",
+                                                    "            }  else {",
+                                                    "                return  false;",
+                                                    "            }",
+                                                    "        });",
+                                                    "",
+                                                    "    });",
+                                                    "    if(id_house == \"188\"){",
+                                                    "        StTarif.load({",
+                                                    "            params: {",
+                                                    "                what:'TarifFromHouses',",
+                                                    "                login:login,",
+                                                    "                password:password",
+                                                    "                //data:data,",
+                                                    "                //house_id: record.get('house_id')",
+                                                    "            },",
+                                                    "            callback: function(records,operation,success){",
+                                                    "                if(success){",
+                                                    "                    viborTarif.clearValue();",
+                                                    "                    viborTarif.setDisabled(true);",
+                                                    "                    tarif.setValue(0);",
+                                                    "                    tarif.setDisabled(true);",
+                                                    "                    btnInsTarif.setDisabled(true);",
+                                                    "",
+                                                    "                }",
+                                                    "            },",
+                                                    "            scope:this",
+                                                    "        });",
+                                                    "    } else {",
+                                                    "",
+                                                    "        StTarif.load({",
+                                                    "            params: {",
+                                                    "                what:'TarifFromHouse',",
+                                                    "                login:login,",
+                                                    "                password:password,",
+                                                    "                //data:data,",
+                                                    "                house_id: id_house",
+                                                    "            },",
+                                                    "            callback: function(records,operation,success){",
+                                                    "                if(success){",
+                                                    "                    viborTarif.clearValue();",
+                                                    "                    viborTarif.setDisabled(true);",
+                                                    "                    tarif.setValue(0);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            scope:this",
+                                                    "        });",
+                                                    "    }",
+                                                    "    myMask.close();",
+                                                    "} else {",
+                                                    "    myMask.close();",
+                                                    "    Ext.MessageBox.show({",
+                                                    "        title: 'Ошибка ',",
+                                                    "        msg: 'Не выбраны дома  для начисления',",
+                                                    "        buttons: Ext.MessageBox.OK,",
+                                                    "        icon: Ext.MessageBox.ERROR",
+                                                    "    });",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "57c9586f-213f-4964-adc7-7cbdcbe44e33"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.CheckboxModel",
+                            "userConfig": {
+                                "showHeaderCheckbox": true
+                            },
+                            "name": "MyCheckboxSelectionModel9",
+                            "designerId": "bdb66a40-7357-402f-8fa2-68b814e07013"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Дом"
+                            },
+                            "name": "MyColumn79",
+                            "designerId": "23b8ac37-f2cb-476b-8da2-6153b6fbe5d6",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "house_id",
+                                        "format": "0",
+                                        "menuDisabled": true,
+                                        "text": "ид",
+                                        "width": 43
+                                    },
+                                    "name": "MyNumberColumn314",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "981dddd5-ca70-4e46-87cd-3a1e5369c6f6"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Date",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "align": "center",
+                                        "dataIndex": "data",
+                                        "format": "F,y",
+                                        "menuDisabled": true,
+                                        "text": "дата",
+                                        "width": 80
+                                    },
+                                    "name": "MyDateColumn",
+                                    "designerId": "7f3ea053-a7d5-4106-a810-6381be58a8f9"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "house",
+                                        "menuDisabled": true,
+                                        "text": "Дом",
+                                        "width": 137
+                                    },
+                                    "name": "MyColumn266",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "7022189e-ada5-4186-821a-303c4b3f5963"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "floor",
+                                        "flex": null,
+                                        "format": "0",
+                                        "menuDisabled": true,
+                                        "text": "Эт",
+                                        "width": 35
+                                    },
+                                    "name": "MyNumberColumn315",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "a99f7abe-f504-4bbe-9d5c-b61a2186aac5"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "dop",
+                                        "flex": null,
+                                        "format": "0.00",
+                                        "menuDisabled": true,
+                                        "text": "Допол",
+                                        "width": 60
+                                    },
+                                    "name": "MyNumberColumn48",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "378237ab-9e70-4a18-9581-73383a078e5f"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "remont",
+                                        "flex": null,
+                                        "format": "0.00",
+                                        "menuDisabled": true,
+                                        "text": "Рем",
+                                        "width": 60
+                                    },
+                                    "name": "MyNumberColumn49",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "7cd1343c-00ee-4ec5-9ab8-133861e9952d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Квартплата дома до 12эт"
+                            },
+                            "name": "MyColumn80",
+                            "designerId": "197e34c1-5109-4024-83dc-ffacb41677ba",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "1 этаж"
+                                    },
+                                    "name": "MyColumn81",
+                                    "designerId": "437b8826-3c55-4893-9434-2f96294638cf",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "kv9f1",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "79c3fa73-0b8a-4335-8bda-4497d5524ac5"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "ch_kv9f1",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Пер",
+                                                "width": 55
+                                            },
+                                            "name": "MyNumberColumn317",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "84def1bd-b1b0-45d8-ae0c-ce0acb2c7bd0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "2й и выше"
+                                    },
+                                    "name": "MyColumn83",
+                                    "designerId": "f319be1d-0a4e-466a-9de8-02bee0e9e02b",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "kv9",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "6faa338f-6920-4ce6-b6c9-b14a333c7ee8"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "ch_kv9",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Пер",
+                                                "width": 55
+                                            },
+                                            "name": "MyNumberColumn317",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "3e0748f2-8e79-4fe2-b3f3-b5a8e926c6b6"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Квартплата дома свыше 12эт"
+                            },
+                            "name": "MyColumn44",
+                            "designerId": "570b52cd-3c17-4a2b-b7a3-97805d4e0afe",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "1 этаж"
+                                    },
+                                    "name": "MyColumn81",
+                                    "designerId": "aba9f697-64db-49e2-b81d-b20f65910ac0",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "kv16f1",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "499eb844-8f16-41f5-bb81-f831d6a8ceb6"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "ch_kv16f1",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Пер",
+                                                "width": 55
+                                            },
+                                            "name": "MyNumberColumn317",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "2287f880-38eb-4efa-bd5b-79341ff38b13"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "2й и выше"
+                                    },
+                                    "name": "MyColumn83",
+                                    "designerId": "55059b97-e443-4480-a3eb-59740afb462c",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "kv16",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "b7af6f0a-bfcd-4ca3-af10-0e92327a7ed7"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "ch_kv16",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Пер",
+                                                "width": 55
+                                            },
+                                            "name": "MyNumberColumn317",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "f3671ffb-8553-4a5c-88df-c4ad482c5125"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Тариф для льготников"
+                            },
+                            "name": "MyColumn84",
+                            "designerId": "f7c24e42-7e63-440d-9793-4160b4a253d8",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "1 этаж"
+                                    },
+                                    "name": "MyColumn81",
+                                    "designerId": "c598fba8-9b1d-46e6-92a3-0781a0acb090",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "lgf1",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "d999299a-32d3-4d12-a94f-6afc05e90556"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "2й и выше"
+                                    },
+                                    "name": "MyColumn83",
+                                    "designerId": "c9598562-d7fc-4bec-8782-493a53ff044b",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "align": "center",
+                                                "dataIndex": "lg",
+                                                "format": "0.000",
+                                                "hidden": null,
+                                                "menuDisabled": true,
+                                                "text": "Тар",
+                                                "width": 60
+                                            },
+                                            "name": "MyNumberColumn316",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "c0a5cddd-6c24-4bc6-a89b-feea2723e53e"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "raion",
+                                "hidden": true,
+                                "text": "Raion"
+                            },
+                            "name": "MyNumberColumn313",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "09f1d20f-d646-4654-8014-d7d4e34e7ffe"
+                        },
+                        {
+                            "type": "Ext.panel.Tool",
+                            "reference": {
+                                "name": "tools",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "type": "search"
+                            },
+                            "name": "MyTool",
+                            "designerId": "aff7076d-3f10-4ee5-97eb-2e5b1157895c",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "owner",
+                                            "tool",
+                                            "event"
+                                        ],
+                                        "fn": "callback",
+                                        "implHandler": [
+                                            "//STORE",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var StTarif = Ext.data.StoreManager.get(\"StTarif\");",
+                                            "//LOGIN & PASSWORD",
+                                            "var values =stUser.getAt(0);",
+                                            "var login = values.get('login');",
+                                            "var password = values.get('password');",
+                                            "// FORM",
+                                            "var tarif = Ext.getCmp('tarKv');",
+                                            "var viborTarif = Ext.getCmp('cbTarifKv');",
+                                            "var form = tool.findParentByType('form');",
+                                            "var value = form.getValues();",
+                                            "",
+                                            "  StTarif.load({",
+                                            "            params: {",
+                                            "                what:'TarifFromHouseAll',",
+                                            "                login:login,",
+                                            "                password:password,",
+                                            "                house_id: value.id_house",
+                                            "            },",
+                                            "            callback: function(records,operation,success){",
+                                            "                if(success){",
+                                            "                    viborTarif.clearValue();",
+                                            "                    viborTarif.setDisabled(true);",
+                                            "                    tarif.setValue(0);",
+                                            "                }",
+                                            "            },",
+                                            "            scope:this",
+                                            "        });",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "callback",
+                                    "designerId": "ac54c157-fe35-4d83-84c4-7fc4a8796c0d"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animCollapse": true,
+                        "collapsed": null,
+                        "collapsible": null,
+                        "height": 538,
+                        "layout": "fit",
+                        "layout|anchor": "100%",
+                        "padding": 10,
+                        "title": "Начисление и перерасчет по электроэнергии",
+                        "titleCollapse": true
+                    },
+                    "name": "MyPanel7",
+                    "designerId": "b271ebd7-02f1-4379-90d5-670237f2c710",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|snapToGrid": 5,
+                                "height": 262,
+                                "layout": "absolute",
+                                "margin": null,
+                                "padding": "",
+                                "style": "background-color: #DCDCDC;",
+                                "title": "",
+                                "width": 900
+                            },
+                            "name": "MyFieldSet30",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "383c472c-1ca6-42fb-b3a5-a00d2992ee1f",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Date",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Период начисления",
+                                        "format": "F,Y",
+                                        "id": null,
+                                        "labelWidth": 130,
+                                        "layout|x": 15,
+                                        "layout|y": 10,
+                                        "name": "data_nach",
+                                        "readOnly": true,
+                                        "startDay": 1,
+                                        "style": null,
+                                        "submitFormat": "Ymd",
+                                        "width": 267
+                                    },
+                                    "name": "MyDateField52",
+                                    "configAlternates": {
+                                        "style": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "1da20dfe-950e-4f0d-bc40-0a68dd35cd92"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "formBind": false,
+                                        "height": null,
+                                        "icon": "resources/css/images/ico/add.png",
+                                        "id": "btAddNachKv",
+                                        "itemId": null,
+                                        "layout|x": 300,
+                                        "layout|y": 10,
+                                        "text": "начислить квартплату за период",
+                                        "width": 285
+                                    },
+                                    "name": "MyButton138",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "4799b038-f9ce-4e8e-8def-1427d4159046",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "e"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var form = button.findParentByType('form');",
+                                                    "var  id_house = form.getForm().findField('id_house').getValue();",
+                                                    "",
+                                                    "//console.log(id_house);",
+                                                    "",
+                                                    "var btnInsTarif = Ext.getCmp('btnInsTarifKv');",
+                                                    "var tarif = Ext.getCmp('tarKv');",
+                                                    "var viborTarif = Ext.getCmp('cbTarifKv');",
+                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var StTarif = Ext.data.StoreManager.get(\"StTarif\");",
+                                                    "var grid =  Ext.getCmp('grTarifHousesKv');",
+                                                    "var gridRowSelectedRecords  = grid.getView().getSelectionModel().getSelection();",
+                                                    "var size = Ext.Object.getSize(gridRowSelectedRecords) ;",
+                                                    "var values =stUser.getAt(0);",
+                                                    "var login = values.get('login');",
+                                                    "var password = values.get('password');",
+                                                    "var myMask= Ext.Msg.show({",
+                                                    "    title:'Начисление...',",
+                                                    "    msg: 'Начисление услуги.Ожидайте...',",
+                                                    "    buttons: Ext.Msg.CANCEL,",
+                                                    "    wait: true,",
+                                                    "    modal: true,",
+                                                    "    icon: Ext.Msg.INFO",
+                                                    "});",
+                                                    "var params =[];",
+                                                    "if (size >= 1){",
+                                                    "    params = {",
+                                                    "        login:values.get('login'),",
+                                                    "        password:values.get('password'),",
+                                                    "        what:\"nachislenie_kvartplata_now\"",
+                                                    "",
+                                                    "    };",
+                                                    "    Ext.Object.each(gridRowSelectedRecords, function(key, val, myself) {",
+                                                    "        Ext.Object.merge(val.data, params);",
+                                                    "        QueryAddress.updateRecords(val.data,function(results){",
+                                                    "            if(results.res){",
+                                                    "                return  true;",
+                                                    "            }  else {",
+                                                    "                return  false;",
+                                                    "            }",
+                                                    "        });",
+                                                    "",
+                                                    "    });",
+                                                    "     if(id_house == \"188\"){",
+                                                    "     StTarif.load({",
+                                                    "         params: {",
+                                                    "             what:'TarifFromHouses',",
+                                                    "             login:login,",
+                                                    "             password:password",
+                                                    "             //data:data,",
+                                                    "             //house_id: record.get('house_id')",
+                                                    "         },",
+                                                    "         callback: function(records,operation,success){",
+                                                    "             if(success){",
+                                                    "                 viborTarif.clearValue();",
+                                                    "                 viborTarif.setDisabled(true);",
+                                                    "                 tarif.setValue(0);",
+                                                    "                 tarif.setDisabled(true);",
+                                                    "                 btnInsTarif.setDisabled(true);",
+                                                    "                 ",
+                                                    "             }",
+                                                    "         },",
+                                                    "         scope:this",
+                                                    "     });",
+                                                    " } else {",
+                                                    "     ",
+                                                    "     StTarif.load({",
+                                                    "         params: {",
+                                                    "             what:'TarifFromHouse',",
+                                                    "             login:login,",
+                                                    "             password:password,",
+                                                    "             //data:data,",
+                                                    "             house_id: id_house",
+                                                    "         },",
+                                                    "         callback: function(records,operation,success){",
+                                                    "             if(success){",
+                                                    "                 viborTarif.clearValue();",
+                                                    "                 viborTarif.setDisabled(true);",
+                                                    "                 tarif.setValue(0);",
+                                                    "             }",
+                                                    "         },",
+                                                    "         scope:this",
+                                                    "         ",
+                                                    "     });",
+                                                    " }",
+                                                    "    myMask.close();",
+                                                    "} else {",
+                                                    "    myMask.close();",
+                                                    "     Ext.MessageBox.show({",
+                                                    "                title: 'Ошибка ',",
+                                                    "                msg: 'Не выбраны дома  для начисления',",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                icon: Ext.MessageBox.ERROR",
+                                                    "            });",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "c071940e-4091-41a4-9f6d-749ef60c3913"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|snapToGrid": 10,
+                                        "height": 385,
+                                        "layout": "absolute",
+                                        "layout|x": 15,
+                                        "layout|y": 60,
+                                        "style": "background-color: #F1EEEE ;",
+                                        "title": "Перерасчет",
+                                        "width": 990
+                                    },
+                                    "name": "MyFieldSet32",
+                                    "configAlternates": {
+                                        "style": "string"
+                                    },
+                                    "designerId": "2ebfb602-cdef-4ece-81e3-2fdb4d266561",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "",
+                                                "checked": null,
+                                                "fieldLabel": "тарифы установлены вручную",
+                                                "inputValue": "1",
+                                                "labelWidth": 250,
+                                                "layout|x": 5,
+                                                "layout|y": 5,
+                                                "name": "tarif_manual",
+                                                "style": null,
+                                                "uncheckedValue": "0"
+                                            },
+                                            "name": "MyCheckbox80",
+                                            "configAlternates": {
+                                                "style": "string",
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "ad5b5a87-21cc-4477-a729-3c361b1eeeb1"
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldSet",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "stretch",
+                                                "height": 125,
+                                                "layout": "hbox",
+                                                "layout|x": 10,
+                                                "layout|y": 40,
+                                                "style": "background-color: #DCDCDC;",
+                                                "title": "дома до 12 этажей",
+                                                "width": 360
+                                            },
+                                            "name": "MyFieldSet3",
+                                            "configAlternates": {
+                                                "style": "string"
+                                            },
+                                            "designerId": "f85a7a6e-cf41-4fd8-b35f-ce61ed2bfb61",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.FieldSet",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "height": 91,
+                                                        "style": "background-color: #F1EEEE ;",
+                                                        "title": "1этаж",
+                                                        "width": 172
+                                                    },
+                                                    "name": "MyFieldSet4",
+                                                    "configAlternates": {
+                                                        "style": "string"
+                                                    },
+                                                    "designerId": "b3eca8e1-b58a-4f78-b08e-7f7e8ca1a399",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Number",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "decimalPrecision": 3,
+                                                                "fieldLabel": "действ",
+                                                                "hideTrigger": true,
+                                                                "labelWidth": 50,
+                                                                "name": "kv9f1",
+                                                                "style": null,
+                                                                "width": 130
+                                                            },
+                                                            "name": "MyNumberField221",
+                                                            "configAlternates": {
+                                                                "style": "string",
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "4d3e8d8c-ba0c-4293-8a6f-09cd201669c7"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.Number",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "decimalPrecision": 3,
+                                                                "fieldLabel": "новый",
+                                                                "hideTrigger": true,
+                                                                "labelWidth": 50,
+                                                                "name": "ch_kv9f1",
+                                                                "style": null,
+                                                                "width": 130
+                                                            },
+                                                            "name": "MyNumberField222",
+                                                            "configAlternates": {
+                                                                "style": "string",
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "0dade2c6-ca85-4d0c-ac5a-389c8345c8bf"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.FieldSet",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "height": 91,
+                                                        "style": "background-color: #F1EEEE ;",
+                                                        "title": "2й этаж и выше",
+                                                        "width": 163
+                                                    },
+                                                    "name": "MyFieldSet20",
+                                                    "configAlternates": {
+                                                        "style": "string"
+                                                    },
+                                                    "designerId": "2c0d78f8-6b25-4ab3-80b5-3cef1ca953fa",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Number",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "decimalPrecision": 3,
+                                                                "fieldLabel": "действ",
+                                                                "hideTrigger": true,
+                                                                "labelWidth": 50,
+                                                                "name": "kv9",
+                                                                "style": null,
+                                                                "width": 130
+                                                            },
+                                                            "name": "MyNumberField221",
+                                                            "configAlternates": {
+                                                                "style": "string",
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "b0805db4-936d-40a6-9d06-7a4e2a5672c6"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.Number",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "decimalPrecision": 3,
+                                                                "fieldLabel": "новый",
+                                                                "hideTrigger": true,
+                                                                "labelWidth": 50,
+                                                                "name": "ch_kv9",
+                                                                "style": null,
+                                                                "width": 130
+                                                            },
+                                                            "name": "MyNumberField222",
+                                                            "configAlternates": {
+                                                                "style": "string",
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "bdb09b7a-2ff7-4098-aa6b-ef8bb1e40829"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldSet",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "stretch",
+                                                "height": 125,
+                                                "layout": "hbox",
+                                                "layout|x": 380,
+                                                "layout|y": 40,
+                                                "style": "background-color: #DCDCDC;",
+                                                "title": "дома свыше 12 этажей",
+                                                "width": 380
+                                            },
+                                            "name": "MyFieldSet21",
+                                            "configAlternates": {
+                                                "style": "string"
+                                            },
+                                            "designerId": "0bfaedd4-83b2-4920-a7e4-4ace872cd04d",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.FieldSet",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "height": 91,
+                                                        "style": "background-color: #F1EEEE ;",
+                                                        "title": "1этаж",
+                                                        "width": 167
+                                                    },
+                                                    "name": "MyFieldSet4",
+                                                    "configAlternates": {
+                                                        "style": "string"
+                                                    },
+                                                    "designerId": "8e2e161d-ebf3-427f-a384-388bc8242968",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Number",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "decimalPrecision": 3,
+                                                                "fieldLabel": "действ",
+                                                                "hideTrigger": true,
+                                                                "labelWidth": 50,
+                                                                "name": "kv16f1",
+                                                                "style": null,
+                                                                "width": 130
+                                                            },
+                                                            "name": "MyNumberField221",
+                                                            "configAlternates": {
+                                                                "style": "string",
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "096ebf34-06f2-4576-b8ff-e2154f94c9e1"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.Number",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "decimalPrecision": 3,
+                                                                "fieldLabel": "новый",
+                                                                "hideTrigger": true,
+                                                                "labelWidth": 50,
+                                                                "name": "ch_kv16f1",
+                                                                "style": null,
+                                                                "width": 130
+                                                            },
+                                                            "name": "MyNumberField222",
+                                                            "configAlternates": {
+                                                                "style": "string",
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "aa0b2afd-3a5e-46f7-b1ed-9a3f0804be7b"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.FieldSet",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "height": 91,
+                                                        "style": "background-color: #F1EEEE ;",
+                                                        "title": "2й этаж и выше",
+                                                        "width": 165
+                                                    },
+                                                    "name": "MyFieldSet20",
+                                                    "configAlternates": {
+                                                        "style": "string"
+                                                    },
+                                                    "designerId": "06800eb4-44d5-4017-b1e2-bb2ef25e4b86",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Number",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "decimalPrecision": 3,
+                                                                "fieldLabel": "действ",
+                                                                "hideTrigger": true,
+                                                                "labelWidth": 50,
+                                                                "name": "kv16",
+                                                                "style": null,
+                                                                "width": 130
+                                                            },
+                                                            "name": "MyNumberField221",
+                                                            "configAlternates": {
+                                                                "style": "string",
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "8bcb6919-1771-49dc-83d1-98fbcd19ab26"
+                                                        },
+                                                        {
+                                                            "type": "Ext.form.field.Number",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "decimalPrecision": 3,
+                                                                "fieldLabel": "новый",
+                                                                "hideTrigger": true,
+                                                                "labelWidth": 50,
+                                                                "name": "ch_kv16",
+                                                                "style": null,
+                                                                "width": 130
+                                                            },
+                                                            "name": "MyNumberField222",
+                                                            "configAlternates": {
+                                                                "style": "string",
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "d8fab00a-ca94-41a0-992c-c4c98362a2b3"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.TextArea",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Инфо перер",
+                                                "height": null,
+                                                "layout|x": 270,
+                                                "layout|y": 235,
+                                                "name": "info",
+                                                "style": null,
+                                                "width": 465
+                                            },
+                                            "name": "MyTextArea",
+                                            "configAlternates": {
+                                                "style": "string",
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "08bf9abb-ef3a-4eae-b4cf-ec6336271a08"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "",
+                                                "checked": true,
+                                                "fieldLabel": "По всем квартирам дома",
+                                                "inputValue": "1",
+                                                "labelWidth": 200,
+                                                "layout|x": 30,
+                                                "layout|y": 180,
+                                                "name": "allkv",
+                                                "style": null,
+                                                "uncheckedValue": "0"
+                                            },
+                                            "name": "MyCheckbox79",
+                                            "configAlternates": {
+                                                "style": "string",
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "87b76342-883a-4ced-bf3c-808bc2c79c4c",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "checkbox",
+                                                            "checked"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var form = checkbox.findParentByType('form');",
+                                                            "var  address_ot = form.getForm().findField('address_ot');",
+                                                            "var  address_do = form.getForm().findField('address_do');",
+                                                            "",
+                                                            "if(checked===true){",
+                                                            "    if (address_ot.isVisible()) address_ot.hide();",
+                                                            "    if (address_do.isVisible()) address_do.hide();",
+                                                            "} else {",
+                                                            "    if (address_ot.isHidden()) address_ot.show();",
+                                                            "    if (address_do.isHidden()) address_do.show();",
+                                                            "",
+                                                            "}"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "71846cea-b0b3-4b11-ac85-280dc2941c37"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldSet",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "height": 85,
+                                                "layout|anchor": null,
+                                                "layout|x": 30,
+                                                "layout|y": 220,
+                                                "style": "background-color: #DCDCDC;",
+                                                "title": "Период перерасчета",
+                                                "width": 195
+                                            },
+                                            "name": "MyFieldSet159",
+                                            "configAlternates": {
+                                                "style": "string",
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "13b01602-bc36-4d76-9f33-e03fc2b3a2b4",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Date",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Дата с",
+                                                        "format": "d-m-Y",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "sdata",
+                                                        "submitFormat": "Ymd",
+                                                        "width": 185
+                                                    },
+                                                    "name": "MyDateField65",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "c11b76ee-4539-4b43-bfb0-814d6c6cc5d6"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Date",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Дата по",
+                                                        "format": "d-m-Y",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "fdata",
+                                                        "submitFormat": "Ymd",
+                                                        "width": 185
+                                                    },
+                                                    "name": "MyDateField66",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "04971f87-b188-4403-a1c2-43f1dc750e54"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": null,
+                                                "displayField": "address",
+                                                "editable": false,
+                                                "fieldLabel": "по",
+                                                "forceSelection": true,
+                                                "hidden": true,
+                                                "labelWidth": 20,
+                                                "layout|anchor": null,
+                                                "layout|x": 530,
+                                                "layout|y": 180,
+                                                "name": "address_do",
+                                                "queryMode": "local",
+                                                "store": "StAddressOrg",
+                                                "style": "background-color: #C2D9E9;",
+                                                "valueField": "address_id",
+                                                "width": 200
+                                            },
+                                            "name": "MyComboBox46",
+                                            "configAlternates": {
+                                                "scrollable": "boolean",
+                                                "style": "string"
+                                            },
+                                            "designerId": "34921bef-cca7-464f-8768-4c2b9957c775"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": null,
+                                                "displayField": "address",
+                                                "enableKeyEvents": true,
+                                                "fieldLabel": "c",
+                                                "forceSelection": true,
+                                                "hidden": true,
+                                                "labelWidth": 20,
+                                                "layout|anchor": null,
+                                                "layout|x": 300,
+                                                "layout|y": 180,
+                                                "name": "address_ot",
+                                                "queryMode": "local",
+                                                "store": "StAddressOrg",
+                                                "style": "background-color: #C2D9E9;",
+                                                "valueField": "address_id",
+                                                "width": 200
+                                            },
+                                            "name": "MyComboBox45",
+                                            "configAlternates": {
+                                                "scrollable": "boolean",
+                                                "style": "string"
+                                            },
+                                            "designerId": "7ef61161-4c25-4fae-b8b3-8a4457eadf68"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "formBind": null,
+                                                "height": 30,
+                                                "icon": "resources/css/images/ico/add.png",
+                                                "id": "btAddPererKv",
+                                                "itemId": null,
+                                                "layout|x": 400,
+                                                "layout|y": 320,
+                                                "style": null,
+                                                "text": "Перерасчитать квартплату за период",
+                                                "width": 340
+                                            },
+                                            "name": "MyButton139",
+                                            "configAlternates": {
+                                                "scrollable": "boolean",
+                                                "style": "string"
+                                            },
+                                            "designerId": "be01aeb1-a135-4f24-95b1-a48a5658f1d0",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "button",
+                                                            "e"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                            "var grid =  Ext.getCmp('grTarifHousesKv');",
+                                                            "var value = button.findParentByType('form').getValues();",
+                                                            "",
+                                                            "var house_id = value.id_house;",
+                                                            "//console.log(house_id);",
+                                                            "",
+                                                            "var values =stUser.getAt(0);",
+                                                            "var params = {",
+                                                            "    login:values.get('login'),",
+                                                            "    password:values.get('password'),",
+                                                            "    what:\"nachislenie_kvartplata\",",
+                                                            "    house_id:house_id",
+                                                            "};",
+                                                            "",
+                                                            "  params = {",
+                                                            "      login:values.get('login'),",
+                                                            "      password:values.get('password'),",
+                                                            "      what:\"pereraschet_kvartplata\",",
+                                                            "      house_id:house_id,",
+                                                            "      kv9f1:value.kv9f1,",
+                                                            "      kv9:value.kv9,",
+                                                            "      ch_kv9f1:value.ch_kv9f1,",
+                                                            "      ch_kv9:value.ch_kv9,",
+                                                            "      kv16f1:value.kv16f1,",
+                                                            "      kv16:value.kv16,",
+                                                            "      ch_kv16f1:value.ch_kv16f1,",
+                                                            "      ch_kv16:value.ch_kv16,",
+                                                            "      allkv:value.allkv,",
+                                                            "      tarif_manual:value.tarif_manual,",
+                                                            "      sdata:value.sdata,",
+                                                            "      fdata:value.fdata,",
+                                                            "      address_ot:value.address_ot,",
+                                                            "      address_do:value.address_do,",
+                                                            "      info:value.info",
+                                                            "  };",
+                                                            "//console.log(params);",
+                                                            "",
+                                                            "var myMask= Ext.Msg.show({",
+                                                            "    title:'Перерасчет...',",
+                                                            "    msg: 'Перерасчет квартплаты .Ожидайте...',",
+                                                            "    buttons: Ext.Msg.CANCEL,",
+                                                            "    wait: true,",
+                                                            "    modal: true,",
+                                                            "    icon: Ext.Msg.INFO",
+                                                            "});",
+                                                            "",
+                                                            "QueryAddress.updateRecords(params,function(results){",
+                                                            "    if(results.success===\"1\"){",
+                                                            "        myMask.close();",
+                                                            "        Ext.MessageBox.show({",
+                                                            "            title: 'Перерасчет квартплаты',",
+                                                            "            msg: results.msg,",
+                                                            "            buttons: Ext.MessageBox.OK,",
+                                                            "            icon: Ext.MessageBox.INFO",
+                                                            "        });",
+                                                            "    } else {",
+                                                            "        myMask.close();",
+                                                            "        Ext.MessageBox.show({",
+                                                            "            title: 'Перерасчет квартплаты',",
+                                                            "            msg: results.msg,",
+                                                            "            buttons: Ext.MessageBox.OK,",
+                                                            "            icon: Ext.MessageBox.ERROR",
+                                                            "        });",
+                                                            "    }",
+                                                            "",
+                                                            "});",
+                                                            "",
+                                                            "",
+                                                            "",
+                                                            "",
+                                                            ""
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "b1520986-d267-49c1-ad80-c368184cae36"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "formBind": null,
+                                                "height": 30,
+                                                "icon": "resources/css/images/ico/add.png",
+                                                "id": "btAddNachDop",
+                                                "itemId": null,
+                                                "layout|x": 760,
+                                                "layout|y": 180,
+                                                "style": null,
+                                                "text": "Начислить доп. услугу",
+                                                "width": 190
+                                            },
+                                            "name": "MyButton22",
+                                            "configAlternates": {
+                                                "scrollable": "boolean",
+                                                "style": "string"
+                                            },
+                                            "designerId": "16fad187-a87d-4ae9-83b1-b3d0a3d31aad",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "button",
+                                                            "e"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                            "var grid =  Ext.getCmp('grTarifHousesKv');",
+                                                            "var value = button.findParentByType('form').getValues();",
+                                                            "",
+                                                            "var house_id = value.id_house;",
+                                                            "//console.log(house_id);",
+                                                            "",
+                                                            "var values =stUser.getAt(0);",
+                                                            "var params = {",
+                                                            "    login:values.get('login'),",
+                                                            "    password:values.get('password'),",
+                                                            "    what:\"nachislenie_dop_osmd\",",
+                                                            "    house_id:house_id",
+                                                            "};",
+                                                            "",
+                                                            "params = {",
+                                                            "    login:values.get('login'),",
+                                                            "    password:values.get('password'),",
+                                                            "    what:\"nachislenie_dop_osmd\",",
+                                                            "    house_id:house_id,",
+                                                            "    allkv:value.allkv,",
+                                                            "    sdata:value.sdata,",
+                                                            "    fdata:value.fdata,",
+                                                            "    address_ot:value.address_ot,",
+                                                            "    address_do:value.address_do,",
+                                                            "    info:value.info",
+                                                            "};",
+                                                            "//console.log(params);",
+                                                            "",
+                                                            "var myMask= Ext.Msg.show({",
+                                                            "    title:'Начисление допуслуги...',",
+                                                            "    msg: 'Начисление допуслуги .Ожидайте...',",
+                                                            "    buttons: Ext.Msg.CANCEL,",
+                                                            "    wait: true,",
+                                                            "    modal: true,",
+                                                            "    icon: Ext.Msg.INFO",
+                                                            "});",
+                                                            "",
+                                                            "QueryAddress.updateRecords(params,function(results){",
+                                                            "    if(results.success===\"1\"){",
+                                                            "        myMask.close();",
+                                                            "        Ext.MessageBox.show({",
+                                                            "            title: 'Начисление допуслуги',",
+                                                            "            msg: results.msg,",
+                                                            "            buttons: Ext.MessageBox.OK,",
+                                                            "            icon: Ext.MessageBox.INFO",
+                                                            "        });",
+                                                            "    } else {",
+                                                            "        myMask.close();",
+                                                            "        Ext.MessageBox.show({",
+                                                            "            title: 'Начисление допуслуги',",
+                                                            "            msg: results.msg,",
+                                                            "            buttons: Ext.MessageBox.OK,",
+                                                            "            icon: Ext.MessageBox.ERROR",
+                                                            "        });",
+                                                            "    }",
+                                                            "",
+                                                            "});",
+                                                            "",
+                                                            "",
+                                                            "",
+                                                            "",
+                                                            ""
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "ffa1bfd0-0c44-47d0-a11a-ef5c9ae84221"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "formBind": null,
+                                                "height": 30,
+                                                "icon": "resources/css/images/ico/add.png",
+                                                "id": "btAddNachRemont",
+                                                "itemId": null,
+                                                "layout|x": 760,
+                                                "layout|y": 220,
+                                                "style": null,
+                                                "text": "Начислить ремонт",
+                                                "width": 190
+                                            },
+                                            "name": "MyButton23",
+                                            "configAlternates": {
+                                                "scrollable": "boolean",
+                                                "style": "string"
+                                            },
+                                            "designerId": "67c9cd08-69e2-4a85-a264-6b62ad7b32aa",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "button",
+                                                            "e"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                            "var grid =  Ext.getCmp('grTarifHousesKv');",
+                                                            "var value = button.findParentByType('form').getValues();",
+                                                            "",
+                                                            "var house_id = value.id_house;",
+                                                            "//console.log(house_id);",
+                                                            "",
+                                                            "var values =stUser.getAt(0);",
+                                                            "var params = {",
+                                                            "    login:values.get('login'),",
+                                                            "    password:values.get('password'),",
+                                                            "    what:\"nachislenie_remont_osmd\",",
+                                                            "    house_id:house_id",
+                                                            "};",
+                                                            "",
+                                                            "params = {",
+                                                            "    login:values.get('login'),",
+                                                            "    password:values.get('password'),",
+                                                            "    what:\"nachislenie_remont_osmd\",",
+                                                            "    house_id:house_id,",
+                                                            "    allkv:value.allkv,",
+                                                            "    sdata:value.sdata,",
+                                                            "    fdata:value.fdata,",
+                                                            "    address_ot:value.address_ot,",
+                                                            "    address_do:value.address_do,",
+                                                            "    info:value.info",
+                                                            "};",
+                                                            "//console.log(params);",
+                                                            "",
+                                                            "var myMask= Ext.Msg.show({",
+                                                            "    title:'Начисление допуслуги...',",
+                                                            "    msg: 'Начисление допуслуги .Ожидайте...',",
+                                                            "    buttons: Ext.Msg.CANCEL,",
+                                                            "    wait: true,",
+                                                            "    modal: true,",
+                                                            "    icon: Ext.Msg.INFO",
+                                                            "});",
+                                                            "",
+                                                            "QueryAddress.updateRecords(params,function(results){",
+                                                            "    if(results.success===\"1\"){",
+                                                            "        myMask.close();",
+                                                            "        Ext.MessageBox.show({",
+                                                            "            title: 'Начисление допуслуги',",
+                                                            "            msg: results.msg,",
+                                                            "            buttons: Ext.MessageBox.OK,",
+                                                            "            icon: Ext.MessageBox.INFO",
+                                                            "        });",
+                                                            "    } else {",
+                                                            "        myMask.close();",
+                                                            "        Ext.MessageBox.show({",
+                                                            "            title: 'Начисление допуслуги',",
+                                                            "            msg: results.msg,",
+                                                            "            buttons: Ext.MessageBox.OK,",
+                                                            "            icon: Ext.MessageBox.ERROR",
+                                                            "        });",
+                                                            "    }",
+                                                            "",
+                                                            "});",
+                                                            "",
+                                                            "",
+                                                            "",
+                                                            ""
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "047aaab0-46a1-4b3d-add1-1f105432cb8a"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "formBind": null,
+                                                "height": 30,
+                                                "icon": "resources/css/images/ico/add.png",
+                                                "id": "btAddNachKvPrev",
+                                                "itemId": null,
+                                                "layout|x": 10,
+                                                "layout|y": 320,
+                                                "style": null,
+                                                "text": "начислить квартплату за предыдущий период",
+                                                "width": 350
+                                            },
+                                            "name": "MyButton1",
+                                            "configAlternates": {
+                                                "scrollable": "boolean",
+                                                "style": "string"
+                                            },
+                                            "designerId": "d32ad6e8-b0cc-4183-a976-fdb73280863b",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "button",
+                                                            "e"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var form = button.findParentByType('form');",
+                                                            "var  id_house = form.getForm().findField('id_house').getValue();",
+                                                            "",
+                                                            "//console.log(id_house);",
+                                                            "",
+                                                            "var btnInsTarif = Ext.getCmp('btnInsTarifKv');",
+                                                            "var tarif = Ext.getCmp('tarKv');",
+                                                            "var viborTarif = Ext.getCmp('cbTarifKv');",
+                                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                            "var StTarif = Ext.data.StoreManager.get(\"StTarif\");",
+                                                            "var grid =  Ext.getCmp('grTarifHousesKv');",
+                                                            "var gridRowSelectedRecords  = grid.getView().getSelectionModel().getSelection();",
+                                                            "var size = Ext.Object.getSize(gridRowSelectedRecords) ;",
+                                                            "var values =stUser.getAt(0);",
+                                                            "var login = values.get('login');",
+                                                            "var password = values.get('password');",
+                                                            "var myMask= Ext.Msg.show({",
+                                                            "    title:'Начисление...',",
+                                                            "    msg: 'Начисление услуги.Ожидайте...',",
+                                                            "    buttons: Ext.Msg.CANCEL,",
+                                                            "    wait: true,",
+                                                            "    modal: true,",
+                                                            "    icon: Ext.Msg.INFO",
+                                                            "});",
+                                                            "var params =[];",
+                                                            "if (size >= 1){",
+                                                            "    params = {",
+                                                            "        login:values.get('login'),",
+                                                            "        password:values.get('password'),",
+                                                            "        what:\"nachislenie_kvartplata_prev\"",
+                                                            "",
+                                                            "    };",
+                                                            "    Ext.Object.each(gridRowSelectedRecords, function(key, val, myself) {",
+                                                            "        Ext.Object.merge(val.data, params);",
+                                                            "        QueryAddress.updateRecords(val.data,function(results){",
+                                                            "            if(results.res){",
+                                                            "                return  true;",
+                                                            "            }  else {",
+                                                            "                return  false;",
+                                                            "            }",
+                                                            "        });",
+                                                            "",
+                                                            "    });",
+                                                            " if(id_house == \"188\"){",
+                                                            "     StTarif.load({",
+                                                            "         params: {",
+                                                            "             what:'TarifFromHouses',",
+                                                            "             login:login,",
+                                                            "             password:password",
+                                                            "             //data:data,",
+                                                            "             //house_id: record.get('house_id')",
+                                                            "         },",
+                                                            "         callback: function(records,operation,success){",
+                                                            "             if(success){",
+                                                            "                 viborTarif.clearValue();",
+                                                            "                 viborTarif.setDisabled(true);",
+                                                            "                 tarif.setValue(0);",
+                                                            "                 tarif.setDisabled(true);",
+                                                            "                 btnInsTarif.setDisabled(true);",
+                                                            "                 ",
+                                                            "             }",
+                                                            "         },",
+                                                            "         scope:this",
+                                                            "     });",
+                                                            " } else {",
+                                                            "     ",
+                                                            "     StTarif.load({",
+                                                            "         params: {",
+                                                            "             what:'TarifFromHouse',",
+                                                            "             login:login,",
+                                                            "             password:password,",
+                                                            "             //data:data,",
+                                                            "             house_id: id_house",
+                                                            "         },",
+                                                            "         callback: function(records,operation,success){",
+                                                            "             if(success){",
+                                                            "                 viborTarif.clearValue();",
+                                                            "                 viborTarif.setDisabled(true);",
+                                                            "                 tarif.setValue(0);",
+                                                            "             }",
+                                                            "         },",
+                                                            "         scope:this",
+                                                            "         ",
+                                                            "     });",
+                                                            " }",
+                                                            "    myMask.close();",
+                                                            "} else {",
+                                                            "    myMask.close();",
+                                                            "    Ext.MessageBox.show({",
+                                                            "        title: 'Ошибка ',",
+                                                            "        msg: 'Не выбраны дома  для начисления',",
+                                                            "        buttons: Ext.MessageBox.OK,",
+                                                            "        icon: Ext.MessageBox.ERROR",
+                                                            "    });",
+                                                            "}",
+                                                            ""
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "28b5638c-2d2e-4f0c-ab5b-097cae354d1c"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "arrowAlign": null,
+                                        "disabled": true,
+                                        "formBind": null,
+                                        "height": null,
+                                        "icon": "resources/css/images/ico/no.png",
+                                        "iconAlign": null,
+                                        "id": "btnClearNachKv",
+                                        "layout|x": 595,
+                                        "layout|y": 10,
+                                        "text": "Сброс признака начисления",
+                                        "tooltip": "Сброс признака начисления",
+                                        "width": 205
+                                    },
+                                    "name": "MyButton143",
+                                    "configAlternates": {
+                                        "tooltip": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "1b6fe279-1e5d-416a-9f0d-ea5a9bc2b555",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "",
+                                                    "var form = button.findParentByType('form');",
+                                                    "var  id_house = form.getForm().findField('id_house').getValue();",
+                                                    "",
+                                                    "//console.log(id_house);",
+                                                    "",
+                                                    "var btnInsTarif = Ext.getCmp('btnInsTarifKv');",
+                                                    "var tarif = Ext.getCmp('tarKv');",
+                                                    "var viborTarif = Ext.getCmp('cbTarifKv');",
+                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var StTarif = Ext.data.StoreManager.get(\"StTarif\");",
+                                                    "var grid =  Ext.getCmp('grTarifHousesKv');",
+                                                    "var gridRowSelectedRecords  = grid.getView().getSelectionModel().getSelection();",
+                                                    "var size = Ext.Object.getSize(gridRowSelectedRecords) ;",
+                                                    "var values =stUser.getAt(0);",
+                                                    "var login = values.get('login');",
+                                                    "var password = values.get('password');",
+                                                    "var myMask= Ext.Msg.show({",
+                                                    "    title:'Начисление...',",
+                                                    "    msg: 'Начисление услуги.Ожидайте...',",
+                                                    "    buttons: Ext.Msg.CANCEL,",
+                                                    "    wait: true,",
+                                                    "    modal: true,",
+                                                    "    icon: Ext.Msg.INFO",
+                                                    "});",
+                                                    "var params =[];",
+                                                    "if (size >= 1){",
+                                                    "    params = {",
+                                                    "        login:values.get('login'),",
+                                                    "        password:values.get('password'),",
+                                                    "        what:\"clear_pr_kv\"",
+                                                    "",
+                                                    "    };",
+                                                    "    Ext.Object.each(gridRowSelectedRecords, function(key, val, myself) {",
+                                                    "        Ext.Object.merge(val.data, params);",
+                                                    "        QueryAddress.updateRecords(val.data,function(results){",
+                                                    "            if(results.res){",
+                                                    "                return  true;",
+                                                    "            }  else {",
+                                                    "                return  false;",
+                                                    "            }",
+                                                    "        });",
+                                                    "",
+                                                    "    });",
+                                                    "     if(id_house == \"188\"){",
+                                                    "        StTarif.load({",
+                                                    "            params: {",
+                                                    "                what:'TarifFromHouses',",
+                                                    "                login:login,",
+                                                    "                password:password",
+                                                    "                //data:data,",
+                                                    "                //house_id: record.get('house_id')",
+                                                    "            },",
+                                                    "            callback: function(records,operation,success){",
+                                                    "                if(success){",
+                                                    "                    viborTarif.clearValue();",
+                                                    "                    viborTarif.setDisabled(true);",
+                                                    "                    tarif.setValue(0);",
+                                                    "                    tarif.setDisabled(true);",
+                                                    "                    btnInsTarif.setDisabled(true);",
+                                                    "",
+                                                    "                }",
+                                                    "            },",
+                                                    "            scope:this",
+                                                    "        });",
+                                                    "    } else {",
+                                                    "",
+                                                    "        StTarif.load({",
+                                                    "            params: {",
+                                                    "                what:'TarifFromHouse',",
+                                                    "                login:login,",
+                                                    "                password:password,",
+                                                    "                //data:data,",
+                                                    "                house_id: id_house",
+                                                    "            },",
+                                                    "            callback: function(records,operation,success){",
+                                                    "                if(success){",
+                                                    "                    viborTarif.clearValue();",
+                                                    "                    viborTarif.setDisabled(true);",
+                                                    "                    tarif.setValue(0);",
+                                                    "                }",
+                                                    "            },",
+                                                    "            scope:this",
+                                                    "        });",
+                                                    "    }",
+                                                    "    myMask.close();",
+                                                    "} else {",
+                                                    "    myMask.close();",
+                                                    "     Ext.MessageBox.show({",
+                                                    "                title: 'Ошибка ',",
+                                                    "                msg: 'Не выбраны дома  для начисления',",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                icon: Ext.MessageBox.ERROR",
+                                                    "            });",
+                                                    "}",
+                                                    "",
+                                                    "",
+                                                    ""
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "d1085608-3f4c-424b-9f34-7ad57fe53ab5"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

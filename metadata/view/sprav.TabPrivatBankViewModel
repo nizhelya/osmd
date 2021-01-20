@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabprivatbank",
+        "designer|userClassName": "sprav.TabPrivatBankViewModel"
+    },
+    "name": "sprav.TabSubsidiaViewModel1",
+    "designerId": "4d7c612a-91b2-4230-899d-a1d142c87d6f"
+}

@@ -1,0 +1,59 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "stLgotnik",
+        "designer|userClassName": "StLgotnik",
+        "groupField": null,
+        "model": "MdLgotnik",
+        "storeId": "stLgotnik"
+    },
+    "designerId": "bb5c4c26-dbcb-4c3d-8ef6-81c3fa19b80b",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryAddress.getResults"
+            },
+            "name": "MyDirectProxy1",
+            "designerId": "746a8882-7fb3-43cc-9d89-7eaa367c3ed1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "3c1c7f29-42c9-4fa6-9a9f-12eeb55fbc31"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter6",
+                    "designerId": "054e5951-b4f4-43c3-9776-53fbfe1f14d1"
+                }
+            ]
+        }
+    ]
+}

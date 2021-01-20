@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winexportlgota",
+        "designer|userClassName": "sprav.WinExportLgotaViewModel"
+    },
+    "designerId": "3e657c96-72f9-45ec-9c55-eae81e52c744"
+}

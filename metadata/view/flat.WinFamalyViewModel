@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winfamaly",
+        "designer|userClassName": "flat.WinFamalyViewModel"
+    },
+    "name": "flat.WinLgotnikViewModel1",
+    "designerId": "b2fe5a63-34c3-4714-9760-4aa55b88e8fd"
+}

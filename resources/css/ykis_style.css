@@ -1,0 +1,293 @@
+h6.header {
+      font-size:80%;
+      color: #070A03 /* #407434 #0079b6 */;
+      font-weight:normal;
+      /*letter-spacing:-.1em;*/
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */
+      padding: 10px 5px 20px 80px;
+      background-image: url(images/home/logo.png);
+      background-repeat: no-repeat;
+     font-family:georgia,tahoma,arial,sans-serif,verdana;  
+      margin-top:15px;
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;   
+behavior: url(ie-css3.htc); /* Новая строка для IE */   
+}
+div.video {
+    font-size:110%;
+      color: #3F742F /* #407434 #0079b6 */;
+      font-weight:normal;
+      letter-spacing:-.05em;
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */     
+      font-family:sans-serif,Tahoma, Verdana, Georgia;   
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;   
+behavior: url(ie-css3.htc); /* Новая строка для IE */   
+}
+
+h6.registrazia {
+      font-size:110%;
+      color: #0079b6/*#3F742F  #407434 #0079b6 */;
+      font-weight:normal;
+      letter-spacing:-.05em;
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */     
+      font-family:sans-serif,Tahoma, Verdana, Georgia;   
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;   
+behavior: url(ie-css3.htc); /* Новая строка для IE */   
+}
+h3.login {
+      font-size:200%;
+      color: #0079b6 /* #407434 #0079b6 */;
+      font-weight:normal;
+      /*letter-spacing:-.1em;*/
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */
+      padding: 15px 2px 5px 100px;
+      background-image: url(images/btn64/contact_64.png) !important;
+      background-repeat: no-repeat;
+     font-family:sans-serif,Tahoma, Verdana, Georgia;  
+      margin-top:30px;
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;   
+behavior: url(ie-css3.htc); /* Новая строка для IE */   
+}
+h6.kvartira {
+      font-size:110%;
+      color: #08468C /*#3F742F #407434 #0079b6 */;
+      font-weight:normal;
+      padding: 0px 2px 5px 32px;
+      letter-spacing:-.05em;
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */     
+    font-family:sans-serif,Tahoma, Verdana, Georgia;  
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;     
+behavior: url(ie-css3.htc); /* Новая строка для IE */ 
+}
+h6.service {
+      font-size:110%;
+      color: #08468C /* #407434 #0079b6 */;
+      font-weight:normal;
+      padding: 5px 2px 5px 5px;
+      letter-spacing:-.05em;
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */     
+     font-family:sans-serif,Tahoma, Verdana, Georgia;   
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;     
+behavior: url(ie-css3.htc); /* Новая строка для IE */ 
+}
+h6.masters {
+      font-size:110%;
+      color: #08468C /* #407434 #0079b6 */;
+      font-weight:normal;
+      padding: 12px 2px 5px 5px;
+      letter-spacing:-.05em;
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */     
+     font-family:sans-serif,Tahoma, Verdana, Georgia;  
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;  
+behavior: url(ie-css3.htc); /* Новая строка для IE */    
+}
+h3.email-confirm {
+      font-size:200%;
+      color: #3F742F /* #407434 #0079b6 */;
+      font-weight:normal;
+      /*letter-spacing:-.1em;*/
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */
+      padding: 0px 2px 5px 100px;
+      background-image: url(images/btn64/email_confirm.png);
+      background-repeat: no-repeat;
+     font-family:sans-serif,Tahoma, Verdana, Georgia;  
+      margin-top:30px;
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;      
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+h6.email-text {
+     font-size:120%;
+      color: #3F742F /*#08468C  #407434 #0079b6 */;
+      font-weight:normal;
+      padding: 12px 2px 5px 5px;
+      letter-spacing:-.05em;
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */     
+    font-family:sans-serif,Tahoma, Verdana, Georgia;  
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;    
+behavior: url(ie-css3.htc); /* Новая строка для IE */  
+}
+h6.reg-text {
+     font-size:110%;
+      color: #08468C /* #407434 #0079b6 */;
+      font-weight:normal;
+      padding: 12px 2px 5px 100px;
+      letter-spacing:-.05em;
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */     
+   font-family:sans-serif,Tahoma, Verdana, Georgia;  
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;
+behavior: url(ie-css3.htc); /* Новая строка для IE */      
+}
+h5.active-text {
+     font-size:150%;
+      color: #3F742F /*#08468C  #407434 #0079b6 */;
+      font-weight:normal;
+      padding: 12px 2px 5px 5px;
+      letter-spacing:-.05em;
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */     
+     font-family:sans-serif,Tahoma, Verdana, Georgia;    
+      text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;    
+behavior: url(ie-css3.htc); /* Новая строка для IE */  
+}
+h4.first-page {
+     font-size:150%;
+      color: #3F742F /*#08468C  #407434 #0079b6 */;
+      font-weight:normal;
+      padding: 12px 2px 5px 5px;
+      letter-spacing:-.05em;
+      /*margin:.6em 0;*/
+      position:relative; 
+     /* font-weight:bold; */     
+     font-family:sans-serif,Tahoma, Verdana, Georgia;    
+     /* text-shadow: 2px 3px 9px #414040 /* #bfbfbf */; 
+      margin:0 auto;  
+      opacity:0.8;
+      filter:alpha(opacity=80); /* For IE8 and earlier */
+     -moz-text-shadow: 2px 3px 5px #bfbfbf;
+     -webkit-text-shadow: 2px 3px 5px #bfbfbf;
+      text-shadow: 2px 3px 5px #bfbfbf;    
+behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+
+.box {
+  -moz-border-radius: 15px; /* Firefox */
+  -webkit-border-radius: 15px; /* Safari и Chrome */
+  border-radius: 15px; /* Opera 10.5+, будущие браузеры, и сейчас Internet Explorer 6+ с IE-CSS3 */
+  -moz-box-shadow: 10px 10px 20px #000; /* Firefox */
+  -webkit-box-shadow: 10px 10px 20px #000; /* Safari и Chrome */
+  box-shadow: 10px 10px 20px #000; /* Opera 10.5+, будущие браузеры и IE6+ с IE-CSS3 */
+  behavior: url(ie-css3.htc); /* Новая строка для IE */
+}
+ #instraction {
+
+    }
+    #instraction dd {
+        cursor:pointer;
+        float:left;
+        height:100px;
+        margin:5px 5px 5px 10px;
+        width:300px;
+        zoom:1;
+    }
+    #instraction dd img {
+        border: 1px solid #ddd;
+        float:left;
+        height:90px;
+        margin:5px 0 0 5px;
+        width:120px;
+    }
+
+    #instraction dd div {
+        float:left;
+        margin-left:10px;
+        width:160px;
+    }
+
+    #instraction dd h4 {
+        color:#555;
+        font-size:11px;
+        font-weight:bold;
+    }
+    #instraction dd p {
+        color:#777;
+    }
+   .over {
+        background: #F5FDE3 url(images/sample-over.gif) no-repeat;
+    }
+  
+    #instraction .x-panel-body {
+        background-color:#fff;
+        border:1px solid;
+        border-color:#fafafa #fafafa #fafafa #fafafa;
+    }
+    #instraction {
+        border:1px solid;
+        border-color:#dadada #ebebeb #ebebeb #dadada;
+        padding:2px;
+        font: 11px tahoma,arial,helvetica,sans-serif
+    }
+
+    #instraction h2 {
+        border-bottom: 2px solid #99bbe8;
+        cursor:pointer;
+        padding-top:6px;
+    }
+    #instraction h2 div {
+        background:transparent url(../images/grid/group-expand-sprite.gif) no-repeat 3px -47px;
+        color:#3764a0;
+        font:bold 11px Helvetica, Arial, sans-serif;
+        padding:4px 4px 4px 17px;
+    }
+    #instraction .collapsed h2 div {
+        background-position: 3px 3px;
+    }
+    #instraction .collapsed dl {
+        display:none;
+    }
+    .x-window {
+        text-align:left;
+    }
+    #instraction dd  h4 span.new-sample{
+        color: red;
+    }
+    #instraction dd  h4 span.updated-sample{
+        color: blue;
+    }
+    li {
+		list-style: inherit !important;
+    }
+
+.x-grid-center-icon{
+	   display:block;
+	   margin:0 auto;
+	   text-align:center;
+	   cursor:pointer;
+	}
+ .x-hide-display { display: none;}
+
+.line-through {
+    text-decoration: line-through;
+}
+.change_color .x-grid-cell {
+    background-color: #ADD2ED    
+}
+.change_color_yellow .x-grid-cell {
+    background-color: #FFFFC0    
+}
+.change_color_red .x-grid-cell {
+    background-color: #FFD0BC    
+}
+.change_color_green .x-grid-cell {
+    background-color: #A6F3A2    
+}

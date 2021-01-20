@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabkvartplata",
+        "designer|userClassName": "sprav.TabKvartplataViewModel"
+    },
+    "designerId": "9153c4b1-4e17-4d95-8fe5-df5c9c65cc95"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabLogin",
+        "designer|userClassName": "sprav.TabLoginViewModel"
+    },
+    "designerId": "40e091c3-9078-4ed4-a8c1-6219f71b8635"
+}

@@ -1,0 +1,46 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "stLgotnikTab",
+        "designer|userClassName": "StLgotnikTab",
+        "groupField": "lgota",
+        "model": "MdLgotnik",
+        "storeId": "stLgotnikTab"
+    },
+    "designerId": "db839fa2-0e9a-44ab-8e57-017eefecdf81",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QuerySprav.getResults"
+            },
+            "name": "MyDirectProxy48",
+            "designerId": "e526ed6e-3c57-4396-aee9-a96f0e7dc28a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader50",
+                    "designerId": "e78186d0-0405-4b0c-bd22-f1dfbdea887b"
+                }
+            ]
+        }
+    ]
+}

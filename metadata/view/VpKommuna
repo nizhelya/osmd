@@ -1,0 +1,135 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "vpkommuna",
+        "designer|userClassName": "VpKommuna",
+        "layout": "border",
+        "scrollable": null
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "5a3af3c3-1693-45ed-969c-b951a340a2c7",
+    "viewControllerInstanceId": "01ad60bc-8e3f-420d-b886-84197dc36cb9",
+    "viewModelInstanceId": "ed014495-1318-4066-a5d8-8dc369e5f2e9",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Center",
+                "height": 714,
+                "layout|flex": 1,
+                "layout|region": "center",
+                "layout|split": true
+            },
+            "name": "menu.tabpncenter",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "1caf50d7-9571-4d7a-bd5f-da758c166ea7",
+            "masterInstanceId": "89a2e8e3-020d-40c4-9f6b-56938a6d2186"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "CopyRihgt",
+                "height": 21,
+                "html": "<center><span style=\"color:#04468C;text-shadow: 2px 3px 5px #bfbfbf;position:absolute;\ndisplay:block;top:3px;letter-spacing:-.05em;font-family:serif;left:0;height:60%;width:100%;\nbackground-color:#FFFFFF;filter:alpha(opacity=65);\n-moz-opacity: 0.65;opacity: 0.65;\">&copy;2004 -2012 <span>Южненская Коммунальная Информационная Система\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ITX&nbsp;&amp;&nbsp;Нижельский С.А.</span></center>",
+                "layout|region": "south",
+                "title": ""
+            },
+            "name": "MyPanel9",
+            "configAlternates": {
+                "html": "string",
+                "scrollable": "boolean"
+            },
+            "designerId": "3dd3099f-cb44-4ace-9a73-a959d5fd8233"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "designer|displayName": "Левая панель",
+                "layout": "vbox",
+                "layout|region": "west",
+                "maxWidth": 250,
+                "title": "",
+                "width": 250
+            },
+            "name": "MyPanel10",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "1adaecdd-1134-440f-9d53-64b41506ea0c",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": false,
+                        "designer|displayName": "логотип",
+                        "height": 78,
+                        "html": "<h6 class=\"header\"><span>Южненская<br>Коммунальная<br>Информационная<br>Система</span></h6>",
+                        "layout": "fit",
+                        "layout|flex": null,
+                        "style": "background-color: #DCDCDC;",
+                        "width": null
+                    },
+                    "name": "MyContainer4",
+                    "configAlternates": {
+                        "html": "string",
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "7fb98fe2-8e62-4211-b821-aacc14104200"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "меню",
+                        "height": null,
+                        "layout|flex": 3,
+                        "plain": null,
+                        "width": null
+                    },
+                    "name": "menu.tabpnleft",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d7bba5c7-60b9-490e-94c6-903146a1e508",
+                    "masterInstanceId": "64623cb5-9c54-42da-88bd-35c71b6c6137"
+                }
+            ]
+        }
+    ]
+}

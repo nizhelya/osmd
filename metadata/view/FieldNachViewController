@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "fieldnach",
+        "designer|userClassName": "FieldNachViewController"
+    },
+    "designerId": "2689456e-f3a6-4d30-974e-5653bcb7d7e2"
+}

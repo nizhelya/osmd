@@ -1,0 +1,14 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css3",
+        "remote": true,
+        "url": "resources/css/report.css"
+    },
+    "designerId": "ec9fd8a4-a783-41c2-9267-f0216e375c62"
+}

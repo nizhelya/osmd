@@ -1,0 +1,1217 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "taboplata",
+        "designer|userClassName": "flat.TabOplata",
+        "id": "tabOplata",
+        "scrollable": true,
+        "title": ""
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "9bb7b6ca-fa03-4f6d-bb7a-696c9cb65461",
+    "viewControllerInstanceId": "3bbdab05-9a8a-413c-b81d-109a0e602670",
+    "viewModelInstanceId": "d8701564-a89f-4b3e-85cc-55705c4a64d1",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": null,
+                "height": null,
+                "id": "grOplata",
+                "margin": 10,
+                "store": "StOplata",
+                "title": "Оплата",
+                "width": 1066
+            },
+            "name": "MyGridPanel45",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "0ef831a3-781e-475b-8e0c-4e80d61d4ff5",
+            "cn": [
+                {
+                    "type": "Ext.grid.feature.GroupingSummary",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "depthToIndent": 200,
+                        "groupByText": "Группировать по этому полю",
+                        "showGroupsText": "Показать в группе",
+                        "startCollapsed": true
+                    },
+                    "name": "MyGroupingSummaryFeature1",
+                    "designerId": "ea875051-f644-4355-bceb-cd7b903ed9d0"
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "style": "background-color: #C2D9C9;"
+                    },
+                    "name": "MyGridView45",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "dc0d10ab-4caa-48f0-9a8e-4584c4cfe1f2"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "rec_id",
+                        "format": "0",
+                        "hidden": true,
+                        "text": null
+                    },
+                    "name": "MyNumberColumn183",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "ab4f3f01-077f-4b1f-9d90-d13518906bbf"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "address_id",
+                        "format": "0",
+                        "hidden": true,
+                        "text": "Address_id"
+                    },
+                    "name": "MyNumberColumn184",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "887d848d-a275-4641-bca6-133fa8cb1f10"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "raion_id",
+                        "format": "0",
+                        "hidden": true,
+                        "text": null
+                    },
+                    "name": "MyNumberColumn185",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d5723e89-6256-4bec-b19b-79ff2031ab12"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "god",
+                        "format": "0",
+                        "hidden": true,
+                        "text": "Год"
+                    },
+                    "name": "MyNumberColumn186",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "606b87cc-5aa6-4cec-b234-a1425c53469b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "address",
+                        "hidden": true,
+                        "menuDisabled": true,
+                        "text": "Адрес",
+                        "width": 87
+                    },
+                    "name": "MyColumn203",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "729805d5-2fd4-4e5b-963f-982c7eeee637"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "pr",
+                        "hidden": true,
+                        "menuDisabled": true,
+                        "text": null,
+                        "width": 87
+                    },
+                    "name": "MyColumn204",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "c209e96e-7788-44db-885b-49ba99916147"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "data",
+                        "format": "d-m-y",
+                        "menuDisabled": true,
+                        "text": "Дата",
+                        "width": 80
+                    },
+                    "name": "MyDateColumn39",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "71562ff5-e941-4fbe-9618-bf7c18b298fb",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyDateField45",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "4d3d1009-c332-4e25-b4f5-061a91c1111f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "kvartplata",
+                        "format": "0.00",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Кварт",
+                        "width": 75
+                    },
+                    "name": "MyNumberColumn187",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "4b1d7cab-40f2-4b61-8697-37207ab5045b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "fn": "summaryRenderer",
+                                "implHandler": [
+                                    "  var n =Ext.util.Format.number(val,'0,000.00');",
+                                    "if (val >= 0) {",
+                                    "    return '<span style=\"color:#000; font-weight:bold;\">' + n + '</span>';",
+                                    "} else  {",
+                                    "    return '<span style=\"color:red; font-weight:bold;\">' + n + '</span>';",
+                                    "}"
+                                ]
+                            },
+                            "name": "summaryRenderer",
+                            "designerId": "14aec3dd-f262-4c71-9475-eedffeaed96e"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField146",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "16b9cc92-35da-4563-8a8d-c4565bfd5c74"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "remont",
+                        "format": "0.00",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Р.фонд",
+                        "width": 75
+                    },
+                    "name": "MyNumberColumn41",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b941fe5c-a0bd-4946-9c11-87ec5a82010b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "fn": "summaryRenderer",
+                                "implHandler": [
+                                    "  var n =Ext.util.Format.number(val,'0,000.00');",
+                                    "if (val >= 0) {",
+                                    "    return '<span style=\"color:#000; font-weight:bold;\">' + n + '</span>';",
+                                    "} else  {",
+                                    "    return '<span style=\"color:red; font-weight:bold;\">' + n + '</span>';",
+                                    "}"
+                                ]
+                            },
+                            "name": "summaryRenderer",
+                            "designerId": "9b1a37fa-7756-46cd-80e9-85d59c99352a"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField146",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3cee589a-5bf8-4eb3-ab65-54ae385cd894"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "otoplenie",
+                        "format": "0.00",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Отопл",
+                        "width": 80
+                    },
+                    "name": "MyNumberColumn188",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "22a7976a-e140-4439-98c5-cd8c5048218c",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "fn": "summaryRenderer",
+                                "implHandler": [
+                                    "  var n =Ext.util.Format.number(val,'0,000.00');",
+                                    "if (val >= 0) {",
+                                    "    return '<span style=\"color:#000; font-weight:bold;\">' + n + '</span>';",
+                                    "} else  {",
+                                    "    return '<span style=\"color:red; font-weight:bold;\">' + n + '</span>';",
+                                    "}"
+                                ]
+                            },
+                            "name": "summaryRenderer",
+                            "designerId": "f42b1dc4-7758-411a-ac81-64fdb0c26d47"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField147",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "fd8948f5-f4fd-4458-9186-09f245b5abc2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ptn",
+                        "format": "0.00",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "ПТН",
+                        "width": 65
+                    },
+                    "name": "MyNumberColumn189",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "1eb5a5b9-34d5-46bc-a600-46fc1285551b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "fn": "summaryRenderer",
+                                "implHandler": [
+                                    "  var n =Ext.util.Format.number(val,'0,000.00');",
+                                    "if (val >= 0) {",
+                                    "    return '<span style=\"color:#000; font-weight:bold;\">' + n + '</span>';",
+                                    "} else  {",
+                                    "    return '<span style=\"color:red; font-weight:bold;\">' + n + '</span>';",
+                                    "}"
+                                ]
+                            },
+                            "name": "summaryRenderer",
+                            "designerId": "1944e5ab-276a-41d2-8000-6a119e3bdf20"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField148",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "9c1b4a21-999d-4ebb-b9bb-c2fc4cbad0f8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "podogrev",
+                        "format": "0.00",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Подог",
+                        "width": 65
+                    },
+                    "name": "MyNumberColumn42",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "fc7544c7-78d5-48f5-a1fb-e7c0ad9716fc",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "fn": "summaryRenderer",
+                                "implHandler": [
+                                    "  var n =Ext.util.Format.number(val,'0,000.00');",
+                                    "if (val >= 0) {",
+                                    "    return '<span style=\"color:#000; font-weight:bold;\">' + n + '</span>';",
+                                    "} else  {",
+                                    "    return '<span style=\"color:red; font-weight:bold;\">' + n + '</span>';",
+                                    "}"
+                                ]
+                            },
+                            "name": "summaryRenderer",
+                            "designerId": "077fbab7-ab2e-4e22-8612-c5b0955eae33"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField148",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3dba9d1d-03c9-40e7-8dc8-744a59701ac3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "voda",
+                        "format": "0.00",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Вода",
+                        "width": 70
+                    },
+                    "name": "MyNumberColumn190",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "21b9b890-fe6d-4d92-809e-d7ebc47320a7",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "fn": "summaryRenderer",
+                                "implHandler": [
+                                    "var n =Ext.util.Format.number(val,'0,000.00');",
+                                    "if (val >= 0) {",
+                                    "    return '<span style=\"color:#000; font-weight:bold;\">' + n + '</span>';",
+                                    "} else  {",
+                                    "    return '<span style=\"color:red; font-weight:bold;\">' + n + '</span>';",
+                                    "}"
+                                ]
+                            },
+                            "name": "summaryRenderer",
+                            "designerId": "3144d47f-a027-47cc-875d-ac8667e7c588"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField149",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "f8ea97ab-b500-4ce8-9afa-356b435af9f8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "stoki",
+                        "format": "0.00",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Стоки",
+                        "width": 70
+                    },
+                    "name": "MyNumberColumn191",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "758e142e-285d-4c19-9e6c-bc7817be9ee9",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "fn": "summaryRenderer",
+                                "implHandler": [
+                                    "  var n =Ext.util.Format.number(val,'0,000.00');",
+                                    "if (val >= 0) {",
+                                    "    return '<span style=\"color:#000; font-weight:bold;\">' + n + '</span>';",
+                                    "} else  {",
+                                    "    return '<span style=\"color:red; font-weight:bold;\">' + n + '</span>';",
+                                    "}"
+                                ]
+                            },
+                            "name": "summaryRenderer",
+                            "designerId": "83f20bfe-093a-4606-9f7f-518474264eb2"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField150",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "474b82cf-2a23-4aa6-8dda-759f89f68609"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "tbo",
+                        "format": "0.00",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "ТБО",
+                        "width": 65
+                    },
+                    "name": "MyNumberColumn192",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "2c58ba6e-4e67-4515-bfb8-82a31751bc89",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "fn": "summaryRenderer",
+                                "implHandler": [
+                                    "  var n =Ext.util.Format.number(val,'0,000.00');",
+                                    "if (val >= 0) {",
+                                    "    return '<span style=\"color:#000; font-weight:bold;\">' + n + '</span>';",
+                                    "} else  {",
+                                    "    return '<span style=\"color:red; font-weight:bold;\">' + n + '</span>';",
+                                    "}"
+                                ]
+                            },
+                            "name": "summaryRenderer",
+                            "designerId": "6a915b7a-29ac-440f-a631-12772ed8eefd"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField151",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "445e9a5b-73e9-4c07-95c1-e62dc5921b03"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "summa",
+                        "format": "0.00",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Сумма",
+                        "width": 85
+                    },
+                    "name": "MyNumberColumn193",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "91f74d3f-cc1a-4d1a-9f13-e896e8aa1d91",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "fn": "summaryRenderer",
+                                "implHandler": [
+                                    "  var n =Ext.util.Format.number(val,'0,000.00');",
+                                    "if (val >= 0) {",
+                                    "    return '<span style=\"color:#000; font-weight:bold;\">' + n + '</span>';",
+                                    "} else  {",
+                                    "    return '<span style=\"color:red; font-weight:bold;\">' + n + '</span>';",
+                                    "}"
+                                ]
+                            },
+                            "name": "summaryRenderer",
+                            "designerId": "884a1c49-8c80-4db1-9e91-342fd659255b"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField152",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "b3bf8f22-17be-442e-b160-6ef8c1b6252e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "prixod",
+                        "menuDisabled": true,
+                        "text": "Приход",
+                        "width": 90
+                    },
+                    "name": "MyColumn205",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "43a4af28-b52a-4913-932e-2b4783f61d63",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyComboBox13",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "d75557c5-cb58-4aa0-862d-dd32ec837754"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "kassa",
+                        "menuDisabled": true,
+                        "text": "Касса",
+                        "width": 90
+                    },
+                    "name": "MyColumn206",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "15a8edfd-d9b6-436e-9eff-e59e9dcb60f4",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyComboBox14",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "4b3c9063-bfb0-4907-9222-085be08aa7d8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nomer",
+                        "hidden": true,
+                        "text": "Nomer"
+                    },
+                    "name": "MyColumn207",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "c3cf7717-04dd-47ef-a3de-453d1861db3a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "decimalPrecision": 0
+                            },
+                            "name": "MyNumberField153",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "8b128c74-c0bd-423d-bf6a-e92afc6f51a6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "operator",
+                        "text": "Оператор",
+                        "width": 90
+                    },
+                    "name": "MyColumn208",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "53df4419-6243-40c3-9ec3-8ab5b972dc01",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyComboBox15",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "5b036f7c-ca9e-4ff9-8546-bffa7ebbeeea"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "data_in",
+                        "hidden": true,
+                        "text": null
+                    },
+                    "name": "MyDateColumn40",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "9c3eff17-5153-471a-bdad-1da195b158f0"
+                },
+                {
+                    "type": "Ext.grid.column.Action",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Редактировать запись",
+                        "flex": null,
+                        "maxWidth": null,
+                        "menuDisabled": true,
+                        "minWidth": null,
+                        "width": 30
+                    },
+                    "name": "MyActionColumn49",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "a5f09628-1161-4bf8-ae67-58dd2cccccb5",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "resources/css/images/ico/edit.png",
+                                "tooltip": "Редактировать запись"
+                            },
+                            "name": "MyActionColumnItem62",
+                            "designerId": "cf16456c-efab-4648-93db-ee0d400f9a3c",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var winEditOplata = Ext.ClassManager.instantiateByAlias('widget.wineditoplata');",
+                                            "var form = winEditOplata.down('#fmEditOplata');",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var values =stUser.getAt(0);",
+                                            "var value = record;",
+                                            "//console.log(value);",
+                                            "view.getSelectionModel().select(rowIndex);",
+                                            "values.set({'vibor':'editOplata'});",
+                                            "stUser.sync();",
+                                            "",
+                                            "form.loadRecord(value);",
+                                            "winEditOplata.show();"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "646c6dee-a1d6-4c57-9d87-6f57f5a43e7d"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "v",
+                                            "metadata",
+                                            "r",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store"
+                                        ],
+                                        "fn": "getClass",
+                                        "implHandler": [
+                                            "var tekd = r.get('data');",
+                                            "var dt = new Date();",
+                                            "var check_date=Ext.Date.format(dt, 'Y-m');",
+                                            "var tek_date=Ext.Date.format(tekd, 'Y-m');",
+                                            "if (check_date === tek_date ) {",
+                                            "    metaData = 'x-grid-center-icon';",
+                                            "} else {",
+                                            "    metaData = 'x-grid-center-icon';",
+                                            "}",
+                                            "return metaData;"
+                                        ]
+                                    },
+                                    "name": "getClass",
+                                    "designerId": "867ae6e7-0b2e-4f75-b417-e3057098b323"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Action",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Удалить запись",
+                        "flex": null,
+                        "maxWidth": null,
+                        "menuDisabled": true,
+                        "minWidth": null,
+                        "width": 30
+                    },
+                    "name": "MyActionColumn50",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b1ad0320-d939-48ab-bb1a-36c1e83ae730",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "resources/css/images/ico/no.png",
+                                "tooltip": "Удалить  запись "
+                            },
+                            "name": "MyActionColumnItem63",
+                            "designerId": "3c646063-c187-4c89-9146-e4f9e7d416a2",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "// in use",
+                                            "var me = this;",
+                                            "//STORE",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "",
+                                            "",
+                                            "//LOGIN & PASSWORD",
+                                            "var values =stUser.getAt(0);",
+                                            "var params = {",
+                                            "    login:values.get('login'),",
+                                            "    password:values.get('password'),",
+                                            "    address_id:values.get('address_id'),",
+                                            "    address:values.get('address'),",
+                                            "    what:\"delOplataApp\"",
+                                            "};",
+                                            "",
+                                            "//GRID",
+                                            "var store = view.getStore();",
+                                            "var value = store.getAt(rowIndex).data;",
+                                            "",
+                                            "",
+                                            "//LOGIKA",
+                                            "",
+                                            "",
+                                            "Ext.Object.merge(value, params);",
+                                            "//console.log(value);",
+                                            "",
+                                            "Ext.MessageBox.confirm({",
+                                            "    title: 'Удаление записи',",
+                                            "    msg: 'Вы удаляете запись об оплате  <br> Подтвердите или отмените свои действия.',",
+                                            "    buttons: Ext.MessageBox.OKCANCEL,",
+                                            "    icon: Ext.MessageBox.ERROR,",
+                                            "    buttonText:{",
+                                            "        ok:'подтвеждаю',",
+                                            "        cancel:'отмена'",
+                                            "    },",
+                                            "    fn:function(btn,newValue){",
+                                            "        if(btn=='ok'){",
+                                            "            QueryKassa.delOplata(value,function(results){",
+                                            "                if(results.success===\"1\"){",
+                                            "                    Ext.MessageBox.show({",
+                                            "                        title: 'Удаление записи об оплате ',",
+                                            "                        msg: results.msg,",
+                                            "                        buttons: Ext.MessageBox.OK,",
+                                            "                        icon: Ext.MessageBox.INFO",
+                                            "                    });",
+                                            "                    store.load({",
+                                            "                        params: {",
+                                            "                            what:'OplataApp',",
+                                            "                            address_id: values.get('address_id'),",
+                                            "                            login:values.get('login'),",
+                                            "                            password:values.get('password')",
+                                            "                        },",
+                                            "                        scope:this",
+                                            "                    });",
+                                            "",
+                                            "                } else {",
+                                            "                    Ext.MessageBox.show({",
+                                            "                        title: 'Удаление записи об оплате',",
+                                            "                        msg: results.msg,",
+                                            "                        buttons: Ext.MessageBox.OK,",
+                                            "                        icon: Ext.MessageBox.ERROR",
+                                            "                    });",
+                                            "                }",
+                                            "            });",
+                                            "        }",
+                                            "    }",
+                                            "});"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "c97debe1-5dcc-4e2e-9ccb-7db34f3e1540"
+                                },
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "v",
+                                            "metadata",
+                                            "r",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store"
+                                        ],
+                                        "fn": "getClass",
+                                        "implHandler": [
+                                            "var tekd = r.get('data');",
+                                            "var dt = new Date();",
+                                            "var check_date=Ext.Date.format(dt, 'Y-m');",
+                                            "var tek_date=Ext.Date.format(tekd, 'Y-m');",
+                                            "if (check_date === tek_date ) {",
+                                            "    metaData = 'x-grid-center-icon';",
+                                            "} else {",
+                                            "    metaData = 'x-hide-display';",
+                                            "}",
+                                            "return metaData;"
+                                        ]
+                                    },
+                                    "name": "getClass",
+                                    "designerId": "151a1d31-ec06-4a8e-b80b-e0498c72d86e"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
